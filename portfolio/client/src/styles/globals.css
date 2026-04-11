@@ -1,0 +1,96 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --clr-bg:          #080808;
+  --clr-bg-2:        #0f0f0f;
+  --clr-bg-3:        #161616;
+  --clr-bg-4:        #1c1c1c;
+  --clr-border:      rgba(255, 255, 255, 0.06);
+  --clr-border-mid:  rgba(255, 255, 255, 0.12);
+  --clr-border-hi:   rgba(255, 255, 255, 0.18);
+
+  --clr-text:        #ede9e3;
+  --clr-text-muted:  #555555;
+  --clr-text-sub:    #888888;
+
+  --clr-accent:      #c8b89a;
+  --clr-accent-dim:  rgba(200, 184, 154, 0.08);
+  --clr-accent-glow: rgba(200, 184, 154, 0.15);
+
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --section-pad: clamp(6rem, 12vw, 10rem);
+  --container:   min(1140px, 90vw);
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    160ms;
+  --dur-mid:     300ms;
+  --dur-slow:    560ms;
+
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+a      { color: inherit; text-decoration: none; }
+img    { display: block; max-width: 100%; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.section { padding-block: var(--section-pad); }
+
+::-webkit-scrollbar       { width: 3px; }
+::-webkit-scrollbar-track { background: var(--clr-bg); }
+::-webkit-scrollbar-thumb {
+  background: var(--clr-bg-4);
+  border-radius: 2px;
+  transition: background var(--dur-fast);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--clr-accent); }
+
+::selection {
+  background: var(--clr-accent-dim);
+  color: var(--clr-text);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity var(--dur-slow) var(--ease-out),
+              transform var(--dur-slow) var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

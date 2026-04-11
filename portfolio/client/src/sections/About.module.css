@@ -1,0 +1,118 @@
+.about {
+  border-top: 1px solid var(--clr-border);
+  position: relative;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin-bottom: 3.5rem;
+}
+.label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--clr-accent);
+  opacity: 0.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.heading {
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 800;
+  color: var(--clr-text);
+  line-height: 1.15;
+  position: sticky;
+  top: 8rem;
+}
+.heading em {
+  font-style: italic;
+  color: var(--clr-text-muted);
+  display: block;
+}
+
+.bio {
+  color: var(--clr-text-sub);
+  font-size: 0.975rem;
+  font-weight: 300;
+  line-height: 1.9;
+  margin-bottom: 1.25rem;
+}
+
+/* Skills grid */
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--clr-border);
+}
+
+/* Each tag */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.9rem 0.4rem 0.7rem;
+  border: 1px solid rgba(var(--tag-color), 0.15);
+  border-color: color-mix(in srgb, var(--tag-color) 20%, transparent);
+  border-radius: 100px;
+  background: var(--tag-bg);
+  cursor: default;
+  transition:
+    transform        180ms var(--ease-out),
+    background       180ms var(--ease-out),
+    border-color     180ms var(--ease-out),
+    box-shadow       180ms var(--ease-out);
+}
+
+.tag:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: color-mix(in srgb, var(--tag-color) 16%, transparent);
+  border-color: color-mix(in srgb, var(--tag-color) 55%, transparent);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--tag-color) 20%, transparent);
+}
+
+/* Icon */
+.tagIcon {
+  font-size: 0.85rem;
+  line-height: 1;
+  color: var(--tag-color);
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--tag-color) 40%, transparent));
+  transition: filter 180ms var(--ease-out);
+}
+.tag:hover .tagIcon {
+  filter: drop-shadow(0 0 8px color-mix(in srgb, var(--tag-color) 70%, transparent));
+}
+
+/* Name */
+.tagName {
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--tag-color);
+  opacity: 0.85;
+  transition: opacity 180ms;
+}
+.tag:hover .tagName {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .grid    { grid-template-columns: 1fr; gap: 2.5rem; }
+  .heading { position: static; }
+}
