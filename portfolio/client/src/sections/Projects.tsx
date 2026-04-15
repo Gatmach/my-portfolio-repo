@@ -53,7 +53,7 @@ export default function Projects() {
       <div className="container">
 
         <div className={styles.header}>
-          <h2 className={`${styles.heading} reveal`}>Selected work</h2>
+          <h2 className={`${styles.heading} reveal`}><em>Crafted </em> Experiences</h2>
         </div>
 
         <div className={styles.grid}>

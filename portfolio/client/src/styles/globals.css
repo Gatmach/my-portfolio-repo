@@ -5,21 +5,21 @@
 }
 
 :root {
-  --clr-bg:          #080808;
-  --clr-bg-2:        #0f0f0f;
-  --clr-bg-3:        #161616;
-  --clr-bg-4:        #1c1c1c;
-  --clr-border:      rgba(255, 255, 255, 0.06);
-  --clr-border-mid:  rgba(255, 255, 255, 0.12);
-  --clr-border-hi:   rgba(255, 255, 255, 0.18);
+  --clr-bg:          #0e1015;
+  --clr-bg-2:        #1C1C20;
+  --clr-bg-3:        #2A2A2E;
+  --clr-bg-4:        #1A1E2E;
+  --clr-border:      #2A2A2E;
+  --clr-border-mid:  #2D3F5E;
+  --clr-border-hi:   #2563EB33;
 
-  --clr-text:        #ede9e3;
-  --clr-text-muted:  #555555;
-  --clr-text-sub:    #888888;
+  --clr-text:        #FFFFFF;
+  --clr-text-muted:  #888888;
+  --clr-text-sub:    #475569;
 
-  --clr-accent:      #c8b89a;
-  --clr-accent-dim:  rgba(200, 184, 154, 0.08);
-  --clr-accent-glow: rgba(200, 184, 154, 0.15);
+  --clr-accent:      #10B981;
+  --clr-accent-dim:  rgba(16, 185, 129, 0.08);
+  --clr-accent-glow: rgba(16, 185, 129, 0.15);
 
   --font-display: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;

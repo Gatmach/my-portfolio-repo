@@ -20,8 +20,6 @@ export default function About() {
     <section id="about" className={`section ${styles.about}`}>
       <div className="container">
 
-        <div className={`${styles.label} reveal`}>About me</div>
-
         <div className={styles.grid}>
           <div className={styles.left}>
             <h2 className={`${styles.heading} reveal`}>
@@ -32,14 +30,17 @@ export default function About() {
 
           <div className={styles.right}>
             <p className={`${styles.bio} reveal`}>
-              I'm a full-stack developer with a passion for building products
-              that are fast, reliable, and delightful to use. I work across
-              the entire stack — from database design to pixel-perfect UIs —
-              with a strong focus on clean architecture and developer experience.
+            I’m a developer passionate about building fast, reliable, 
+            and delightful digital products. I work across full-stack web 
+            and mobile development, and I’m experienced in applying AI, 
+            machine learning, neural networks, and natural language processing 
+            to real-world problems. From designing scalable backends to crafting 
+            intuitive, pixel-perfect interfaces, I focus on clean architecture, 
+            performance, and creating solutions that are both practical and impactful.
             </p>
             <p className={`${styles.bio} reveal`} style={{ transitionDelay: '80ms' }}>
-              When I'm not writing code, I'm exploring new tools, contributing
-              to open source, or obsessing over coffee brewing ratios.
+              When I’m not coding, I’m exploring new tools, expanding my skills, 
+              and preparing to contribute more actively to the tech community.
             </p>
 
             <div className={`${styles.skills} reveal`} style={{ transitionDelay: '160ms' }}>
