@@ -45,7 +45,6 @@
   align-items: center;
   gap: 0.45rem;
   padding: 0.4rem 0.9rem 0.4rem 0.7rem;
-  border: 1px solid rgba(var(--tag-color), 0.15);
   border-color: color-mix(in srgb, var(--tag-color) 20%, transparent);
   border-radius: 100px;
   background: var(--tag-bg);
@@ -90,6 +89,11 @@
 }
 
 @media (max-width: 768px) {
-  .grid    { grid-template-columns: 1fr; gap: 2.5rem; }
-  .heading { position: static; }
+  .grid { 
+    grid-template-columns: 1fr; 
+    gap: 2.5rem; 
+  }
+  .heading { 
+    position: static; 
+  }
 }

@@ -2,19 +2,17 @@ import styles from './About.module.css'
 
 const skills = [
   { name: 'React',       color: '#61DAFB', bg: 'rgba(97,218,251,0.08)',  icon: '⚛' },
-  { name: 'TypeScript',  color: '#3178C6', bg: 'rgba(49,120,198,0.08)',  icon: '𝙏𝙎' },
-  { name: 'Node.js',     color: '#84BA64', bg: 'rgba(132,186,100,0.08)', icon: '⬡' },
-  { name: 'Express',     color: '#eeeeee', bg: 'rgba(238,238,238,0.06)', icon: '⚡' },
+  { name: 'JavaScript', color: '#F7DF1E', bg: 'rgba(247,223,30,0.08)',  icon: '𝙅𝙎' },
   { name: 'PostgreSQL',  color: '#336791', bg: 'rgba(51,103,145,0.08)',  icon: '🐘' },
-  { name: 'REST APIs',   color: '#FF6C37', bg: 'rgba(255,108,55,0.08)',  icon: '⇄' },
-  { name: 'Git',         color: '#F05032', bg: 'rgba(240,80,50,0.08)',   icon: '⑂' },
   { name: 'Docker',      color: '#2496ED', bg: 'rgba(36,150,237,0.08)',  icon: '🐳' },
-  { name: 'Tailwind',    color: '#38BDF8', bg: 'rgba(56,189,248,0.08)',  icon: '🌊' },
-  { name: 'Vite',        color: '#BC52EE', bg: 'rgba(188,82,238,0.08)',  icon: '⚡' },
-  { name: 'Linux',       color: '#FCC624', bg: 'rgba(252,198,36,0.08)',  icon: '🐧' },
-  { name: 'CI/CD',       color: '#c8b89a', bg: 'rgba(200,184,154,0.08)', icon: '♾' },
+  { name: 'Python',     color: '#3776AB', bg: 'rgba(55,118,171,0.08)',  icon: '🐍' },
+  { name: 'C/C++',      color: '#00599C', bg: 'rgba(0,89,156,0.08)',    icon: '⚙' },
+  { name: 'Java',       color: '#007396', bg: 'rgba(0,115,150,0.08)',    icon: '☕' },
+  { name: 'Seaborn',    color: '#4C72B0', bg: 'rgba(76,114,176,0.08)',  icon: '📊' },
+  { name: 'Matplotlib', color: '#11557C', bg: 'rgba(17,85,124,0.08)',   icon: '📈' },
+  { name: 'pandas',     color: '#4DABCF', bg: 'rgba(77,171,207,0.08)',  icon: '🐼' },
+  { name: 'NumPy',      color: '#4DABCF', bg: 'rgba(77,171,207,0.08)',  icon: '🔢' },
 ]
-
 export default function About() {
   return (
     <section id="about" className={`section ${styles.about}`}>
