@@ -1,32 +1,17 @@
 .contact {
-  border-top: 1px solid var(--clr-border);
+  padding-top: 2rem;
 }
 
 .wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 4rem;
   align-items: start;
 }
 
-.label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--clr-text-muted);
-  margin-bottom: 1.5rem;
-}
-.label::before {
-  content: '';
-  display: block;
-  width: 24px; height: 1px;
-  background: var(--clr-accent);
-  opacity: 0.6;
-}
+/* ===========================
+   Left Section
+=========================== */
 
 .heading {
   font-size: clamp(2rem, 3.8vw, 3rem);
@@ -45,23 +30,9 @@
   margin-bottom: 2.75rem;
 }
 
-.socials {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-
-.socialLink {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  color: var(--clr-text-muted);
-  width: fit-content;
-  transition: color var(--dur-fast);
-  padding: 0.2rem 0;
-}
-.socialLink:hover { color: var(--clr-accent); }
+/* ===========================
+   Form
+=========================== */
 
 .form {
   display: flex;
@@ -85,50 +56,301 @@
 
 .input,
 .textarea {
+  width: 100%;
+
+  padding: 0.875rem 1rem;
+
   background: var(--clr-bg-2);
   border: 1px solid var(--clr-border);
   border-radius: var(--r-sm);
-  padding: 0.875rem 1rem;
+
   color: var(--clr-text);
   font-family: var(--font-body);
   font-size: 0.925rem;
   font-weight: 300;
+
   outline: none;
-  width: 100%;
   resize: none;
-  transition: border-color var(--dur-fast), background var(--dur-fast);
+
+  transition:
+    border-color var(--dur-fast),
+    background var(--dur-fast),
+    box-shadow var(--dur-fast);
 }
+
 .input::placeholder,
-.textarea::placeholder { color: var(--clr-text-muted); }
+.textarea::placeholder {
+  color: var(--clr-text-muted);
+}
+
 .input:focus,
 .textarea:focus {
-  border-color: var(--clr-accent);
   background: var(--clr-bg-3);
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px rgba(255, 165, 0, 0.12);
 }
+
+/* ===========================
+   Turnstile
+=========================== */
+
+.turnstile {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 1.25rem;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ===========================
+   Button
+=========================== */
 
 .submit {
   align-self: flex-start;
-  padding: 0.875rem 2.25rem;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: fit-content;
+  min-width: 170px;
+  max-width: 220px;
+  height: 50px;
+
+  padding: 0 2rem;
+
   background: var(--clr-accent);
   color: #080808;
-  font-family: var(--font-display);
-  font-size: 0.85rem;
-  font-weight: 700;
-  border-radius: var(--r-sm);
-  border: none;
-  cursor: pointer;
-  letter-spacing: 0.02em;
-  transition: opacity var(--dur-fast), transform var(--dur-fast);
-}
-.submit:hover:not(:disabled) {
-  opacity: 0.85;
-  transform: translateY(-2px);
-}
-.submit:disabled { opacity: 0.4; cursor: not-allowed; }
 
-.successMsg { font-size: 0.875rem; color: #6ee7b7; margin-top: 0.25rem; }
-.errorMsg   { font-size: 0.875rem; color: #fca5a5; margin-top: 0.25rem; }
+  border: none;
+  border-radius: var(--r-sm);
+
+  cursor: pointer;
+
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+
+  transition:
+    transform var(--dur-fast),
+    opacity var(--dur-fast),
+    background var(--dur-fast);
+}
+
+.submit:hover:not(:disabled) {
+  transform: translateY(-2px);
+  opacity: 0.92;
+}
+
+.submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submit:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ===========================
+   Spinner
+=========================== */
+
+.loadingSpinner {
+  display: inline-flex;
+  animation: spin 0.9s linear infinite;
+}
+
+/* ===========================
+   Status Messages
+=========================== */
+
+.successMsg,
+.errorMsg {
+  margin-top: 0.75rem;
+  padding: 0.9rem 1rem;
+
+  border-radius: var(--r-sm);
+
+  font-size: 0.9rem;
+  line-height: 1.5;
+
+  animation: fadeInOut 5s ease forwards;
+}
+
+.successMsg {
+  background: rgba(34, 197, 94, 0.12);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #86efac;
+}
+
+.errorMsg {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+/* ===========================
+   Animations
+=========================== */
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  10% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/* Tablet + Mobile (768px and below) */
 
 @media (max-width: 768px) {
-  .wrapper { grid-template-columns: 1fr; gap: 3rem; }
+  .contact {
+    padding-top: 0;
+  }
+
+  .wrapper {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .heading {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);
+  }
+
+  .sub {
+    max-width: 100%;
+    margin-bottom: 0;
+    font-size: 0.95rem;
+  }
+
+  .form {
+    gap: 1.2rem;
+  }
+
+  .field {
+    gap: 0.45rem;
+  }
+
+  .fieldLabel {
+    font-size: 0.66rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.8rem 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .turnstile {
+    justify-content: flex-start;
+    overflow-x: auto;
+  }
+
+  .submit {
+    width: auto;
+    min-width: 170px;
+    max-width: 200px;
+  }
+
+  .successMsg,
+  .errorMsg {
+    font-size: 0.88rem;
+  }
+}
+
+/* Small Phones (420px and below) */
+
+@media (max-width: 420px) {
+  .wrapper {
+    gap: 2rem;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .sub {
+    font-size: 0.88rem;
+  }
+
+  .form {
+    gap: 1rem;
+  }
+
+  .fieldLabel {
+    font-size: 0.64rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 0.75rem 0.9rem;
+    font-size: 0.85rem;
+  }
+
+  .submit {
+    width: auto;
+    min-width: 150px;
+    max-width: 180px;
+    height: 46px;
+    padding: 0 1.25rem;
+    font-size: 0.85rem;
+  }
+
+  .turnstile {
+    overflow-x: auto;
+  }
+
+  .successMsg,
+  .errorMsg {
+    font-size: 0.84rem;
+    padding: 0.8rem 0.9rem;
+  }
 }

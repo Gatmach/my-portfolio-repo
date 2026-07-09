@@ -24,8 +24,8 @@
   --font-display: 'Syne', sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
-  --section-pad: clamp(6rem, 12vw, 10rem);
-  --container:   min(1140px, 90vw);
+  --section-pad: clamp(4rem, 8vw, 6rem);
+  --container:   min(1400px, 90vw);
 
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);

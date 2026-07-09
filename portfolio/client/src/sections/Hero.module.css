@@ -8,7 +8,6 @@
   overflow: hidden;
 }
 
-/* Background */
 .bg {
   position: absolute;
   inset: 0;
@@ -27,16 +26,13 @@
   z-index: 1;
 } 
 
-/* Bottom fade into next section */
 .overlayBottom {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 200px;
-  /*background: linear-gradient(to bottom, transparent, var(--clr-bg)); */
   z-index: 2;
 } 
 
-/* Content */
 .inner {
   position: relative;
   z-index: 3;
@@ -48,7 +44,6 @@
   padding-left: 3rem;
 }
 
-/* Eyebrow */
 .eyebrowWrap {
   display: flex;
   align-items: center;
@@ -73,7 +68,6 @@
   color: var(--clr-accent);
 }
 
-/* Title */
 .title {
   display: flex;
   flex-direction: column;
@@ -110,7 +104,6 @@
   animation: fadeSlideLeft 0.9s var(--ease-out) 0.46s both;
 }
 
-/* Divider */
 .divider {
   width: 48px;
   height: 1px;
@@ -120,7 +113,6 @@
   animation: fadeSlideLeft 0.9s var(--ease-out) 0.52s both;
 }
 
-/* Badge */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -136,10 +128,8 @@
   animation: fadeSlideLeft 0.9s var(--ease-out) 0.56s both;
 }
 
-/* Subtitle */
 .subtitle {
   font-size: clamp(0.9rem, 1.2vw, 1rem);
-  /*color: var(--clr-text-muted); */
   color: var(--clr-text-white);
   font-weight: 300;
   max-width: 40ch;
@@ -148,7 +138,6 @@
   animation: fadeSlideLeft 0.9s var(--ease-out) 0.64s both;
 }
 
-/* Buttons */
 .actions {
   display: flex;
   gap: 0.875rem;
@@ -197,7 +186,6 @@
   transform: translateY(-2px);
 }
 
-/* ── Animations ── */
 @keyframes fadeSlideLeft {
   from {
     opacity: 0;
@@ -209,23 +197,99 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-  .content { padding-left: 2rem; max-width: 480px; }
-}
+/* Tablet + Mobile (768px and below) */
 
 @media (max-width: 768px) {
-  .hero { align-items: flex-end; padding-bottom: 5rem; }
-  .content { padding-left: 1rem; max-width: 100%; }
-  .overlay { background: rgba(6, 6, 6, 0.88); }
-  .titleLine2 { padding-left: 1.5rem; }
+  .hero {
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 5rem;
+    min-height: 100vh;
+  }
+
+  .overlay {
+    background: rgba(6, 6, 6, 0.88);
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .titleLine1,
+  .titleLine2 {
+    font-size: clamp(2.8rem, 8vw, 4rem);
+    line-height: 1;
+  }
+
+  .titleLine2 {
+    padding-left: 1.5rem;
+  }
+
+  .titleAccent {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    max-width: 100%;
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-top: 1.25rem;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    padding: 0.85rem 1.7rem;
+    font-size: 0.85rem;
+  }
 }
 
-@media (max-width: 480px) {
+/* Small Phones (420px and below) */
+
+@media (max-width: 420px) {
+  .hero {
+    padding-bottom: 4rem;
+  }
+
+  .content {
+    padding: 0 0.75rem;
+  }
+
   .titleLine1,
-  .titleLine2  { font-size: 2.6rem; }
-  .titleLine2  { padding-left: 1rem; }
-  .titleAccent { font-size: 1.2rem; }
+  .titleLine2 {
+    font-size: 2.4rem;
+  }
+
+  .titleLine2 {
+    padding-left: 1rem;
+  }
+
+  .titleAccent {
+    font-size: 1.1rem;
+  }
+
+  .description {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
   .btnPrimary,
-  .btnGhost    { padding: 0.8rem 1.5rem; font-size: 0.8rem; }
+  .btnGhost {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
 }

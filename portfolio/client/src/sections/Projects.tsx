@@ -23,34 +23,51 @@ const projects: Project[] = [
     githubUrl: 'https://github.com/Gatmach/SWM-System',
   },
   {
-    title: 'Smart Waste Management System',
+    title: 'Farm2Fork',
     role: 'Full-Stack Developer',
     description:
-      'A smart city web application that supports real-time monitoring and optimization of waste collection using IoT and data analytics.',
-    tags: ['Django', 'Python', 'PostgreSQL', 'Chart.js', 'JavaScript'],
-    year: '2025',
-    image: '/images/swms.png',
-    githubUrl: 'https://github.com/Gatmach/SWM-System',
+      'A blockchain-powered agricultural traceability platform that enables farmers, buyers, and consumers to track produce from farm to market through QR code verification, real-time lifecycle updates, and secure supply chain management.',
+    tags: ['Laravel', 'React Native', 'Expo', 'PostgreSQL', 'Blockchain', 'REST API'],
+    year: '2026',
+    image: '/images/farm2fork.jpeg',
+    githubUrl: 'https://github.com/Farmtfork',
   },
   {
-    title: 'Smart Waste Management System',
-    role: 'Full-Stack Developer',
+    title: 'CropAI – AI-Powered Crop Disease Diagnosis',
+    role: 'AI/ML & Full-Stack Developer',
     description:
-      'A smart city web application that supports real-time monitoring and optimization of waste collection using IoT and data analytics.',
-    tags: ['Django', 'Python', 'PostgreSQL', 'Chart.js', 'JavaScript'],
+      'An AI-powered crop disease diagnosis platform that enables farmers to identify diseases in maize, tomatoes, and beans using computer vision. The system delivers real-time, offline-capable predictions, treatment recommendations, and a mobile-first experience to support sustainable agriculture and food security.',
+    tags: [
+      'FastAPI',
+      'TensorFlow',
+      'Keras',
+      'React Native',
+      'SQLite',
+      'Docker',
+      'Python'
+    ],
     year: '2025',
-    image: '/images/swms.png',
-    githubUrl: 'https://github.com/Gatmach/SWM-System',
+    image: '/images/cropai.png',
+    githubUrl: 'https://github.com/Gatmach/ai-crop-disease-diagnosis',
   },
   {
-    title: 'Smart Waste Management System',
-    role: 'Full-Stack Developer',
+    title: 'Feelr – AI-Powered Sentiment Analysis Platform',
+    role: 'Machine Learning & Full-Stack Developer',
     description:
-      'A smart city web application that supports real-time monitoring and optimization of waste collection using IoT and data analytics.',
-    tags: ['Django', 'Python', 'PostgreSQL', 'Chart.js', 'JavaScript'],
+      'A web-based sentiment analysis platform that leverages natural language processing and deep learning to classify text sentiment. Feelr enables users to analyze emotions, visualize sentiment trends, track analysis history, and manage accounts through a secure, responsive interface.',
+    tags: [
+      'Django',
+      'Django REST Framework',
+      'React',
+      'TensorFlow',
+      'RoBERTa',
+      'PostgreSQL',
+      'Chart.js',
+      'JWT'
+    ],
     year: '2025',
-    image: '/images/swms.png',
-    githubUrl: 'https://github.com/Gatmach/SWM-System',
+    image: '/images/feelr.png',
+    githubUrl: 'https://github.com/Gatmach/feeler',
   },
 ]
 
@@ -86,7 +103,7 @@ export default function Projects() {
             <em>Crafted </em>Experiences
           </h2>
           <p className={`${styles.sub} reveal`}>
-            A selection of things I've built — from production apps to open-source tools.
+        A closer look at what I build — real products designed to solve real problems, from first idea to finished system.
           </p>
         </div>
 
@@ -106,23 +123,6 @@ export default function Projects() {
                   <img src={p.image} alt={p.title} className={styles.thumbnailImg} />
                 ) : (
                   <span className={styles.thumbnailNum}>{i + 1}</span>
-                )}
-
-                {/* Hover overlay — Read More button only */}
-                {p.image && (
-                  <div className={styles.overlay}>
-                    <div className={styles.overlayContent}>
-                      <a
-                        href={p.githubUrl ?? p.liveUrl ?? '#'}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.overlayBtn}
-                        onClick={(e: React.MouseEvent<HTMLAnchorElement>) => e.stopPropagation()}
-                      >
-                        Read More
-                      </a>
-                    </div>
-                  </div>
                 )}
               </div>
 
@@ -168,6 +168,18 @@ export default function Projects() {
                 {/* Footer */}
                 <div className={styles.cardFooter}>
                   <span className={styles.year}>{p.year}</span>
+
+                  {(p.githubUrl || p.liveUrl) && (
+                    <a
+                      href={p.githubUrl ?? p.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.readMore}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      Read More →
+                    </a>
+                  )}
                 </div>
 
               </div>
