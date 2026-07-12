@@ -17,6 +17,7 @@ interface FormState {
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
 const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY
+const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:5000'
 
 if (!siteKey) {
   console.error('Missing VITE_TURNSTILE_SITE_KEY environment variable')
@@ -71,7 +72,7 @@ export default function Contact() {
     setStatus('loading')
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${apiUrl}/api/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

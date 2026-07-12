@@ -8,14 +8,14 @@ import express, {
 } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
-import compression  from 'compression'
+import compression from 'compression'
 import morgan from 'morgan'
 import rateLimit from 'express-rate-limit'
 
 import contactRouter from './routes/contact'
 
 const app = express()
-const PORT = Number(process.env.PORT) || 5000
+const PORT = process.env.PORT || 5000
 
 // ---------------------------------------------------------
 // Validate required environment variables
@@ -40,21 +40,21 @@ for (const variable of requiredEnv) {
 // Express Configuration
 // ---------------------------------------------------------
 
-// Required for Render/Railway/Vercel proxies
+// Required for Render/Vercel proxy support
 app.set('trust proxy', 1)
 
 // Security headers
 app.use(helmet())
 
 // Compress responses
-app.use(compression() as express.RequestHandler)
+app.use(compression())
 
-// HTTP request logger (development only)
+// HTTP request logging (development only)
 if (process.env.NODE_ENV !== 'production') {
   app.use(morgan('dev'))
 }
 
-// Parse JSON requests
+// Parse JSON bodies
 app.use(
   express.json({
     limit: '10kb',
@@ -64,9 +64,7 @@ app.use(
 // CORS
 app.use(
   cors({
-    origin:
-      process.env.CLIENT_URL ||
-      'http://localhost:5173',
+    origin: process.env.CLIENT_URL,
     credentials: true,
   })
 )
@@ -77,13 +75,9 @@ app.use(
 
 const contactLimiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-
   max: 20,
-
   standardHeaders: true,
-
   legacyHeaders: false,
-
   message: {
     success: false,
     message:
@@ -91,7 +85,7 @@ const contactLimiter = rateLimit({
   },
 })
 
-// Apply only to contact endpoint
+// Apply limiter only to contact endpoint
 app.use('/api/contact', contactLimiter)
 
 // ---------------------------------------------------------
@@ -145,8 +139,10 @@ app.use(
 // ---------------------------------------------------------
 
 const server = app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`)
-  console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`)
+  console.log(`🚀 Server listening on port ${PORT}`)
+  console.log(
+    `🌍 Environment: ${process.env.NODE_ENV ?? 'development'}`
+  )
 })
 
 // ---------------------------------------------------------
