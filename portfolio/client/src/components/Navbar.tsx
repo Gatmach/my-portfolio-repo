@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { useActiveSection } from '../hooks/useActiveSection'
+import Logo from '../sections/Logo'
 import styles from './Navbar.module.css'
 
 const links = [
@@ -50,7 +51,7 @@ export default function Navbar() {
   return (
     <header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
       <div className={`container ${styles.inner}`} ref={menuRef}>
-        <a href="#home" className={styles.logo}>Portfolio</a>
+        <Logo />
 
         {/* Desktop nav */}
         <nav className={styles.nav}>

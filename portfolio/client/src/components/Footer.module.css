@@ -6,7 +6,7 @@
 
 .inner {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   gap: 3rem;
   padding-bottom: 3.5rem;
 }
@@ -14,25 +14,15 @@
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  gap: 0.875rem;
 }
-
-.logo {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  color: var(--clr-text);
-  display: inline-block;
-  margin-bottom: 0.875rem;
-  transition: color var(--dur-fast);
-}
-.logo:hover { color: var(--clr-accent); }
 
 .tagline {
   font-size: 0.85rem;
   color: var(--clr-text-muted);
   font-weight: 300;
-  max-width: 26ch;
+  max-width: 30ch;
   line-height: 1.7;
 }
 
@@ -92,94 +82,33 @@
   letter-spacing: 0.04em;
 }
 
-/* Tablet + Mobile (768px and below) */
-
-@media (max-width: 768px) {
-  .footer {
-    padding-top: 3rem;
-  }
-
+/* Mobile */
+@media (max-width: 640px) {
   .inner {
-    grid-template-columns: 1.4fr 1fr 1fr;
-    gap: 1.5rem;
-    padding-bottom: 2.5rem;
-    align-items: start;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
   }
-
+  .brand {
+    align-items: center;
+    text-align: center;
+  }
   .tagline {
     max-width: 100%;
-    font-size: 0.82rem;
   }
+}
 
-  .logo {
-    font-size: 1.05rem;
+/* Phones */
+@media (max-width: 420px) {
+  .inner {
+    gap: 2rem;
+    padding-bottom: 2.5rem;
   }
-
-  .colTitle {
-    margin-bottom: 0.9rem;
-    font-size: 0.66rem;
-  }
-
-  .list {
-    gap: 0.9rem;
-  }
-
   .link {
     width: 40px;
     height: 40px;
   }
-
-  .bottom {
-    padding-block: 1.25rem;
-  }
-
   .bottom p {
-    text-align: center;
-    line-height: 1.6;
-    font-size: 0.72rem;
-  }
-}
-
-/* Small Phones (420px and below) */
-
-@media (max-width: 420px) {
-  .footer {
-    padding-top: 2.5rem;
-  }
-
-  .inner {
-    grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 0.9rem;
-    padding-bottom: 2rem;
-    align-items: start;
-  }
-
-  .logo {
-    font-size: 0.95rem;
-  }
-
-  .tagline {
-    font-size: 0.78rem;
-    line-height: 1.6;
-  }
-
-  .colTitle {
-    font-size: 0.62rem;
-    margin-bottom: 0.7rem;
-  }
-
-  .list {
-    gap: 0.55rem;
-    flex-wrap: nowrap;
-  }
-
-  .link {
-    width: 36px;
-    height: 36px;
-  }
-
-  .bottom p {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
     text-align: center;
   }
 }
