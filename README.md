@@ -1,108 +1,371 @@
-# Portfolio — Gatmach Yuol
+# 💼 Gatmach Yuol — Full-Stack Developer Portfolio
 
-A full-stack personal portfolio website built with React, TypeScript, and Node.js. Features a dark minimal design, smooth scroll animations, active navbar tracking, and a working contact form.
+<p align="center">
+  <img src="screenshots/hero.png" alt="Portfolio Hero" width="100%">
+</p>
 
-## Live Demo
+<p align="center">
 
-*Coming soon*
+![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript)
+![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=for-the-badge&logo=vite)
+![Node.js](https://img.shields.io/badge/Node.js-22-339933?style=for-the-badge&logo=node.js)
+![Express](https://img.shields.io/badge/Express-4-000000?style=for-the-badge&logo=express)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql)
+![Render](https://img.shields.io/badge/Render-Backend-46E3B7?style=for-the-badge&logo=render)
+![Vercel](https://img.shields.io/badge/Vercel-Frontend-000000?style=for-the-badge&logo=vercel)
 
-## Tech Stack
+</p>
 
-### Frontend
+<p align="center">
+
+A modern, responsive, full-stack portfolio website showcasing my projects, technical skills, and professional journey.
+
+Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare Turnstile**, and deployed using **Vercel** and **Render**.
+
+</p>
+
+---
+
+# 🌐 Live Demo
+
+### Portfolio
+
+> https://my-portfolio-repo-eta.vercel.app/
+
+### Backend API
+
+> https://portfolio-backend-koo9.onrender.com/api/health
+
+---
+
+# ✨ Features
+
+- 🎨 Modern responsive UI
+- 🌙 Clean dark theme
+- ⚡ Fast Vite build system
+- 📱 Mobile-first design
+- 🎯 Active navigation tracking
+- ✨ Smooth scroll animations
+- 📂 Project showcase
+- 📧 Secure contact form
+- 🛡 Cloudflare Turnstile protection
+- 🚦 Express rate limiting
+- 🔒 Security headers using Helmet
+- 📬 Email delivery using Nodemailer
+- 🌐 REST API backend
+- 🚀 CI-ready GitHub Actions workflow
+- 🧹 ESLint + Prettier + Husky configuration
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
 | Technology | Purpose |
 |------------|---------|
-| React 18 | UI framework |
-| TypeScript | Type safety |
-| Vite | Build tool & dev server |
-| CSS Modules | Scoped component styling |
+| React 18 | UI Library |
+| TypeScript | Type Safety |
+| Vite | Build Tool |
+| CSS Modules | Component Styling |
+| React Hooks | State Management |
 
-### Backend
+---
+
+## Backend
+
 | Technology | Purpose |
 |------------|---------|
 | Node.js | Runtime |
-| Express | HTTP server & routing |
-| TypeScript | Type safety |
-| Nodemailer | Email dispatch |
+| Express | REST API |
+| TypeScript | Type Safety |
+| Nodemailer | Email Service |
+| PostgreSQL | Database |
+| Cloudflare Turnstile | Spam Protection |
 
-## Features
+---
 
-- **Hero section** — Full-screen background image with staggered text animations
-- **Active navbar** — Highlights the current section automatically as you scroll
-- **Mobile menu** — Responsive burger menu that closes when scrolling into a new section
-- **About section** — Bio with branded skill tags featuring brand colors and hover effects
-- **Projects grid** — Card grid with hover animations, GitHub and live site links
-- **Contact form** — Sends messages directly to my inbox
-- **Scroll reveal** — Sections fade and slide into view on scroll
-- **Footer** — Navigation and social links
+## Deployment
 
-## Getting Started
+| Service | Purpose |
+|----------|---------|
+| Vercel | Frontend Hosting |
+| Render | Backend Hosting |
+| GitHub | Version Control |
 
-### Prerequisites
+---
 
-- Node.js v18 or higher
-- npm v9 or higher
-- Git
+# 📸 Screenshots
 
-## Installation
+## 🏠 Home
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/my-portfolio-repo.git
-   cd portfolio
-   ```
-## Install all dependencies
-  ```bash
-    npm install
-  ```
-### Configure environment variables
-### This project uses environment variables to protect sensitive data. 
+<p align="center">
+<img src="screenshots/hero.png" width="900">
+</p>
+
+---
+
+## 👨‍💻 About
+
+<p align="center">
+<img src="screenshots/about.png" width="900">
+</p>
+
+---
+
+## 🚀 Projects
+
+<p align="center">
+<img src="screenshots/projects.png" width="900">
+</p>
+
+---
+
+## 📬 Contact
+
+<p align="center">
+<img src="screenshots/contact.png" width="900">
+</p>
+
+---
+
+<details>
+
+<summary><strong>📷 View Full Resolution Screenshots</strong></summary>
+
+### Hero
+
+<img src="screenshots/hero-fs8.png">
+
+---
+
+### About
+
+<img src="screenshots/about-fs8.png">
+
+---
+
+### Projects
+
+<img src="screenshots/projects-fs8.png">
+
+---
+
+### Contact
+
+<img src="screenshots/contact-fs8.png">
+
+</details>
+
+---
+
+# 📂 Project Structure
+
+```text
+portfolio/
+│
+├── client/                 # React frontend
+│   ├── src/
+│   ├── public/
+│   └── vite.config.ts
+│
+├── server/                 # Express backend
+│   ├── src/
+│   └── routes/
+│
+├── screenshots/
+│
+├── package.json
+└── README.md
 ```
-Create a .env file in the server/ folder and add your email service credentials.
+
+---
+
+# ⚙ Installation
+
+## Clone the repository
+
+```bash
+git clone https://github.com/Gatmach/my-portfolio-repo.git
+
+cd my-portfolio-repo/portfolio
 ```
-### Run the development servers
+
+---
+
+## Install dependencies
+
+```bash
+npm install
+```
+
+---
+
+# 🔐 Environment Variables
+
+## Client (`client/.env`)
+
+```env
+VITE_API_URL=https://portfolio-backend-koo9.onrender.com
+
+VITE_TURNSTILE_SITE_KEY=YOUR_SITE_KEY
+```
+
+---
+
+## Server (`server/.env`)
+
+```env
+DATABASE_URL=YOUR_DATABASE_URL
+
+PORT=5000
+
+CLIENT_URL=http://localhost:5173
+
+EMAIL_USER=YOUR_EMAIL
+
+EMAIL_PASS=YOUR_APP_PASSWORD
+
+TURNSTILE_SECRET_KEY=YOUR_SECRET_KEY
+```
+
+---
+
+# 🚀 Running the Project
+
+Start frontend and backend together
+
 ```bash
 npm run dev
 ```
-This starts both the frontend and backend simultaneously.
 
-## Available Scripts
- ### From the root folder:
-Script	              Description
-```
-npm run dev	- Start both client and server in development mode
-npm run build	- Build both client and server for production
-```
-## From the client/ folder:
-Script	      Description
-```
-npm run dev	- Start frontend dev server only
-npm run build	- Build frontend for production
-npm run preview	Preview production build locally
-```
-## From the server/ folder:
-Script	    Description
-```
-npm run dev	- Start backend with hot-reload
-npm run build	- Compile TypeScript to dist/
-npm start - compiled production server
-```
-## Deployment
-### Frontend → Vercel
+---
+
+## Frontend only
+
 ```bash
-npm install -g vercel
-cd client
+npm run dev --workspace=client
+```
+
+---
+
+## Backend only
+
+```bash
+npm run dev --workspace=server
+```
+
+---
+
+# 📦 Build
+
+Build the complete project
+
+```bash
+npm run build
+```
+
+---
+
+# 🧹 Code Quality
+
+Lint
+
+```bash
+npm run lint
+```
+
+Format
+
+```bash
+npm run format
+```
+
+---
+
+# 🚀 Deployment
+
+## Frontend
+
+Hosted on **Vercel**
+
+```bash
 vercel
 ```
-## Backend → Render
-### 1. Push your repo to GitHub
-### 2. Go to render.com → New Web Service
-### 3. Connect your repo and set the root directory to server/
-### 4. Set build command to npm run build and start command to npm start
-### 5. Add your environment variables in the Render dashboard
 
-## License
+---
 
-## Author
-### Gatmach Yuol — Developer
-### GitHub: https://github.com/Gatmach
-### LinkedIn: www.linkedin.com/in/gatmachyuolnyuon
+## Backend
+
+Hosted on **Render**
+
+Build Command
+
+```bash
+npm run build
+```
+
+Start Command
+
+```bash
+npm start
+```
+
+---
+
+# 🔒 Security
+
+This project includes:
+
+- Cloudflare Turnstile
+- Helmet
+- Rate Limiting
+- Secure CORS
+- Environment Variables
+- Compression
+- Input Validation
+
+---
+
+# 📈 Future Improvements
+
+- Blog section
+- Dark / Light theme
+- Analytics Dashboard
+- Downloadable Resume
+- Custom Domain
+- Project Search:
+- API Documentation
+
+---
+
+# 👨‍💻 Author
+
+## Gatmach Yuol
+
+Computer Science Graduate | Full-Stack Developer | AI & Data Enthusiast
+
+### GitHub
+
+https://github.com/Gatmach
+
+### LinkedIn
+
+https://www.linkedin.com/in/gatmachyuolnyuon
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+See the **LICENSE** file for more information.
+
+---
+
+<p align="center">
+
+⭐ If you found this project interesting, consider giving it a star on GitHub.
+
+</p>
