@@ -1,7 +1,7 @@
 # 💼 Gatmach Yuol — Full-Stack Developer Portfolio
 
 <p align="center">
-  <img src="screenshots/hero.png" alt="Portfolio Hero" width="100%">
+  <img src="portfolio/creenshots/hero.png" alt="Portfolio Hero" width="100%">
 </p>
 
 <p align="center">
@@ -101,7 +101,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 ## 🏠 Home
 
 <p align="center">
-<img src="screenshots/hero.png" width="900">
+<img src="portfolio/screenshots/hero.png" width="900">
 </p>
 
 ---
@@ -109,7 +109,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 ## 👨‍💻 About
 
 <p align="center">
-<img src="screenshots/about.png" width="900">
+<img src="portfolio/creenshots/about.png" width="900">
 </p>
 
 ---
@@ -117,7 +117,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 ## 🚀 Projects
 
 <p align="center">
-<img src="screenshots/projects.png" width="900">
+<img src="portfolio/screenshots/projects.png" width="900">
 </p>
 
 ---
@@ -125,7 +125,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 ## 📬 Contact
 
 <p align="center">
-<img src="screenshots/contact.png" width="900">
+<img src="portfolio/screenshots/contact.png" width="900">
 </p>
 
 ---
@@ -136,25 +136,25 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 
 ### Hero
 
-<img src="screenshots/hero-fs8.png">
+<img src="portfolio/screenshots/hero-fs8.png">
 
 ---
 
 ### About
 
-<img src="screenshots/about-fs8.png">
+<img src="portfolio/screenshots/about-fs8.png">
 
 ---
 
 ### Projects
 
-<img src="screenshots/projects-fs8.png">
+<img src="portflio/screenshots/projects-fs8.png">
 
 ---
 
 ### Contact
 
-<img src="screenshots/contact-fs8.png">
+<img src="portfolio/screenshots/contact-fs8.png">
 
 </details>
 
