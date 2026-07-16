@@ -1,24 +1,26 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
 :root {
-  --clr-bg:          #0e1015;
-  --clr-bg-2:        #1C1C20;
-  --clr-bg-3:        #2A2A2E;
-  --clr-bg-4:        #1A1E2E;
-  --clr-border:      #2A2A2E;
-  --clr-border-mid:  #2D3F5E;
-  --clr-border-hi:   #2563EB33;
+  --clr-bg: #0e1015;
+  --clr-bg-2: #1c1c20;
+  --clr-bg-3: #2a2a2e;
+  --clr-bg-4: #1a1e2e;
+  --clr-border: #2a2a2e;
+  --clr-border-mid: #2d3f5e;
+  --clr-border-hi: #2563eb33;
 
-  --clr-text:        #FFFFFF;
-  --clr-text-muted:  #888888;
-  --clr-text-sub:    #475569;
+  --clr-text: #ffffff;
+  --clr-text-muted: #888888;
+  --clr-text-sub: #475569;
 
-  --clr-accent:      #10B981;
-  --clr-accent-dim:  rgba(16, 185, 129, 0.08);
+  --clr-accent: #10b981;
+  --clr-accent-dim: rgba(16, 185, 129, 0.08);
   --clr-accent-glow: rgba(16, 185, 129, 0.15);
 
   --font-display: 'Syne', sans-serif;
@@ -27,7 +29,7 @@
   --section-pad: clamp(4rem, 8vw, 6rem);
 
   /* Responsive container */
-  
+
   --container-max: 1700px;
   --container-padding: clamp(1rem, 2vw, 2rem);
 
@@ -86,7 +88,6 @@ button {
 
 /* Responsive Container */
 
-
 .container {
   width: 100%;
   max-width: var(--container-max);
@@ -94,8 +95,7 @@ button {
   padding-inline: var(--container-padding);
 }
 
-  /* Sections */
-
+/* Sections */
 
 .section {
   padding-block: var(--section-pad);
@@ -166,7 +166,6 @@ button {
     --container-padding: 1.5rem;
   }
 }
-
 
 /* Tablet */
 

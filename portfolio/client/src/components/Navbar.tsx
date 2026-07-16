@@ -4,17 +4,17 @@ import Logo from '../sections/Logo'
 import styles from './Navbar.module.css'
 
 const links = [
-  { label: 'Home',     href: '#home',     id: 'home' },
-  { label: 'About',    href: '#about',    id: 'about' },
+  { label: 'Home', href: '#home', id: 'home' },
+  { label: 'About', href: '#about', id: 'about' },
   { label: 'Projects', href: '#projects', id: 'projects' },
-  { label: 'Contact',  href: '#contact',  id: 'contact' },
+  { label: 'Contact', href: '#contact', id: 'contact' },
 ]
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-  const active                  = useActiveSection()
-  const menuRef                 = useRef<HTMLDivElement>(null)
+  const active = useActiveSection()
+  const menuRef = useRef<HTMLDivElement>(null)
 
   // Track navbar background on scroll
   useEffect(() => {
@@ -39,7 +39,10 @@ export default function Navbar() {
     setMenuOpen(false)
   }, [active])
 
-  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleLinkClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     e.preventDefault()
     setMenuOpen(false)
     const id = href.replace('#', '')
@@ -81,7 +84,9 @@ export default function Navbar() {
       </div>
 
       {/* Mobile dropdown */}
-      <div className={`${styles.dropdown} ${menuOpen ? styles.dropdownOpen : ''}`}>
+      <div
+        className={`${styles.dropdown} ${menuOpen ? styles.dropdownOpen : ''}`}
+      >
         <div className="container">
           {links.map((l) => (
             <a

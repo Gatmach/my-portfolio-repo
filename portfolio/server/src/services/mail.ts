@@ -22,11 +22,7 @@ interface ContactEmail {
   message: string
 }
 
-export async function sendContactEmail({
-  name,
-  email,
-  message,
-}: ContactEmail) {
+export async function sendContactEmail({ name, email, message }: ContactEmail) {
   try {
     // Verify SMTP connection
     await transporter.verify()

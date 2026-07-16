@@ -1,12 +1,15 @@
 .header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   padding-block: 1.5rem;
   border-bottom: 1px solid transparent;
-  transition: background var(--dur-mid) var(--ease-in-out),
-              border-color var(--dur-mid) var(--ease-in-out),
-              padding var(--dur-mid) var(--ease-in-out);
+  transition:
+    background var(--dur-mid) var(--ease-in-out),
+    border-color var(--dur-mid) var(--ease-in-out),
+    padding var(--dur-mid) var(--ease-in-out);
 }
 
 .header.scrolled {
@@ -33,7 +36,9 @@
   color: var(--clr-text);
   transition: color var(--dur-fast);
 }
-.logo:hover { color: var(--clr-accent); }
+.logo:hover {
+  color: var(--clr-accent);
+}
 
 /* Desktop nav */
 .nav {
@@ -55,16 +60,26 @@
 .link::after {
   content: '';
   position: absolute;
-  bottom: -2px; left: 0;
-  width: 0; height: 1px;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
   background: var(--clr-accent);
   transition: width var(--dur-mid) var(--ease-out);
 }
 
-.link:hover        { color: var(--clr-text); }
-.link:hover::after { width: 100%; }
-.link.active       { color: var(--clr-text); }
-.link.active::after{ width: 100%; }
+.link:hover {
+  color: var(--clr-text);
+}
+.link:hover::after {
+  width: 100%;
+}
+.link.active {
+  color: var(--clr-text);
+}
+.link.active::after {
+  width: 100%;
+}
 
 /* Burger */
 .burger {
@@ -79,20 +94,31 @@
 }
 .burger span {
   display: block;
-  width: 22px; height: 1.5px;
+  width: 22px;
+  height: 1.5px;
   background: var(--clr-text);
   border-radius: 2px;
-  transition: transform var(--dur-mid) var(--ease-out),
-              opacity var(--dur-fast),
-              background var(--dur-fast);
+  transition:
+    transform var(--dur-mid) var(--ease-out),
+    opacity var(--dur-fast),
+    background var(--dur-fast);
   transform-origin: center;
 }
-.burger:hover span { background: var(--clr-accent); }
+.burger:hover span {
+  background: var(--clr-accent);
+}
 
 /* Burger → X */
-.burgerOpen span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
-.burgerOpen span:nth-child(2) { opacity: 0; transform: scaleX(0); }
-.burgerOpen span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+.burgerOpen span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.burgerOpen span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
 
 /* Mobile dropdown */
 .dropdown {
@@ -103,9 +129,10 @@
   background: rgba(8, 8, 8, 0.97);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  transition: max-height 380ms var(--ease-in-out),
-              opacity 280ms var(--ease-in-out),
-              border-color 280ms;
+  transition:
+    max-height 380ms var(--ease-in-out),
+    opacity 280ms var(--ease-in-out),
+    border-color 280ms;
 }
 
 .dropdown.dropdownOpen {
@@ -125,16 +152,25 @@
   color: var(--clr-text-muted);
   border-bottom: 1px solid var(--clr-border);
   letter-spacing: -0.01em;
-  transition: color var(--dur-fast),
-              padding-left var(--dur-mid) var(--ease-out);
+  transition:
+    color var(--dur-fast),
+    padding-left var(--dur-mid) var(--ease-out);
 }
-.dropLink:last-child { border-bottom: none; }
-.dropLink:hover      { color: var(--clr-text); padding-left: 8px; }
-.dropLink.active     { color: var(--clr-accent); }
+.dropLink:last-child {
+  border-bottom: none;
+}
+.dropLink:hover {
+  color: var(--clr-text);
+  padding-left: 8px;
+}
+.dropLink.active {
+  color: var(--clr-accent);
+}
 
 /* Active dot */
 .dot {
-  width: 5px; height: 5px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background: var(--clr-accent);
   flex-shrink: 0;

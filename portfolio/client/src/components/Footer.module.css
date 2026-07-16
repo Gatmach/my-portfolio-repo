@@ -60,7 +60,10 @@
   border-radius: 50%;
   border: 1px solid var(--clr-border);
   color: var(--clr-text-muted);
-  transition: color var(--dur-fast), border-color var(--dur-fast), background var(--dur-fast);
+  transition:
+    color var(--dur-fast),
+    border-color var(--dur-fast),
+    background var(--dur-fast);
 }
 .link:hover {
   color: var(--clr-accent);

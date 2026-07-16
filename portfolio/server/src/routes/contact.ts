@@ -12,10 +12,7 @@ const contactSchema = z.object({
     .min(2, 'Name must be at least 2 characters long')
     .max(100),
 
-  email: z
-    .string()
-    .trim()
-    .email('Please provide a valid email address'),
+  email: z.string().trim().email('Please provide a valid email address'),
 
   message: z
     .string()
@@ -28,12 +25,9 @@ const contactSchema = z.object({
 
 router.post('/', async (req: Request, res: Response) => {
   try {
-    const {
-      name,
-      email,
-      message,
-      turnstileToken,
-    } = contactSchema.parse(req.body)
+    const { name, email, message, turnstileToken } = contactSchema.parse(
+      req.body
+    )
 
     if (!process.env.TURNSTILE_SECRET_KEY) {
       console.error('TURNSTILE_SECRET_KEY is missing.')

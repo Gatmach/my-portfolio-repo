@@ -23,7 +23,9 @@
   stroke-dasharray: 63;
   stroke-dashoffset: 63;
   animation: draw 1s var(--ease-out) 0.1s forwards;
-  transition: stroke-width var(--dur-fast), filter var(--dur-fast);
+  transition:
+    stroke-width var(--dur-fast),
+    filter var(--dur-fast);
 }
 
 .bar {

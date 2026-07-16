@@ -27,7 +27,14 @@ const projects: Project[] = [
     role: 'Full-Stack Developer',
     description:
       'A blockchain-powered agricultural traceability platform that enables farmers, buyers, and consumers to track produce from farm to market through QR code verification, real-time lifecycle updates, and secure supply chain management.',
-    tags: ['Laravel', 'React Native', 'Expo', 'PostgreSQL', 'Blockchain', 'REST API'],
+    tags: [
+      'Laravel',
+      'React Native',
+      'Expo',
+      'PostgreSQL',
+      'Blockchain',
+      'REST API',
+    ],
     year: '2026',
     image: '/images/farm2fork.jpeg',
     githubUrl: 'https://github.com/Farmtfork',
@@ -44,7 +51,7 @@ const projects: Project[] = [
       'React Native',
       'SQLite',
       'Docker',
-      'Python'
+      'Python',
     ],
     year: '2025',
     image: '/images/cropai.png',
@@ -63,7 +70,7 @@ const projects: Project[] = [
       'RoBERTa',
       'PostgreSQL',
       'Chart.js',
-      'JWT'
+      'JWT',
     ],
     year: '2025',
     image: '/images/feelr.png',
@@ -72,15 +79,31 @@ const projects: Project[] = [
 ]
 
 const GitHubIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 2.97 1.81 5.16 4.44 6.04" />
   </svg>
 )
 
 const ExternalIcon = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
-    stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
     <path d="M14 3h7v7" />
     <path d="M10 14L21 3" />
     <path d="M21 14v7h-7" />
@@ -96,14 +119,14 @@ export default function Projects() {
   return (
     <section id="projects" className={`section ${styles.projects}`}>
       <div className="container">
-
         {/* ── Header ── */}
         <div className={styles.header}>
           <h2 className={`${styles.heading} reveal`}>
             <em>Crafted </em>Experiences
           </h2>
           <p className={`${styles.sub} reveal`}>
-        A closer look at what I build — real products designed to solve real problems, from first idea to finished system.
+            A closer look at what I build — real products designed to solve real
+            problems, from first idea to finished system.
           </p>
         </div>
 
@@ -116,11 +139,14 @@ export default function Projects() {
               style={{ transitionDelay: `${i * 60}ms` }}
               onClick={() => p.liveUrl && window.open(p.liveUrl, '_blank')}
             >
-
               {/* Thumbnail */}
               <div className={styles.thumbnail}>
                 {p.image ? (
-                  <img src={p.image} alt={p.title} className={styles.thumbnailImg} />
+                  <img
+                    src={p.image}
+                    alt={p.title}
+                    className={styles.thumbnailImg}
+                  />
                 ) : (
                   <span className={styles.thumbnailNum}>{i + 1}</span>
                 )}
@@ -128,22 +154,31 @@ export default function Projects() {
 
               {/* Card body */}
               <div className={styles.body}>
-
                 {/* Links — only on cards without image */}
                 <div className={styles.topRow}>
                   {!p.image && (
                     <div className={styles.links}>
                       {p.githubUrl && (
-                        <a href={p.githubUrl} target="_blank" rel="noopener noreferrer"
-                          className={styles.iconLink} aria-label="GitHub"
-                          onClick={(e) => e.stopPropagation()}>
+                        <a
+                          href={p.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.iconLink}
+                          aria-label="GitHub"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <GitHubIcon />
                         </a>
                       )}
                       {p.liveUrl && (
-                        <a href={p.liveUrl} target="_blank" rel="noopener noreferrer"
-                          className={styles.iconLink} aria-label="Live site"
-                          onClick={(e) => e.stopPropagation()}>
+                        <a
+                          href={p.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.iconLink}
+                          aria-label="Live site"
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <ExternalIcon />
                         </a>
                       )}
@@ -161,7 +196,9 @@ export default function Projects() {
                 {/* Tags */}
                 <div className={styles.tags}>
                   {p.tags.map((t) => (
-                    <span key={t} className={styles.tag}>{t}</span>
+                    <span key={t} className={styles.tag}>
+                      {t}
+                    </span>
                   ))}
                 </div>
 
@@ -181,12 +218,10 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
-
               </div>
             </article>
           ))}
         </div>
-
       </div>
     </section>
   )

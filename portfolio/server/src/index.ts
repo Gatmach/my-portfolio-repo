@@ -1,11 +1,7 @@
 import 'dotenv/config'
 
 import process from 'process'
-import express, {
-  Request,
-  Response,
-  NextFunction,
-} from 'express'
+import express, { Request, Response } from 'express'
 import cors from 'cors'
 import helmet from 'helmet'
 import compression from 'compression'
@@ -30,9 +26,7 @@ const requiredEnv = [
 
 for (const variable of requiredEnv) {
   if (!process.env[variable]) {
-    throw new Error(
-      `❌ Missing required environment variable: ${variable}`
-    )
+    throw new Error(`❌ Missing required environment variable: ${variable}`)
   }
 }
 
@@ -80,8 +74,7 @@ const contactLimiter = rateLimit({
   legacyHeaders: false,
   message: {
     success: false,
-    message:
-      'Too many contact requests. Please try again in 15 minutes.',
+    message: 'Too many contact requests. Please try again in 15 minutes.',
   },
 })
 
@@ -122,8 +115,7 @@ app.use(
   (
     err: Error,
     _req: Request,
-    res: Response,
-    _next: NextFunction
+    res: Response
   ) => {
     console.error(err)
 
@@ -133,16 +125,13 @@ app.use(
     })
   }
 )
-
 // ---------------------------------------------------------
 // Start Server
 // ---------------------------------------------------------
 
 const server = app.listen(PORT, () => {
   console.log(`🚀 Server listening on port ${PORT}`)
-  console.log(
-    `🌍 Environment: ${process.env.NODE_ENV ?? 'development'}`
-  )
+  console.log(`🌍 Environment: ${process.env.NODE_ENV ?? 'development'}`)
 })
 
 // ---------------------------------------------------------

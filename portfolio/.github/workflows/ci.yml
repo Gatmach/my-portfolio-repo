@@ -2,19 +2,17 @@ name: Portfolio CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   pull_request:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [22]
+    defaults:
+      run:
+        working-directory: portfolio
 
     steps:
       - name: Checkout repository
@@ -23,17 +21,12 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 22
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
-        run: npm install
-
-      - name: Install client dependencies
-        run: npm install --workspace=client
-
-      - name: Install server dependencies
-        run: npm install --workspace=server
+        run: npm ci
 
       - name: Build client
         run: npm run build --workspace=client

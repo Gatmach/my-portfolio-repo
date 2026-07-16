@@ -1,4 +1,5 @@
 import { Turnstile } from '@marsidev/react-turnstile'
+import type { TurnstileInstance } from '@marsidev/react-turnstile'
 import {
   useState,
   useEffect,
@@ -33,7 +34,7 @@ export default function Contact() {
   const [status, setStatus] = useState<Status>('idle')
   const [turnstileToken, setTurnstileToken] = useState('')
 
-  const turnstileRef = useRef<any>(null)
+  const turnstileRef = useRef<TurnstileInstance | null>(null)
 
   // Hide success/error message automatically
   useEffect(() => {
@@ -108,10 +109,7 @@ export default function Contact() {
   }
 
   return (
-    <section
-      id="contact"
-      className={`section ${styles.contact}`}
-    >
+    <section id="contact" className={`section ${styles.contact}`}>
       <div className="container">
         <div className={styles.wrapper}>
           {/* Left */}
@@ -123,9 +121,8 @@ export default function Contact() {
             </h2>
 
             <p className={`${styles.sub} reveal`}>
-              Have a project in mind or just want to chat?
-              Drop me a message and I'll get back to you
-              within 24 hours.
+              Have a project in mind or just want to chat? Drop me a message and
+              I'll get back to you within 24 hours.
             </p>
           </div>
 
@@ -136,10 +133,7 @@ export default function Contact() {
             noValidate
           >
             <div className={styles.field}>
-              <label
-                htmlFor="name"
-                className={styles.fieldLabel}
-              >
+              <label htmlFor="name" className={styles.fieldLabel}>
                 Name
               </label>
 
@@ -157,10 +151,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.field}>
-              <label
-                htmlFor="email"
-                className={styles.fieldLabel}
-              >
+              <label htmlFor="email" className={styles.fieldLabel}>
                 Email
               </label>
 
@@ -177,10 +168,7 @@ export default function Contact() {
             </div>
 
             <div className={styles.field}>
-              <label
-                htmlFor="message"
-                className={styles.fieldLabel}
-              >
+              <label htmlFor="message" className={styles.fieldLabel}>
                 Message
               </label>
 
@@ -224,8 +212,8 @@ export default function Contact() {
 
             {status === 'success' && (
               <p className={styles.successMsg}>
-                ✓ Thank you! Your message has been sent successfully.
-                I'll get back to you within 24 hours.
+                ✓ Thank you! Your message has been sent successfully. I'll get
+                back to you within 24 hours.
               </p>
             )}
 
