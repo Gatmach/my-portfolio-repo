@@ -1,7 +1,7 @@
 # 💼 Gatmach Yuol — Full-Stack Developer Portfolio
 
 <p align="center">
-  <img src="portfolio/creenshots/hero.png" alt="Portfolio Hero" width="100%">
+  <img src="portfolio/screenshots/hero.png" alt="Portfolio Hero" width="100%">
 </p>
 
 <p align="center">
@@ -109,7 +109,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 ## 👨‍💻 About
 
 <p align="center">
-<img src="portfolio/creenshots/about.png" width="900">
+<img src="portfolio/screenshots/about.png" width="900">
 </p>
 
 ---
@@ -148,7 +148,7 @@ Built with **React**, **TypeScript**, **Express**, **PostgreSQL**, **Cloudflare 
 
 ### Projects
 
-<img src="portflio/screenshots/projects-fs8.png">
+<img src="portfolio/screenshots/projects-fs8.png">
 
 ---
 
