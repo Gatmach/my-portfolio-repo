@@ -11,7 +11,7 @@
     "build": "npm run build --workspace=client && npm run build --workspace=server",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "prepare": "husky"
+    "prepare": "command -v husky >/dev/null 2>&1 && husky || true"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,css,md}": [
