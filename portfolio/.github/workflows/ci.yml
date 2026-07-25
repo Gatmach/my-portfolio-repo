@@ -8,6 +8,10 @@ on:
     branches:
       - main
 
+defaults:
+  run:
+    working-directory: portfolio
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -17,14 +21,14 @@ jobs:
         node-version: [22]
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
+          cache-dependency-path: portfolio/package-lock.json
 
       - name: Install dependencies
         run: npm ci
@@ -32,13 +36,13 @@ jobs:
       - name: Check formatting
         run: npx prettier --check .
 
-      - name: Lint project
+      - name: Lint
         run: npm run lint
 
-      - name: Build project
+      - name: Build
         run: npm run build
 
-      - name: Verify Docker Compose
+      - name: Validate Docker Compose
         run: docker compose config
 
       - name: Build Docker images
