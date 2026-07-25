@@ -111,20 +111,14 @@ app.use((_req: Request, res: Response) => {
 // Global Error Handler
 // ---------------------------------------------------------
 
-app.use(
-  (
-    err: Error,
-    _req: Request,
-    res: Response
-  ) => {
-    console.error(err)
+app.use((err: Error, _req: Request, res: Response) => {
+  console.error(err)
 
-    res.status(500).json({
-      success: false,
-      message: 'Internal server error.',
-    })
-  }
-)
+  res.status(500).json({
+    success: false,
+    message: 'Internal server error.',
+  })
+})
 // ---------------------------------------------------------
 // Start Server
 // ---------------------------------------------------------
