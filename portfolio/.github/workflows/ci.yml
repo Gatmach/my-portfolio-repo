@@ -10,10 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: portfolio
-
     steps:
       - uses: actions/checkout@v4
 
@@ -23,14 +19,26 @@ jobs:
           cache: npm
           cache-dependency-path: portfolio/package-lock.json
 
-      - run: npm ci
+      - name: Install dependencies
+        working-directory: portfolio
+        run: npm ci
 
-      - run: npx prettier --check .
+      - name: Check formatting
+        working-directory: portfolio
+        run: npx prettier --check .
 
-      - run: npm run lint
+      - name: Lint
+        working-directory: portfolio
+        run: npm run lint
 
-      - run: npm run build
+      - name: Build
+        working-directory: portfolio
+        run: npm run build
 
-      - run: docker compose config
+      - name: Validate Docker Compose
+        working-directory: portfolio
+        run: docker compose config
 
-      - run: docker compose build
+      - name: Build Docker images
+        working-directory: portfolio
+        run: docker compose build
