@@ -88,6 +88,7 @@ const GitHubIcon = () => (
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 2.97 1.81 5.16 4.44 6.04" />
   </svg>
@@ -103,6 +104,7 @@ const ExternalIcon = () => (
     strokeWidth="1.5"
     strokeLinecap="round"
     strokeLinejoin="round"
+    aria-hidden="true"
   >
     <path d="M14 3h7v7" />
     <path d="M10 14L21 3" />
@@ -119,104 +121,125 @@ export default function Projects() {
   return (
     <section id="projects" className={`section ${styles.projects}`}>
       <div className="container">
-        {/* ── Header ── */}
+        {/* Section Header */}
         <div className={styles.header}>
           <h2 className={`${styles.heading} reveal`}>
             <em>Crafted </em>Experiences
           </h2>
+
           <p className={`${styles.sub} reveal`}>
-            A closer look at what I build — real products designed to solve real
-            problems, from first idea to finished system.
+            A closer look at what I build — real products designed to solve
+            real problems, from first idea to finished system.
           </p>
         </div>
 
-        {/* ── Grid ── */}
+        {/* Projects Grid */}
         <div className={styles.grid}>
-          {projects.map((p, i) => (
+          {projects.map((project, index) => (
             <article
-              key={i}
+              key={project.title}
               className={`${styles.card} reveal`}
-              style={{ transitionDelay: `${i * 60}ms` }}
-              onClick={() => p.liveUrl && window.open(p.liveUrl, '_blank')}
+              style={{
+                transitionDelay: `${index * 60}ms`,
+              }}
             >
-              {/* Thumbnail */}
+              {/* Project Image */}
               <div className={styles.thumbnail}>
-                {p.image ? (
+                {project.image ? (
                   <img
-                    src={p.image}
-                    alt={p.title}
+                    src={project.image}
+                    alt={`${project.title} project preview`}
                     className={styles.thumbnailImg}
+                    loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 ) : (
-                  <span className={styles.thumbnailNum}>{i + 1}</span>
+                  <span
+                    className={styles.thumbnailNum}
+                    aria-hidden="true"
+                  >
+                    {String(index + 1).padStart(2, '0')}
+                  </span>
                 )}
               </div>
 
-              {/* Card body */}
+              {/* Project Content */}
               <div className={styles.body}>
-                {/* Links — only on cards without image */}
-                <div className={styles.topRow}>
-                  {!p.image && (
+                {/* External Links */}
+                {(project.githubUrl || project.liveUrl) && (
+                  <div className={styles.topRow}>
                     <div className={styles.links}>
-                      {p.githubUrl && (
+                      {project.githubUrl && (
                         <a
-                          href={p.githubUrl}
+                          href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={styles.iconLink}
-                          aria-label="GitHub"
-                          onClick={(e) => e.stopPropagation()}
+                          aria-label={`View ${project.title} source code on GitHub`}
                         >
                           <GitHubIcon />
                         </a>
                       )}
-                      {p.liveUrl && (
+
+                      {project.liveUrl && (
                         <a
-                          href={p.liveUrl}
+                          href={project.liveUrl}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={styles.iconLink}
-                          aria-label="Live site"
-                          onClick={(e) => e.stopPropagation()}
+                          aria-label={`View live ${project.title} project`}
                         >
                           <ExternalIcon />
                         </a>
                       )}
                     </div>
-                  )}
-                </div>
+                  </div>
+                )}
 
-                {/* Title + role */}
-                <h3 className={styles.title}>{p.title}</h3>
-                <p className={styles.role}>{p.role}</p>
+                {/* Title */}
+                <h3 className={styles.title}>{project.title}</h3>
+
+                {/* Role */}
+                <p className={styles.role}>{project.role}</p>
 
                 {/* Description */}
-                <p className={styles.desc}>{p.description}</p>
+                <p className={styles.desc}>{project.description}</p>
 
-                {/* Tags */}
-                <div className={styles.tags}>
-                  {p.tags.map((t) => (
-                    <span key={t} className={styles.tag}>
-                      {t}
+                {/* Technologies */}
+                <div className={styles.tags} aria-label="Technologies used">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className={styles.tag}>
+                      {tag}
                     </span>
                   ))}
                 </div>
 
                 {/* Footer */}
                 <div className={styles.cardFooter}>
-                  <span className={styles.year}>{p.year}</span>
+                  <span className={styles.year}>{project.year}</span>
 
-                  {(p.githubUrl || p.liveUrl) && (
-                    <a
-                      href={p.githubUrl ?? p.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={styles.readMore}
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Read More →
-                    </a>
-                  )}
+                  <div className={styles.footerLinks}>
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.readMore}
+                      >
+                        GitHub →
+                      </a>
+                    )}
+
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.readMore}
+                      >
+                        Live Demo →
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </article>

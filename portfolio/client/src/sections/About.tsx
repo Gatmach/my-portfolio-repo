@@ -1,7 +1,12 @@
 import styles from './About.module.css'
 
 const skills = [
-  { name: 'React', color: '#61DAFB', bg: 'rgba(97,218,251,0.08)', icon: '⚛' },
+  {
+    name: 'React',
+    color: '#61DAFB',
+    bg: 'rgba(97,218,251,0.08)',
+    icon: '⚛',
+  },
   {
     name: 'JavaScript',
     color: '#F7DF1E',
@@ -14,10 +19,30 @@ const skills = [
     bg: 'rgba(51,103,145,0.08)',
     icon: '🐘',
   },
-  { name: 'Docker', color: '#2496ED', bg: 'rgba(36,150,237,0.08)', icon: '🐳' },
-  { name: 'Python', color: '#3776AB', bg: 'rgba(55,118,171,0.08)', icon: '🐍' },
-  { name: 'C/C++', color: '#00599C', bg: 'rgba(0,89,156,0.08)', icon: '⚙' },
-  { name: 'Java', color: '#007396', bg: 'rgba(0,115,150,0.08)', icon: '☕' },
+  {
+    name: 'Docker',
+    color: '#2496ED',
+    bg: 'rgba(36,150,237,0.08)',
+    icon: '🐳',
+  },
+  {
+    name: 'Python',
+    color: '#3776AB',
+    bg: 'rgba(55,118,171,0.08)',
+    icon: '🐍',
+  },
+  {
+    name: 'C/C++',
+    color: '#00599C',
+    bg: 'rgba(0,89,156,0.08)',
+    icon: '⚙',
+  },
+  {
+    name: 'Java',
+    color: '#007396',
+    bg: 'rgba(0,115,150,0.08)',
+    icon: '☕',
+  },
   {
     name: 'Seaborn',
     color: '#4C72B0',
@@ -30,9 +55,20 @@ const skills = [
     bg: 'rgba(17,85,124,0.08)',
     icon: '📈',
   },
-  { name: 'pandas', color: '#4DABCF', bg: 'rgba(77,171,207,0.08)', icon: '🐼' },
-  { name: 'NumPy', color: '#4DABCF', bg: 'rgba(77,171,207,0.08)', icon: '🔢' },
+  {
+    name: 'pandas',
+    color: '#4DABCF',
+    bg: 'rgba(77,171,207,0.08)',
+    icon: '🐼',
+  },
+  {
+    name: 'NumPy',
+    color: '#4DABCF',
+    bg: 'rgba(77,171,207,0.08)',
+    icon: '🔢',
+  },
 ]
+
 export default function About() {
   return (
     <section id="about" className={`section ${styles.about}`}>
@@ -56,12 +92,14 @@ export default function About() {
               architecture, performance, and creating solutions that are both
               practical and impactful.
             </p>
+
             <p
               className={`${styles.bio} reveal`}
               style={{ transitionDelay: '80ms' }}
             >
-              When I’m not coding, I’m exploring new tools, expanding my skills,
-              and preparing to contribute more actively to the tech community.
+              When I’m not coding, I’m exploring new tools, expanding my
+              skills, and preparing to contribute more actively to the tech
+              community.
             </p>
 
             <div
@@ -79,8 +117,13 @@ export default function About() {
                     } as React.CSSProperties
                   }
                 >
-                  <span className={styles.tagIcon}>{s.icon}</span>
-                  <span className={styles.tagName}>{s.name}</span>
+                  <span className={styles.tagIcon}>
+                    {s.icon}
+                  </span>
+
+                  <span className={styles.tagName}>
+                    {s.name}
+                  </span>
                 </span>
               ))}
             </div>

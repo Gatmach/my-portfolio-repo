@@ -1,68 +1,164 @@
+/*
+============================================================
+LOGO WRAPPER
+============================================================
+*/
+
 .logoWrap {
   display: inline-flex;
+
   align-items: center;
-  gap: 0.6rem;
+
+  gap: 0.7rem;
+
   text-decoration: none;
+
+  color: var(--clr-text);
+
+  line-height: 1;
+
+  flex-shrink: 0;
 }
 
+
+/*
+============================================================
+LOGO MARK
+============================================================
+*/
+
 .mark {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
+
   overflow: visible;
+
   flex-shrink: 0;
-  transition: transform var(--dur-mid) var(--ease-out);
+
+  transition:
+    transform var(--dur-mid) var(--ease-out);
 }
 
 .logoWrap:hover .mark {
   transform: rotate(-8deg);
 }
 
+
+/*
+============================================================
+RING
+============================================================
+*/
+
 .ring {
   stroke: var(--clr-accent);
+
   stroke-width: 2.4;
+
   stroke-dasharray: 63;
   stroke-dashoffset: 63;
-  animation: draw 1s var(--ease-out) 0.1s forwards;
+
+  animation:
+    draw 1s var(--ease-out) 0.1s forwards;
+
   transition:
     stroke-width var(--dur-fast),
     filter var(--dur-fast);
 }
 
+
+/*
+============================================================
+INNER BAR
+============================================================
+*/
+
 .bar {
   stroke: var(--clr-text);
+
   stroke-width: 2.4;
+
   stroke-dasharray: 14;
   stroke-dashoffset: 14;
-  animation: draw 0.45s var(--ease-out) 1.05s forwards;
+
+  animation:
+    draw 0.45s var(--ease-out) 1.05s forwards;
 }
+
+
+/*
+============================================================
+ACCENT DOT
+============================================================
+*/
 
 .dot {
   fill: var(--clr-accent);
+
   opacity: 0;
+
   transform-origin: 26.4px 13.6px;
-  animation: pop 0.4s var(--ease-out) 1.35s forwards;
+
+  animation:
+    pop 0.4s var(--ease-out) 1.35s forwards;
 }
+
+
+/*
+============================================================
+MARK HOVER
+============================================================
+*/
 
 .logoWrap:hover .ring {
   stroke-width: 3;
-  filter: drop-shadow(0 0 6px var(--clr-accent-glow));
+
+  filter:
+    drop-shadow(
+      0 0 6px var(--clr-accent-glow)
+    );
 }
+
+
+/*
+============================================================
+WORDMARK
+============================================================
+*/
 
 .word {
   font-family: var(--font-display);
-  font-size: 1.1rem;
+
+  font-size: 1.25rem;
+
   font-weight: 800;
-  letter-spacing: -0.02em;
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+
   color: var(--clr-text);
+
   opacity: 0;
+
   transform: translateX(-6px);
-  animation: fadeIn 0.6s var(--ease-out) 0.85s forwards;
+
+  animation:
+    fadeIn 0.6s var(--ease-out) 0.85s forwards;
 }
 
 .word em {
   font-style: normal;
+
   color: var(--clr-accent);
 }
+
+
+/*
+============================================================
+ANIMATIONS
+============================================================
+*/
 
 @keyframes draw {
   to {
@@ -73,10 +169,13 @@
 @keyframes pop {
   from {
     opacity: 0;
+
     transform: scale(0.4);
   }
+
   to {
     opacity: 1;
+
     transform: scale(1);
   }
 }
@@ -84,9 +183,61 @@
 @keyframes fadeIn {
   to {
     opacity: 1;
+
     transform: translateX(0);
   }
 }
+
+
+/*
+============================================================
+TABLET
+============================================================
+*/
+
+@media (max-width: 768px) {
+  .mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .word {
+    font-size: 1.2rem;
+  }
+
+  .logoWrap {
+    gap: 0.65rem;
+  }
+}
+
+
+/*
+============================================================
+SMALL PHONES
+============================================================
+*/
+
+@media (max-width: 420px) {
+  .mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .word {
+    font-size: 1.15rem;
+  }
+
+  .logoWrap {
+    gap: 0.6rem;
+  }
+}
+
+
+/*
+============================================================
+REDUCED MOTION
+============================================================
+*/
 
 @media (prefers-reduced-motion: reduce) {
   .ring,
@@ -94,8 +245,11 @@
   .dot,
   .word {
     animation: none !important;
+
     stroke-dashoffset: 0 !important;
+
     opacity: 1 !important;
+
     transform: none !important;
   }
 }

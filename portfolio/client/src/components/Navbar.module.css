@@ -1,190 +1,372 @@
 .header {
   position: fixed;
+
   top: 0;
   left: 0;
   right: 0;
+
   z-index: 100;
-  padding-block: 1.5rem;
+
+  padding-block: 1.4rem;
+
   border-bottom: 1px solid transparent;
+
   transition:
     background var(--dur-mid) var(--ease-in-out),
     border-color var(--dur-mid) var(--ease-in-out),
-    padding var(--dur-mid) var(--ease-in-out);
+    padding var(--dur-mid) var(--ease-in-out),
+    backdrop-filter var(--dur-mid) var(--ease-in-out);
 }
 
 .header.scrolled {
-  background: rgba(8, 8, 8, 0.94);
+  background: rgba(14, 16, 21, 0.82);
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-color: var(--clr-border);
-  padding-block: 1rem;
+
+  border-color: rgba(245, 245, 245, 0.08);
+
+  padding-block: 0.9rem;
 }
+
+
+/* ============================================================
+   INNER
+   ============================================================ */
 
 .inner {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
+
   position: relative;
+
+  min-height: 48px;
 }
 
-/* Logo */
+
+/* ============================================================
+   LOGO
+   ============================================================ */
+
 .logo {
   font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: -0.03em;
+
+  font-size: 1.25rem;
+
+  font-weight: var(--fw-bold);
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+
   color: var(--clr-text);
-  transition: color var(--dur-fast);
+
+  transition:
+    color var(--dur-fast) var(--ease-out);
 }
+
 .logo:hover {
   color: var(--clr-accent);
 }
 
-/* Desktop nav */
+
+/* ============================================================
+   DESKTOP NAVIGATION
+   ============================================================ */
+
 .nav {
   display: flex;
+
   align-items: center;
-  gap: 2.75rem;
+
+  gap: clamp(
+    1.75rem,
+    2.75vw,
+    2.75rem
+  );
 }
 
+
+/* ============================================================
+   NAV LINKS
+   ============================================================ */
+
 .link {
-  font-size: 0.825rem;
-  font-weight: 400;
-  color: var(--clr-text-muted);
-  letter-spacing: 0.04em;
-  transition: color var(--dur-fast);
   position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  min-height: 44px;
+
   padding-bottom: 3px;
+
+  font-family: var(--font-body);
+
+  font-size: var(--fs-sm);
+
+  font-weight: var(--fw-medium);
+
+  line-height: 1;
+
+  color: var(--clr-text-sub);
+
+  letter-spacing: 0.025em;
+
+  transition:
+    color var(--dur-fast) var(--ease-out);
 }
+
+
+/* Active / hover indicator */
 
 .link::after {
   content: '';
+
   position: absolute;
-  bottom: -2px;
+
   left: 0;
+  bottom: 3px;
+
   width: 0;
-  height: 1px;
+  height: 2px;
+
+  border-radius: 2px;
+
   background: var(--clr-accent);
-  transition: width var(--dur-mid) var(--ease-out);
+
+  transition:
+    width var(--dur-mid) var(--ease-out);
 }
+
+
+/* Hover */
 
 .link:hover {
   color: var(--clr-text);
 }
+
 .link:hover::after {
   width: 100%;
 }
+
+
+/* Active */
+
 .link.active {
   color: var(--clr-text);
 }
+
 .link.active::after {
   width: 100%;
 }
 
-/* Burger */
+
+/* ============================================================
+   BURGER
+   ============================================================ */
+
 .burger {
   display: none;
-  flex-direction: column;
+
+  align-items: center;
   justify-content: center;
+
+  flex-direction: column;
+
   gap: 5px;
-  padding: 6px;
-  background: none;
-  border: none;
+
+  width: 48px;
+  height: 48px;
+
+  padding: 0;
+
+  background: rgba(28, 28, 32, 0.45);
+
+  border: 1px solid
+    rgba(245, 245, 245, 0.12);
+
+  border-radius: var(--r-md);
+
   cursor: pointer;
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition:
+    border-color var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
 }
+
+.burger:hover {
+  border-color: var(--clr-accent);
+
+  background: var(--clr-accent-dim);
+}
+
 .burger span {
   display: block;
-  width: 22px;
+
+  width: 21px;
   height: 1.5px;
+
   background: var(--clr-text);
+
   border-radius: 2px;
+
+  transform-origin: center;
+
   transition:
     transform var(--dur-mid) var(--ease-out),
-    opacity var(--dur-fast),
-    background var(--dur-fast);
-  transform-origin: center;
+    opacity var(--dur-fast) var(--ease-out),
+    background var(--dur-fast) var(--ease-out);
 }
+
 .burger:hover span {
   background: var(--clr-accent);
 }
 
-/* Burger → X */
+
+/* ============================================================
+   BURGER → X
+   ============================================================ */
+
 .burgerOpen span:nth-child(1) {
-  transform: translateY(6.5px) rotate(45deg);
-}
-.burgerOpen span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-.burgerOpen span:nth-child(3) {
-  transform: translateY(-6.5px) rotate(-45deg);
+  transform:
+    translateY(6.5px)
+    rotate(45deg);
 }
 
-/* Mobile dropdown */
+.burgerOpen span:nth-child(2) {
+  opacity: 0;
+
+  transform: scaleX(0);
+}
+
+.burgerOpen span:nth-child(3) {
+  transform:
+    translateY(-6.5px)
+    rotate(-45deg);
+}
+
+
+/* ============================================================
+   MOBILE DROPDOWN
+   ============================================================ */
+
 .dropdown {
   overflow: hidden;
+
   max-height: 0;
+
   opacity: 0;
+
   border-bottom: 1px solid transparent;
-  background: rgba(8, 8, 8, 0.97);
+
+  background: rgba(14, 16, 21, 0.96);
+
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
+
   transition:
     max-height 380ms var(--ease-in-out),
     opacity 280ms var(--ease-in-out),
-    border-color 280ms;
+    border-color 280ms var(--ease-in-out);
 }
 
 .dropdown.dropdownOpen {
   max-height: 400px;
+
   opacity: 1;
-  border-color: var(--clr-border);
+
+  border-color:
+    rgba(245, 245, 245, 0.08);
 }
+
+
+/* ============================================================
+   MOBILE LINKS
+   ============================================================ */
 
 .dropLink {
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
-  padding: 1.1rem 0;
+
+  min-height: 58px;
+
+  padding-block: 1rem;
+
   font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--clr-text-muted);
-  border-bottom: 1px solid var(--clr-border);
+
+  font-size: var(--fs-base);
+
+  font-weight: var(--fw-semibold);
+
+  line-height: 1;
+
+  color: var(--clr-text-sub);
+
+  border-bottom:
+    1px solid rgba(245, 245, 245, 0.07);
+
   letter-spacing: -0.01em;
+
   transition:
-    color var(--dur-fast),
+    color var(--dur-fast) var(--ease-out),
     padding-left var(--dur-mid) var(--ease-out);
 }
+
 .dropLink:last-child {
   border-bottom: none;
 }
+
 .dropLink:hover {
   color: var(--clr-text);
-  padding-left: 8px;
+
+  padding-left: 0.5rem;
 }
+
 .dropLink.active {
   color: var(--clr-accent);
 }
 
-/* Active dot */
+
+/* ============================================================
+   ACTIVE DOT
+   ============================================================ */
+
 .dot {
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
+
   border-radius: 50%;
+
   background: var(--clr-accent);
+
   flex-shrink: 0;
+
+  box-shadow:
+    0 0 0 4px var(--clr-accent-dim);
 }
 
-/* Tablet + Mobile (768px and below) */
+
+/* ============================================================
+   TABLET + MOBILE
+   ============================================================ */
 
 @media (max-width: 768px) {
   .header {
-    padding-block: 1.15rem;
+    padding-block: 1.1rem;
   }
 
   .header.scrolled {
-    padding-block: 0.9rem;
+    padding-block: 0.8rem;
   }
 
   .burger {
@@ -200,24 +382,33 @@
   }
 
   .dropLink {
-    font-size: 1rem;
-    padding: 1rem 0;
+    min-height: 58px;
+
+    font-size: 1.1rem;
   }
 }
 
-/* Small Phones (420px and below) */
+
+/* ============================================================
+   SMALL PHONES
+   ============================================================ */
 
 @media (max-width: 420px) {
   .header {
-    padding-block: 1rem;
+    padding-block: 0.95rem;
   }
 
   .header.scrolled {
-    padding-block: 0.8rem;
+    padding-block: 0.7rem;
   }
 
   .logo {
-    font-size: 1rem;
+    font-size: 1.15rem;
+  }
+
+  .burger {
+    width: 46px;
+    height: 46px;
   }
 
   .burger span {
@@ -225,7 +416,25 @@
   }
 
   .dropLink {
-    font-size: 0.95rem;
-    padding: 0.9rem 0;
+    min-height: 56px;
+
+    font-size: 1.05rem;
+  }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .header,
+  .link,
+  .link::after,
+  .burger,
+  .burger span,
+  .dropdown,
+  .dropLink {
+    transition: none;
   }
 }
