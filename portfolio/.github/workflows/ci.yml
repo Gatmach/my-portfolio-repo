@@ -11,34 +11,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
-          cache-dependency-path: portfolio/package-lock.json
+          cache-dependency-path: package-lock.json
 
       - name: Install dependencies
-        working-directory: portfolio
         run: npm ci
 
       - name: Check formatting
-        working-directory: portfolio
         run: npx prettier --check .
 
       - name: Lint
-        working-directory: portfolio
         run: npm run lint
 
-      - name: Build
-        working-directory: portfolio
+      - name: Build application
         run: npm run build
 
+      - name: Setup Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
       - name: Validate Docker Compose
-        working-directory: portfolio
         run: docker compose config
 
       - name: Build Docker images
-        working-directory: portfolio
         run: docker compose build
