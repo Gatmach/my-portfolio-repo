@@ -14,12 +14,5 @@
   ],
   "installCommand": "npm install",
   "buildCommand": "cd client && npm run build",
-  "outputDirectory": "client/dist",
-  "framework": "react",
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/client/index.html"
-    }
-  ]
+  "outputDirectory": "client/dist"
 }
