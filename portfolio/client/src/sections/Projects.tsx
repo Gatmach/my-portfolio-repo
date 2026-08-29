@@ -1,3 +1,4 @@
+
 import styles from './Projects.module.css'
 
 interface Project {
@@ -85,7 +86,7 @@ const GitHubIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.5"
+    strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
     aria-hidden="true"
@@ -101,19 +102,16 @@ const ExternalIcon = () => (
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    strokeWidth="1.5"
+    strokeWidth="1.6"
     strokeLinecap="round"
     strokeLinejoin="round"
     aria-hidden="true"
   >
     <path d="M14 3h7v7" />
     <path d="M10 14L21 3" />
-    <path d="M21 14v7h-7" />
+    <path d="M14 3h7v7" />
     <path d="M21 3l-9 9" />
-    <path d="M5 5h6" />
-    <path d="M5 5v6" />
-    <path d="M5 19h6" />
-    <path d="M19 19v-6" />
+    <path d="M21 14v7h-7" />
   </svg>
 )
 
@@ -121,11 +119,16 @@ export default function Projects() {
   return (
     <section id="projects" className={`section ${styles.projects}`}>
       <div className="container">
+
         {/* Section Header */}
         <div className={styles.header}>
-          <h2 className={`${styles.heading} reveal`}>
-            <em>Crafted </em>Experiences
-          </h2>
+          <div className={styles.headerContent}>
+            <span className={styles.eyebrow}>Selected Work</span>
+
+            <h2 className={`${styles.heading} reveal`}>
+              <em>Crafted</em> Experiences
+            </h2>
+          </div>
 
           <p className={`${styles.sub} reveal`}>
             A closer look at what I build — real products designed to solve
@@ -140,7 +143,7 @@ export default function Projects() {
               key={project.title}
               className={`${styles.card} reveal`}
               style={{
-                transitionDelay: `${index * 60}ms`,
+                transitionDelay: `${index * 70}ms`,
               }}
             >
               {/* Project Image */}
@@ -160,52 +163,41 @@ export default function Projects() {
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 )}
+
+                <div className={styles.imageOverlay} />
+
+                <span className={styles.projectIndex}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
               </div>
 
-              {/* Project Content */}
+              {/* Card Body */}
               <div className={styles.body}>
-                {/* External Links */}
-                {(project.githubUrl || project.liveUrl) && (
-                  <div className={styles.topRow}>
-                    <div className={styles.links}>
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.iconLink}
-                          aria-label={`View ${project.title} source code on GitHub`}
-                        >
-                          <GitHubIcon />
-                        </a>
-                      )}
 
-                      {project.liveUrl && (
-                        <a
-                          href={project.liveUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={styles.iconLink}
-                          aria-label={`View live ${project.title} project`}
-                        >
-                          <ExternalIcon />
-                        </a>
-                      )}
-                    </div>
-                  </div>
-                )}
+                {/* Meta */}
+                <div className={styles.projectMeta}>
+                  <span className={styles.year}>{project.year}</span>
+
+                  <span className={styles.projectType}>
+                    {project.role}
+                  </span>
+                </div>
 
                 {/* Title */}
-                <h3 className={styles.title}>{project.title}</h3>
-
-                {/* Role */}
-                <p className={styles.role}>{project.role}</p>
+                <h3 className={styles.title}>
+                  {project.title}
+                </h3>
 
                 {/* Description */}
-                <p className={styles.desc}>{project.description}</p>
+                <p className={styles.desc}>
+                  {project.description}
+                </p>
 
                 {/* Technologies */}
-                <div className={styles.tags} aria-label="Technologies used">
+                <div
+                  className={styles.tags}
+                  aria-label="Technologies used"
+                >
                   {project.tags.map((tag) => (
                     <span key={tag} className={styles.tag}>
                       {tag}
@@ -214,33 +206,37 @@ export default function Projects() {
                 </div>
 
                 {/* Footer */}
-                <div className={styles.cardFooter}>
-                  <span className={styles.year}>{project.year}</span>
+                {(project.githubUrl || project.liveUrl) && (
+                  <div className={styles.cardFooter}>
+                    <div className={styles.footerLinks}>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.readMore}
+                          aria-label={`View ${project.title} source code on GitHub`}
+                        >
+                          <GitHubIcon />
+                          <span>GitHub</span>
+                        </a>
+                      )}
 
-                  <div className={styles.footerLinks}>
-                    {project.githubUrl && (
-                      <a
-                        href={project.githubUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.readMore}
-                      >
-                        GitHub →
-                      </a>
-                    )}
-
-                    {project.liveUrl && (
-                      <a
-                        href={project.liveUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.readMore}
-                      >
-                        Live Demo →
-                      </a>
-                    )}
+                      {project.liveUrl && (
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={styles.readMore}
+                          aria-label={`View live ${project.title} project`}
+                        >
+                          <span>Live Demo</span>
+                          <ExternalIcon />
+                        </a>
+                      )}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </article>
           ))}
