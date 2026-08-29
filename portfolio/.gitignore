@@ -41,3 +41,5 @@ Thumbs.db
 *.sw?
 .vercel
 .env*
+vercel.json
+client/vercel.json
