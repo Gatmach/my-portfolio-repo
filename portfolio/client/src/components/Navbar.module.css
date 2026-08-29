@@ -29,7 +29,6 @@
   padding-block: 0.9rem;
 }
 
-
 /* ============================================================
    INNER
    ============================================================ */
@@ -44,7 +43,6 @@
 
   min-height: 48px;
 }
-
 
 /* ============================================================
    LOGO
@@ -63,14 +61,12 @@
 
   color: var(--clr-text);
 
-  transition:
-    color var(--dur-fast) var(--ease-out);
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
 .logo:hover {
   color: var(--clr-accent);
 }
-
 
 /* ============================================================
    DESKTOP NAVIGATION
@@ -81,13 +77,8 @@
 
   align-items: center;
 
-  gap: clamp(
-    1.75rem,
-    2.75vw,
-    2.75rem
-  );
+  gap: clamp(1.75rem, 2.75vw, 2.75rem);
 }
-
 
 /* ============================================================
    NAV LINKS
@@ -116,10 +107,8 @@
 
   letter-spacing: 0.025em;
 
-  transition:
-    color var(--dur-fast) var(--ease-out);
+  transition: color var(--dur-fast) var(--ease-out);
 }
-
 
 /* Active / hover indicator */
 
@@ -138,10 +127,8 @@
 
   background: var(--clr-accent);
 
-  transition:
-    width var(--dur-mid) var(--ease-out);
+  transition: width var(--dur-mid) var(--ease-out);
 }
-
 
 /* Hover */
 
@@ -153,7 +140,6 @@
   width: 100%;
 }
 
-
 /* Active */
 
 .link.active {
@@ -163,7 +149,6 @@
 .link.active::after {
   width: 100%;
 }
-
 
 /* ============================================================
    BURGER
@@ -186,8 +171,7 @@
 
   background: rgba(28, 28, 32, 0.45);
 
-  border: 1px solid
-    rgba(245, 245, 245, 0.12);
+  border: 1px solid rgba(245, 245, 245, 0.12);
 
   border-radius: var(--r-md);
 
@@ -229,15 +213,12 @@
   background: var(--clr-accent);
 }
 
-
 /* ============================================================
    BURGER → X
    ============================================================ */
 
 .burgerOpen span:nth-child(1) {
-  transform:
-    translateY(6.5px)
-    rotate(45deg);
+  transform: translateY(6.5px) rotate(45deg);
 }
 
 .burgerOpen span:nth-child(2) {
@@ -247,11 +228,8 @@
 }
 
 .burgerOpen span:nth-child(3) {
-  transform:
-    translateY(-6.5px)
-    rotate(-45deg);
+  transform: translateY(-6.5px) rotate(-45deg);
 }
-
 
 /* ============================================================
    MOBILE DROPDOWN
@@ -282,10 +260,8 @@
 
   opacity: 1;
 
-  border-color:
-    rgba(245, 245, 245, 0.08);
+  border-color: rgba(245, 245, 245, 0.08);
 }
-
 
 /* ============================================================
    MOBILE LINKS
@@ -312,8 +288,7 @@
 
   color: var(--clr-text-sub);
 
-  border-bottom:
-    1px solid rgba(245, 245, 245, 0.07);
+  border-bottom: 1px solid rgba(245, 245, 245, 0.07);
 
   letter-spacing: -0.01em;
 
@@ -336,7 +311,6 @@
   color: var(--clr-accent);
 }
 
-
 /* ============================================================
    ACTIVE DOT
    ============================================================ */
@@ -351,10 +325,8 @@
 
   flex-shrink: 0;
 
-  box-shadow:
-    0 0 0 4px var(--clr-accent-dim);
+  box-shadow: 0 0 0 4px var(--clr-accent-dim);
 }
-
 
 /* ============================================================
    TABLET + MOBILE
@@ -388,7 +360,6 @@
   }
 }
 
-
 /* ============================================================
    SMALL PHONES
    ============================================================ */
@@ -421,7 +392,6 @@
     font-size: 1.05rem;
   }
 }
-
 
 /* ============================================================
    REDUCED MOTION

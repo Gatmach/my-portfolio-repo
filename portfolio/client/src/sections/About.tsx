@@ -97,9 +97,8 @@ export default function About() {
               className={`${styles.bio} reveal`}
               style={{ transitionDelay: '80ms' }}
             >
-              When I’m not coding, I’m exploring new tools, expanding my
-              skills, and preparing to contribute more actively to the tech
-              community.
+              When I’m not coding, I’m exploring new tools, expanding my skills,
+              and preparing to contribute more actively to the tech community.
             </p>
 
             <div
@@ -117,13 +116,9 @@ export default function About() {
                     } as React.CSSProperties
                   }
                 >
-                  <span className={styles.tagIcon}>
-                    {s.icon}
-                  </span>
+                  <span className={styles.tagIcon}>{s.icon}</span>
 
-                  <span className={styles.tagName}>
-                    {s.name}
-                  </span>
+                  <span className={styles.tagName}>{s.name}</span>
                 </span>
               ))}
             </div>

@@ -1,4 +1,3 @@
-
 import styles from './Projects.module.css'
 
 interface Project {
@@ -119,7 +118,6 @@ export default function Projects() {
   return (
     <section id="projects" className={`section ${styles.projects}`}>
       <div className="container">
-
         {/* Section Header */}
         <div className={styles.header}>
           <div className={styles.headerContent}>
@@ -131,8 +129,8 @@ export default function Projects() {
           </div>
 
           <p className={`${styles.sub} reveal`}>
-            A closer look at what I build — real products designed to solve
-            real problems, from first idea to finished system.
+            A closer look at what I build — real products designed to solve real
+            problems, from first idea to finished system.
           </p>
         </div>
 
@@ -156,10 +154,7 @@ export default function Projects() {
                     loading={index === 0 ? 'eager' : 'lazy'}
                   />
                 ) : (
-                  <span
-                    className={styles.thumbnailNum}
-                    aria-hidden="true"
-                  >
+                  <span className={styles.thumbnailNum} aria-hidden="true">
                     {String(index + 1).padStart(2, '0')}
                   </span>
                 )}
@@ -173,31 +168,21 @@ export default function Projects() {
 
               {/* Card Body */}
               <div className={styles.body}>
-
                 {/* Meta */}
                 <div className={styles.projectMeta}>
                   <span className={styles.year}>{project.year}</span>
 
-                  <span className={styles.projectType}>
-                    {project.role}
-                  </span>
+                  <span className={styles.projectType}>{project.role}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className={styles.title}>
-                  {project.title}
-                </h3>
+                <h3 className={styles.title}>{project.title}</h3>
 
                 {/* Description */}
-                <p className={styles.desc}>
-                  {project.description}
-                </p>
+                <p className={styles.desc}>{project.description}</p>
 
                 {/* Technologies */}
-                <div
-                  className={styles.tags}
-                  aria-label="Technologies used"
-                >
+                <div className={styles.tags} aria-label="Technologies used">
                   {project.tags.map((tag) => (
                     <span key={tag} className={styles.tag}>
                       {tag}

@@ -20,7 +20,6 @@ LOGO WRAPPER
   flex-shrink: 0;
 }
 
-
 /*
 ============================================================
 LOGO MARK
@@ -35,14 +34,12 @@ LOGO MARK
 
   flex-shrink: 0;
 
-  transition:
-    transform var(--dur-mid) var(--ease-out);
+  transition: transform var(--dur-mid) var(--ease-out);
 }
 
 .logoWrap:hover .mark {
   transform: rotate(-8deg);
 }
-
 
 /*
 ============================================================
@@ -58,14 +55,12 @@ RING
   stroke-dasharray: 63;
   stroke-dashoffset: 63;
 
-  animation:
-    draw 1s var(--ease-out) 0.1s forwards;
+  animation: draw 1s var(--ease-out) 0.1s forwards;
 
   transition:
     stroke-width var(--dur-fast),
     filter var(--dur-fast);
 }
-
 
 /*
 ============================================================
@@ -81,10 +76,8 @@ INNER BAR
   stroke-dasharray: 14;
   stroke-dashoffset: 14;
 
-  animation:
-    draw 0.45s var(--ease-out) 1.05s forwards;
+  animation: draw 0.45s var(--ease-out) 1.05s forwards;
 }
-
 
 /*
 ============================================================
@@ -99,10 +92,8 @@ ACCENT DOT
 
   transform-origin: 26.4px 13.6px;
 
-  animation:
-    pop 0.4s var(--ease-out) 1.35s forwards;
+  animation: pop 0.4s var(--ease-out) 1.35s forwards;
 }
-
 
 /*
 ============================================================
@@ -113,12 +104,8 @@ MARK HOVER
 .logoWrap:hover .ring {
   stroke-width: 3;
 
-  filter:
-    drop-shadow(
-      0 0 6px var(--clr-accent-glow)
-    );
+  filter: drop-shadow(0 0 6px var(--clr-accent-glow));
 }
-
 
 /*
 ============================================================
@@ -143,8 +130,7 @@ WORDMARK
 
   transform: translateX(-6px);
 
-  animation:
-    fadeIn 0.6s var(--ease-out) 0.85s forwards;
+  animation: fadeIn 0.6s var(--ease-out) 0.85s forwards;
 }
 
 .word em {
@@ -152,7 +138,6 @@ WORDMARK
 
   color: var(--clr-accent);
 }
-
 
 /*
 ============================================================
@@ -188,7 +173,6 @@ ANIMATIONS
   }
 }
 
-
 /*
 ============================================================
 TABLET
@@ -210,7 +194,6 @@ TABLET
   }
 }
 
-
 /*
 ============================================================
 SMALL PHONES
@@ -231,7 +214,6 @@ SMALL PHONES
     gap: 0.6rem;
   }
 }
-
 
 /*
 ============================================================

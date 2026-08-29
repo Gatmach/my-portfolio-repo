@@ -99,7 +99,6 @@ SECTION HEADER
   color: var(--clr-text-sub);
 }
 
-
 /*
 ============================================================
 PROJECT GRID
@@ -109,12 +108,10 @@ PROJECT GRID
 .grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: clamp(1.5rem, 3vw, 3rem);
 }
-
 
 /*
 ============================================================
@@ -137,9 +134,7 @@ PROJECT CARD
 
   background: var(--clr-bg-2);
 
-  border:
-    1px solid
-    rgba(245, 245, 245, 0.08);
+  border: 1px solid rgba(245, 245, 245, 0.08);
 
   border-radius: var(--r-lg);
 
@@ -155,13 +150,10 @@ PROJECT CARD
 
   background: var(--clr-bg-3);
 
-  border-color:
-    rgba(16, 185, 129, 0.42);
+  border-color: rgba(16, 185, 129, 0.42);
 
-  box-shadow:
-    0 26px 70px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
 }
-
 
 /*
 ============================================================
@@ -186,8 +178,7 @@ ACCENT EDGE
 
   transform-origin: bottom;
 
-  transition:
-    transform var(--dur-mid) var(--ease-out);
+  transition: transform var(--dur-mid) var(--ease-out);
 
   z-index: 5;
 }
@@ -195,7 +186,6 @@ ACCENT EDGE
 .card:hover::before {
   transform: scaleY(1);
 }
-
 
 /*
 ============================================================
@@ -214,9 +204,7 @@ PROJECT THUMBNAIL
 
   background: var(--clr-bg-3);
 
-  border-bottom:
-    1px solid
-    rgba(245, 245, 245, 0.07);
+  border-bottom: 1px solid rgba(245, 245, 245, 0.07);
 }
 
 .thumbnailImg {
@@ -240,7 +228,6 @@ PROJECT THUMBNAIL
   filter: brightness(1.06);
 }
 
-
 /*
 ============================================================
 IMAGE OVERLAY
@@ -252,23 +239,20 @@ IMAGE OVERLAY
 
   inset: 0;
 
-  background:
-    linear-gradient(
-      180deg,
-      rgba(0, 0, 0, 0.02) 35%,
-      rgba(0, 0, 0, 0.38) 100%
-    );
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 35%,
+    rgba(0, 0, 0, 0.38) 100%
+  );
 
   pointer-events: none;
 
-  transition:
-    opacity var(--dur-mid) var(--ease-out);
+  transition: opacity var(--dur-mid) var(--ease-out);
 }
 
 .card:hover .imageOverlay {
   opacity: 0.72;
 }
-
 
 /*
 ============================================================
@@ -292,14 +276,11 @@ PROJECT INDEX
 
   padding: 0 0.65rem;
 
-  border:
-    1px solid
-    rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.16);
 
   border-radius: 999px;
 
-  background:
-    rgba(8, 10, 14, 0.62);
+  background: rgba(8, 10, 14, 0.62);
 
   backdrop-filter: blur(10px);
 
@@ -322,13 +303,10 @@ PROJECT INDEX
 .card:hover .projectIndex {
   color: var(--clr-accent);
 
-  border-color:
-    rgba(16, 185, 129, 0.45);
+  border-color: rgba(16, 185, 129, 0.45);
 
-  background:
-    rgba(8, 10, 14, 0.76);
+  background: rgba(8, 10, 14, 0.76);
 }
-
 
 /*
 ============================================================
@@ -364,7 +342,6 @@ FALLBACK THUMBNAIL
   transform: scale(1.05);
 }
 
-
 /*
 ============================================================
 CARD BODY
@@ -380,12 +357,10 @@ CARD BODY
 
   min-width: 0;
 
-  padding:
-    clamp(1.5rem, 2.5vw, 2.15rem);
+  padding: clamp(1.5rem, 2.5vw, 2.15rem);
 
   gap: 0.65rem;
 }
-
 
 /*
 ============================================================
@@ -447,7 +422,6 @@ PROJECT META
   opacity: 0.9;
 }
 
-
 /*
 ============================================================
 PROJECT TITLE
@@ -459,8 +433,7 @@ PROJECT TITLE
 
   font-family: var(--font-display);
 
-  font-size:
-    clamp(1.35rem, 1.6vw, 1.7rem);
+  font-size: clamp(1.35rem, 1.6vw, 1.7rem);
 
   font-weight: var(--fw-bold);
 
@@ -470,14 +443,12 @@ PROJECT TITLE
 
   color: var(--clr-text);
 
-  transition:
-    color var(--dur-fast) var(--ease-out);
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
 .card:hover .title {
   color: var(--clr-text);
 }
-
 
 /*
 ============================================================
@@ -513,7 +484,6 @@ DESCRIPTION
   overflow: hidden;
 }
 
-
 /*
 ============================================================
 TECHNOLOGY TAGS
@@ -537,18 +507,13 @@ TECHNOLOGY TAGS
 
   min-height: 29px;
 
-  padding:
-    0.3rem
-    0.68rem;
+  padding: 0.3rem 0.68rem;
 
-  border:
-    1px solid
-    var(--clr-border);
+  border: 1px solid var(--clr-border);
 
   border-radius: 999px;
 
-  background:
-    rgba(255, 255, 255, 0.015);
+  background: rgba(255, 255, 255, 0.015);
 
   font-family: var(--font-body);
 
@@ -572,15 +537,12 @@ TECHNOLOGY TAGS
 .tag:hover {
   color: var(--clr-accent);
 
-  border-color:
-    rgba(16, 185, 129, 0.5);
+  border-color: rgba(16, 185, 129, 0.5);
 
-  background:
-    var(--clr-accent-dim);
+  background: var(--clr-accent-dim);
 
   transform: translateY(-1px);
 }
-
 
 /*
 ============================================================
@@ -599,9 +561,7 @@ CARD FOOTER
 
   padding-top: 1.2rem;
 
-  border-top:
-    1px solid
-    rgba(245, 245, 245, 0.08);
+  border-top: 1px solid rgba(245, 245, 245, 0.08);
 }
 
 .footerLinks {
@@ -615,7 +575,6 @@ CARD FOOTER
 
   gap: 0.55rem;
 }
-
 
 /*
 ============================================================
@@ -633,13 +592,9 @@ PROJECT ACTION
 
   min-height: 36px;
 
-  padding:
-    0.45rem
-    0.85rem;
+  padding: 0.45rem 0.85rem;
 
-  border:
-    1px solid
-    var(--clr-border);
+  border: 1px solid var(--clr-border);
 
   border-radius: 999px;
 
@@ -669,20 +624,16 @@ PROJECT ACTION
 
   border-color: var(--clr-accent);
 
-  background:
-    var(--clr-accent-dim);
+  background: var(--clr-accent-dim);
 
   transform: translateY(-2px);
 }
 
 .readMore:focus-visible {
-  outline:
-    2px solid
-    var(--clr-accent);
+  outline: 2px solid var(--clr-accent);
 
   outline-offset: 3px;
 }
-
 
 /*
 ============================================================
@@ -716,7 +667,6 @@ LARGE TABLET
   }
 }
 
-
 /*
 ============================================================
 TABLET + MOBILE
@@ -735,8 +685,7 @@ TABLET + MOBILE
   }
 
   .heading {
-    font-size:
-      clamp(2.4rem, 8vw, 3.5rem);
+    font-size: clamp(2.4rem, 8vw, 3.5rem);
   }
 
   .sub {
@@ -798,7 +747,6 @@ TABLET + MOBILE
   }
 }
 
-
 /*
 ============================================================
 SMALL PHONES
@@ -851,9 +799,7 @@ SMALL PHONES
   .tag {
     min-height: 28px;
 
-    padding:
-      0.28rem
-      0.62rem;
+    padding: 0.28rem 0.62rem;
 
     font-size: 0.68rem;
   }
@@ -867,12 +813,9 @@ SMALL PHONES
   .readMore {
     min-height: 36px;
 
-    padding:
-      0.4rem
-      0.72rem;
+    padding: 0.4rem 0.72rem;
   }
 }
-
 
 /*
 ============================================================
@@ -888,8 +831,7 @@ TOUCH DEVICES
 
     background: var(--clr-bg-2);
 
-    border-color:
-      rgba(245, 245, 245, 0.08);
+    border-color: rgba(245, 245, 245, 0.08);
   }
 
   .card:hover::before {
@@ -909,11 +851,9 @@ TOUCH DEVICES
   .card:hover .projectIndex {
     color: rgba(255, 255, 255, 0.8);
 
-    border-color:
-      rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.16);
 
-    background:
-      rgba(8, 10, 14, 0.62);
+    background: rgba(8, 10, 14, 0.62);
   }
 
   .tag:hover {
@@ -936,7 +876,6 @@ TOUCH DEVICES
     transform: none;
   }
 }
-
 
 /*
 ============================================================

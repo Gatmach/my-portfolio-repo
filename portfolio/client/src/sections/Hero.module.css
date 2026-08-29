@@ -14,7 +14,6 @@
   isolation: isolate;
 }
 
-
 /* ============================================================
    BACKGROUND
    ============================================================ */
@@ -34,7 +33,6 @@
   z-index: -3;
 }
 
-
 /* ============================================================
    OVERLAYS
    ============================================================ */
@@ -43,14 +41,13 @@
   position: absolute;
   inset: 0;
 
-  background:
-    linear-gradient(
-      90deg,
-      rgba(6, 5, 6, 0.82) 0%,
-      rgba(6, 5, 6, 0.64) 42%,
-      rgba(6, 5, 6, 0.3) 75%,
-      rgba(6, 5, 6, 0.18) 100%
-    );
+  background: linear-gradient(
+    90deg,
+    rgba(6, 5, 6, 0.82) 0%,
+    rgba(6, 5, 6, 0.64) 42%,
+    rgba(6, 5, 6, 0.3) 75%,
+    rgba(6, 5, 6, 0.18) 100%
+  );
 
   z-index: -2;
 }
@@ -64,16 +61,10 @@
 
   height: 260px;
 
-  background:
-    linear-gradient(
-      to bottom,
-      transparent 0%,
-      var(--clr-bg) 100%
-    );
+  background: linear-gradient(to bottom, transparent 0%, var(--clr-bg) 100%);
 
   z-index: -1;
 }
-
 
 /* ============================================================
    CONTENT
@@ -89,13 +80,8 @@
 .content {
   max-width: 720px;
 
-  padding-left: clamp(
-    1rem,
-    4vw,
-    4rem
-  );
+  padding-left: clamp(1rem, 4vw, 4rem);
 }
-
 
 /* ============================================================
    EYEBROW
@@ -109,12 +95,7 @@
 
   margin-bottom: 2.25rem;
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.1s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.1s both;
 }
 
 .eyebrowLine {
@@ -146,7 +127,6 @@
   color: var(--clr-accent);
 }
 
-
 /* ============================================================
    MAIN TITLE
    ============================================================ */
@@ -160,17 +140,12 @@
   margin: 0 0 1.75rem;
 }
 
-
 /* First name */
 
 .titleLine1 {
   font-family: var(--font-display);
 
-  font-size: clamp(
-    4rem,
-    8vw,
-    7rem
-  );
+  font-size: clamp(4rem, 8vw, 7rem);
 
   font-weight: 800;
 
@@ -180,25 +155,15 @@
 
   color: var(--clr-text);
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.22s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.22s both;
 }
-
 
 /* Last name */
 
 .titleLine2 {
   font-family: var(--font-display);
 
-  font-size: clamp(
-    4rem,
-    8vw,
-    7rem
-  );
+  font-size: clamp(4rem, 8vw, 7rem);
 
   font-weight: 800;
 
@@ -206,22 +171,12 @@
 
   letter-spacing: -0.055em;
 
-  padding-left: clamp(
-    1.5rem,
-    4vw,
-    4rem
-  );
+  padding-left: clamp(1.5rem, 4vw, 4rem);
 
   color: var(--clr-text);
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.34s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.34s both;
 }
-
 
 /* Professional title */
 
@@ -230,11 +185,7 @@
 
   font-family: var(--font-display);
 
-  font-size: clamp(
-    1.5rem,
-    2.5vw,
-    2.25rem
-  );
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
 
   font-style: italic;
 
@@ -246,14 +197,8 @@
 
   color: var(--clr-accent);
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.46s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.46s both;
 }
-
 
 /* ============================================================
    DIVIDER
@@ -269,14 +214,8 @@
 
   opacity: 0.5;
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.52s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.52s both;
 }
-
 
 /* ============================================================
    SUBTITLE
@@ -297,14 +236,8 @@
 
   text-wrap: pretty;
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.64s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.64s both;
 }
-
 
 /* ============================================================
    ACTIONS
@@ -318,14 +251,8 @@
 
   flex-wrap: wrap;
 
-  animation:
-    fadeSlideLeft
-    0.9s
-    var(--ease-out)
-    0.74s
-    both;
+  animation: fadeSlideLeft 0.9s var(--ease-out) 0.74s both;
 }
-
 
 /* ============================================================
    PRIMARY BUTTON
@@ -368,7 +295,6 @@
   transform: translateY(-3px);
 }
 
-
 /* ============================================================
    GHOST BUTTON
    ============================================================ */
@@ -382,8 +308,7 @@
 
   padding: 0.9rem 2rem;
 
-  border: 1px solid
-    rgba(245, 245, 245, 0.22);
+  border: 1px solid rgba(245, 245, 245, 0.22);
 
   color: var(--clr-text);
 
@@ -420,7 +345,6 @@
   transform: translateY(-3px);
 }
 
-
 /* ============================================================
    ANIMATION
    ============================================================ */
@@ -438,7 +362,6 @@
     transform: translateX(0);
   }
 }
-
 
 /* ============================================================
    TABLET
@@ -458,14 +381,9 @@
 
   .titleLine1,
   .titleLine2 {
-    font-size: clamp(
-      3.75rem,
-      8vw,
-      6rem
-    );
+    font-size: clamp(3.75rem, 8vw, 6rem);
   }
 }
-
 
 /* ============================================================
    MOBILE / TABLET
@@ -486,13 +404,12 @@
   }
 
   .overlay {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(6, 5, 6, 0.35) 0%,
-        rgba(6, 5, 6, 0.7) 45%,
-        rgba(6, 5, 6, 0.94) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(6, 5, 6, 0.35) 0%,
+      rgba(6, 5, 6, 0.7) 45%,
+      rgba(6, 5, 6, 0.94) 100%
+    );
   }
 
   .overlayBottom {
@@ -525,11 +442,7 @@
 
   .titleLine1,
   .titleLine2 {
-    font-size: clamp(
-      3.4rem,
-      12vw,
-      5.5rem
-    );
+    font-size: clamp(3.4rem, 12vw, 5.5rem);
 
     line-height: 0.9;
   }
@@ -572,7 +485,6 @@
   }
 }
 
-
 /* ============================================================
    SMALL PHONES
    ============================================================ */
@@ -592,11 +504,7 @@
 
   .titleLine1,
   .titleLine2 {
-    font-size: clamp(
-      2.9rem,
-      14vw,
-      4rem
-    );
+    font-size: clamp(2.9rem, 14vw, 4rem);
   }
 
   .titleLine2 {
@@ -628,7 +536,6 @@
     min-height: 52px;
   }
 }
-
 
 /* ============================================================
    REDUCED MOTION

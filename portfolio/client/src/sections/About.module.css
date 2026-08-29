@@ -8,7 +8,6 @@ ABOUT
   position: relative;
 }
 
-
 /*
 ============================================================
 LAYOUT
@@ -22,15 +21,10 @@ LAYOUT
     minmax(280px, 0.8fr)
     minmax(0, 1.2fr);
 
-  gap: clamp(
-    4rem,
-    8vw,
-    9rem
-  );
+  gap: clamp(4rem, 8vw, 9rem);
 
   align-items: start;
 }
-
 
 /*
 ============================================================
@@ -41,7 +35,6 @@ LEFT COLUMN
 .left {
   position: relative;
 }
-
 
 /*
 ============================================================
@@ -83,7 +76,6 @@ SECTION HEADING
   color: var(--clr-accent);
 }
 
-
 /*
 ============================================================
 RIGHT COLUMN
@@ -93,7 +85,6 @@ RIGHT COLUMN
 .right {
   min-width: 0;
 }
-
 
 /*
 ============================================================
@@ -123,7 +114,6 @@ BIOGRAPHY
   margin-bottom: 0;
 }
 
-
 /*
 ============================================================
 SKILLS
@@ -141,10 +131,8 @@ SKILLS
 
   padding-top: 2rem;
 
-  border-top:
-    1px solid rgba(245, 245, 245, 0.08);
+  border-top: 1px solid rgba(245, 245, 245, 0.08);
 }
-
 
 /*
 ============================================================
@@ -161,19 +149,9 @@ SKILL TAG
 
   min-height: 38px;
 
-  padding:
-    0.45rem
-    1rem
-    0.45rem
-    0.75rem;
+  padding: 0.45rem 1rem 0.45rem 0.75rem;
 
-  border:
-    1px solid
-    color-mix(
-      in srgb,
-      var(--tag-color) 20%,
-      transparent
-    );
+  border: 1px solid color-mix(in srgb, var(--tag-color) 20%, transparent);
 
   border-radius: 100px;
 
@@ -189,33 +167,14 @@ SKILL TAG
 }
 
 .tag:hover {
-  transform:
-    translateY(-3px)
-    scale(1.03);
+  transform: translateY(-3px) scale(1.03);
 
-  background:
-    color-mix(
-      in srgb,
-      var(--tag-color) 16%,
-      transparent
-    );
+  background: color-mix(in srgb, var(--tag-color) 16%, transparent);
 
-  border-color:
-    color-mix(
-      in srgb,
-      var(--tag-color) 55%,
-      transparent
-    );
+  border-color: color-mix(in srgb, var(--tag-color) 55%, transparent);
 
-  box-shadow:
-    0 6px 22px
-    color-mix(
-      in srgb,
-      var(--tag-color) 18%,
-      transparent
-    );
+  box-shadow: 0 6px 22px color-mix(in srgb, var(--tag-color) 18%, transparent);
 }
-
 
 /*
 ============================================================
@@ -238,32 +197,18 @@ SKILL ICON
 
   color: var(--tag-color);
 
-  filter:
-    drop-shadow(
-      0 0 4px
-      color-mix(
-        in srgb,
-        var(--tag-color) 40%,
-        transparent
-      )
-    );
+  filter: drop-shadow(
+    0 0 4px color-mix(in srgb, var(--tag-color) 40%, transparent)
+  );
 
-  transition:
-    filter 180ms var(--ease-out);
+  transition: filter 180ms var(--ease-out);
 }
 
 .tag:hover .tagIcon {
-  filter:
-    drop-shadow(
-      0 0 8px
-      color-mix(
-        in srgb,
-        var(--tag-color) 70%,
-        transparent
-      )
-    );
+  filter: drop-shadow(
+    0 0 8px color-mix(in srgb, var(--tag-color) 70%, transparent)
+  );
 }
-
 
 /*
 ============================================================
@@ -286,14 +231,12 @@ SKILL NAME
 
   opacity: 0.9;
 
-  transition:
-    opacity 180ms var(--ease-out);
+  transition: opacity 180ms var(--ease-out);
 }
 
 .tag:hover .tagName {
   opacity: 1;
 }
-
 
 /*
 ============================================================
@@ -317,7 +260,6 @@ TABLET
   }
 }
 
-
 /*
 ============================================================
 TABLET + MOBILE
@@ -340,11 +282,7 @@ TABLET + MOBILE
 
     max-width: 14ch;
 
-    font-size: clamp(
-      2.25rem,
-      7vw,
-      3.25rem
-    );
+    font-size: clamp(2.25rem, 7vw, 3.25rem);
 
     line-height: 1.05;
   }
@@ -370,11 +308,7 @@ TABLET + MOBILE
   .tag {
     min-height: 38px;
 
-    padding:
-      0.45rem
-      0.9rem
-      0.45rem
-      0.7rem;
+    padding: 0.45rem 0.9rem 0.45rem 0.7rem;
   }
 
   .tagName {
@@ -385,7 +319,6 @@ TABLET + MOBILE
     font-size: 0.95rem;
   }
 }
-
 
 /*
 ============================================================
@@ -415,11 +348,7 @@ SMALL PHONES
   .tag {
     min-height: 36px;
 
-    padding:
-      0.4rem
-      0.8rem
-      0.4rem
-      0.65rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.65rem;
   }
 
   .tagName {
@@ -430,7 +359,6 @@ SMALL PHONES
     font-size: 0.9rem;
   }
 }
-
 
 /*
 ============================================================
