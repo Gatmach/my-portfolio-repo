@@ -11,25 +11,33 @@ export default function Hero() {
         <div className={styles.content}>
           <div className={styles.eyebrowWrap}>
             <span className={styles.eyebrowLine} />
-            <p className={styles.eyebrow}>Available for work</p>
+            <p className={styles.eyebrow}>Available for opportunities</p>
           </div>
 
           <h1 className={styles.title}>
             <span className={styles.titleLine1}>Gatmach</span>
             <span className={styles.titleLine2}>Yuol</span>
-            <span className={styles.titleAccent}>Developer</span>
+            <span className={styles.titleAccent}>Software Developer & AI Enthusiast</span>
           </h1>
 
           <div className={styles.divider} />
 
           <p className={styles.subtitle}>
-            Building fast, scalable, and thoughtful digital experiences.
+            I build practical software solutions and explore AI-driven technologies
+            to solve real-world problems and create meaningful impact.
           </p>
 
           <div className={styles.actions}>
             <a href="#projects" className={styles.btnPrimary}>
-              View my work
+              Explore my work
             </a>
+            <a 
+               href="/documents/gatmach_yuol_cv.pdf"
+               download="gatmach_yuol_cv.pdf"
+               className={styles.btnGhost}
+               >
+                Download CV
+               </a>
             <a href="#contact" className={styles.btnGhost}>
               Get in touch
             </a>

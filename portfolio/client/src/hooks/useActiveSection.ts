@@ -1,6 +1,16 @@
+
 import { useState, useEffect } from 'react'
 
-const sections = ['home', 'about', 'projects', 'blog', 'contact']
+const sections = [
+  'home',
+  'about',
+  'expertise',
+  'projects',
+  'services',
+  'achievements',
+  'insights',
+  'contact',
+]
 
 export function useActiveSection() {
   const [active, setActive] = useState('home')
@@ -28,7 +38,7 @@ export function useActiveSection() {
       observers.push(observer)
     })
 
-    return () => observers.forEach((o) => o.disconnect())
+    return () => observers.forEach((observer) => observer.disconnect())
   }, [])
 
   return active

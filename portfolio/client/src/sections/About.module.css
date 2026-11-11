@@ -1,112 +1,51 @@
-/*
-============================================================
-ABOUT
-============================================================
-*/
 
 .about {
   position: relative;
+  background: var(--clr-white);
 }
-
-/*
-============================================================
-LAYOUT
-============================================================
-*/
 
 .grid {
   display: grid;
-
-  grid-template-columns:
-    minmax(280px, 0.8fr)
-    minmax(0, 1.2fr);
-
-  gap: clamp(4rem, 8vw, 9rem);
-
+  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
+  gap: clamp(3rem, 7vw, 7rem);
   align-items: start;
 }
-
-/*
-============================================================
-LEFT COLUMN
-============================================================
-*/
 
 .left {
   position: relative;
 }
 
-/*
-============================================================
-SECTION HEADING
-============================================================
-*/
-
 .heading {
-  position: sticky;
-
-  top: 8rem;
-
   margin: 0;
-
   max-width: 12ch;
-
   font-family: var(--font-display);
-
   font-size: var(--fs-3xl);
-
   font-weight: var(--fw-bold);
-
-  line-height: 1.05;
-
-  letter-spacing: -0.035em;
-
-  color: var(--clr-text);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  color: var(--clr-navy);
 }
 
 .heading em {
   display: block;
-
   margin-top: 0.15em;
-
-  font-style: italic;
-
+  color: var(--clr-red);
+  font-style: normal;
   font-weight: var(--fw-bold);
-
-  color: var(--clr-accent);
 }
-
-/*
-============================================================
-RIGHT COLUMN
-============================================================
-*/
 
 .right {
   min-width: 0;
 }
 
-/*
-============================================================
-BIOGRAPHY
-============================================================
-*/
-
 .bio {
-  max-width: 64ch;
-
+  max-width: 65ch;
   margin: 0 0 1.25rem;
-
   color: var(--clr-text-sub);
-
   font-family: var(--font-body);
-
   font-size: var(--fs-base);
-
   font-weight: var(--fw-regular);
-
-  line-height: 1.75;
-
+  line-height: 1.85;
   letter-spacing: -0.01em;
 }
 
@@ -114,157 +53,55 @@ BIOGRAPHY
   margin-bottom: 0;
 }
 
-/*
-============================================================
-SKILLS
-============================================================
-*/
+/* ============================================================
+   ACADEMIC & PROFESSIONAL HIGHLIGHTS
+============================================================ */
 
-.skills {
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem 2rem;
+  margin-top: 2.5rem;
+  padding-block: 2rem;
+  border-top: 1px solid var(--clr-border);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.highlight {
   display: flex;
-
-  flex-wrap: wrap;
-
-  gap: 0.7rem;
-
-  margin-top: 2.25rem;
-
-  padding-top: 2rem;
-
-  border-top: 1px solid rgba(245, 245, 245, 0.08);
-}
-
-/*
-============================================================
-SKILL TAG
-============================================================
-*/
-
-.tag {
-  display: inline-flex;
-
-  align-items: center;
-
+  flex-direction: column;
   gap: 0.5rem;
-
-  min-height: 38px;
-
-  padding: 0.45rem 1rem 0.45rem 0.75rem;
-
-  border: 1px solid color-mix(in srgb, var(--tag-color) 20%, transparent);
-
-  border-radius: 100px;
-
-  background: var(--tag-bg);
-
-  cursor: default;
-
-  transition:
-    transform 180ms var(--ease-out),
-    background 180ms var(--ease-out),
-    border-color 180ms var(--ease-out),
-    box-shadow 180ms var(--ease-out);
+  padding-left: 1rem;
+  border-left: 3px solid var(--clr-red);
 }
 
-.tag:hover {
-  transform: translateY(-3px) scale(1.03);
-
-  background: color-mix(in srgb, var(--tag-color) 16%, transparent);
-
-  border-color: color-mix(in srgb, var(--tag-color) 55%, transparent);
-
-  box-shadow: 0 6px 22px color-mix(in srgb, var(--tag-color) 18%, transparent);
+.highlightLabel {
+  color: var(--clr-text-sub);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/*
-============================================================
-SKILL ICON
-============================================================
-*/
-
-.tagIcon {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  width: 18px;
-  height: 18px;
-
-  font-size: 1rem;
-
-  line-height: 1;
-
-  color: var(--tag-color);
-
-  filter: drop-shadow(
-    0 0 4px color-mix(in srgb, var(--tag-color) 40%, transparent)
-  );
-
-  transition: filter 180ms var(--ease-out);
-}
-
-.tag:hover .tagIcon {
-  filter: drop-shadow(
-    0 0 8px color-mix(in srgb, var(--tag-color) 70%, transparent)
-  );
-}
-
-/*
-============================================================
-SKILL NAME
-============================================================
-*/
-
-.tagName {
+.highlightValue {
+  color: var(--clr-navy);
   font-family: var(--font-body);
-
-  font-size: var(--fs-sm);
-
-  font-weight: var(--fw-medium);
-
-  line-height: 1;
-
-  letter-spacing: 0.015em;
-
-  color: var(--tag-color);
-
-  opacity: 0.9;
-
-  transition: opacity 180ms var(--ease-out);
+  font-size: 0.95rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
 }
 
-.tag:hover .tagName {
-  opacity: 1;
-}
-
-/*
-============================================================
-TABLET
-============================================================
-*/
 
 @media (max-width: 1024px) {
   .grid {
-    gap: 4rem;
+    gap: 3rem;
   }
 
   .heading {
-    top: 7rem;
-
     font-size: var(--fs-2xl);
   }
-
-  .bio {
-    font-size: 1.08rem;
-  }
 }
-
-/*
-============================================================
-TABLET + MOBILE
-============================================================
-*/
 
 @media (max-width: 768px) {
   .about {
@@ -273,101 +110,36 @@ TABLET + MOBILE
 
   .grid {
     grid-template-columns: 1fr;
-
-    gap: 2.75rem;
+    gap: 2rem;
   }
 
   .heading {
-    position: static;
-
     max-width: 14ch;
-
     font-size: clamp(2.25rem, 7vw, 3.25rem);
-
-    line-height: 1.05;
   }
 
   .bio {
     max-width: 100%;
-
-    font-size: 1.1rem;
-
-    line-height: 1.7;
-
-    margin-bottom: 1.25rem;
-  }
-
-  .skills {
-    margin-top: 2rem;
-
-    padding-top: 1.75rem;
-
-    gap: 0.6rem;
-  }
-
-  .tag {
-    min-height: 38px;
-
-    padding: 0.45rem 0.9rem 0.45rem 0.7rem;
-  }
-
-  .tagName {
-    font-size: 0.95rem;
-  }
-
-  .tagIcon {
-    font-size: 0.95rem;
+    font-size: 1rem;
+    line-height: 1.8;
   }
 }
 
-/*
-============================================================
-SMALL PHONES
-============================================================
-*/
+@media (max-width: 600px) {
+  .highlights {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    padding-block: 1.5rem;
+  }
+
+  .highlightValue {
+    font-size: 0.9rem;
+  }
+}
 
 @media (max-width: 420px) {
-  .grid {
-    gap: 2.25rem;
-  }
-
   .heading {
     font-size: 2.25rem;
-  }
-
-  .bio {
-    font-size: 1.05rem;
-
-    line-height: 1.7;
-  }
-
-  .skills {
-    gap: 0.5rem;
-  }
-
-  .tag {
-    min-height: 36px;
-
-    padding: 0.4rem 0.8rem 0.4rem 0.65rem;
-  }
-
-  .tagName {
-    font-size: 0.9rem;
-  }
-
-  .tagIcon {
-    font-size: 0.9rem;
-  }
-}
-
-/*
-============================================================
-REDUCED MOTION
-============================================================
-*/
-
-@media (prefers-reduced-motion: reduce) {
-  .tag {
-    transition: none;
   }
 }

@@ -1,705 +1,347 @@
-/*
-============================================================
-PROJECTS
-============================================================
-*/
+
+/* ============================================================
+   PROJECTS SECTION
+============================================================ */
 
 .projects {
-  padding-top: clamp(5rem, 8vw, 7rem);
-  padding-bottom: clamp(6rem, 10vw, 9rem);
+  padding-top: clamp(4.5rem, 7vw, 7rem);
+  padding-bottom: clamp(5rem, 8vw, 8rem);
+  background: var(--clr-white);
 }
 
-/*
-============================================================
-SECTION HEADER
-============================================================
-*/
+/* ============================================================
+   SECTION HEADER
+============================================================ */
 
 .header {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1fr)
-    minmax(280px, 0.7fr);
-
-  gap: clamp(2rem, 5vw, 5rem);
-
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
   align-items: end;
-
-  margin-bottom: clamp(3rem, 6vw, 5rem);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
 .headerContent {
   display: flex;
-
   flex-direction: column;
-
-  gap: 0.65rem;
+  gap: 0.8rem;
 }
 
 .eyebrow {
-  display: inline-flex;
-
-  align-items: center;
-
-  width: fit-content;
-
-  font-family: var(--font-body);
-
-  font-size: 0.7rem;
-
+  margin: 0;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: var(--fw-semibold);
-
-  line-height: 1;
-
-  letter-spacing: 0.16em;
-
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-
-  color: var(--clr-accent);
-
-  opacity: 0.9;
 }
 
 .heading {
   margin: 0;
-
+  color: var(--clr-navy);
   font-family: var(--font-display);
-
   font-size: var(--fs-3xl);
-
   font-weight: var(--fw-bold);
-
-  line-height: 0.98;
-
-  letter-spacing: -0.04em;
-
-  color: var(--clr-text);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
 }
 
 .heading em {
-  font-style: italic;
-
-  font-weight: var(--fw-bold);
-
-  color: var(--clr-accent);
+  color: var(--clr-red);
+  font-style: normal;
 }
 
 .sub {
   max-width: 48ch;
-
   margin: 0;
-
-  font-family: var(--font-body);
-
-  font-size: var(--fs-base);
-
-  line-height: 1.75;
-
   color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.8;
 }
 
-/*
-============================================================
-PROJECT GRID
-============================================================
-*/
+/* ============================================================
+   PROJECT GRID
+============================================================ */
 
 .grid {
   display: grid;
-
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
-  gap: clamp(1.5rem, 3vw, 3rem);
+  align-items: stretch;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
 }
 
-/*
-============================================================
-PROJECT CARD
-============================================================
-*/
+/* ============================================================
+   PROJECT CARD
+============================================================ */
 
 .card {
-  position: relative;
-
   display: flex;
-
   flex-direction: column;
-
   min-width: 0;
-
   height: 100%;
-
   overflow: hidden;
-
-  background: var(--clr-bg-2);
-
-  border: 1px solid rgba(245, 245, 245, 0.08);
-
-  border-radius: var(--r-lg);
-
-  transition:
-    transform var(--dur-mid) var(--ease-out),
-    border-color var(--dur-mid) var(--ease-out),
-    background var(--dur-mid) var(--ease-out),
-    box-shadow var(--dur-mid) var(--ease-out);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
 }
 
-.card:hover {
-  transform: translateY(-7px);
-
-  background: var(--clr-bg-3);
-
-  border-color: rgba(16, 185, 129, 0.42);
-
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.28);
-}
-
-/*
-============================================================
-ACCENT EDGE
-============================================================
-*/
-
-.card::before {
-  content: '';
-
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  bottom: 0;
-
-  width: 3px;
-
-  background: var(--clr-accent);
-
-  transform: scaleY(0);
-
-  transform-origin: bottom;
-
-  transition: transform var(--dur-mid) var(--ease-out);
-
-  z-index: 5;
-}
-
-.card:hover::before {
-  transform: scaleY(1);
-}
-
-/*
-============================================================
-PROJECT THUMBNAIL
-============================================================
-*/
+/* ============================================================
+   PROJECT IMAGE
+============================================================ */
 
 .thumbnail {
   position: relative;
-
   width: 100%;
-
   aspect-ratio: 16 / 9;
-
   overflow: hidden;
-
   background: var(--clr-bg-3);
-
-  border-bottom: 1px solid rgba(245, 245, 245, 0.07);
+  border-bottom: 1px solid var(--clr-border);
 }
 
 .thumbnailImg {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
-
   object-position: center;
-
-  transition:
-    transform 800ms var(--ease-out),
-    filter 600ms var(--ease-out);
 }
-
-.card:hover .thumbnailImg {
-  transform: scale(1.055);
-
-  filter: brightness(1.06);
-}
-
-/*
-============================================================
-IMAGE OVERLAY
-============================================================
-*/
 
 .imageOverlay {
   position: absolute;
-
   inset: 0;
-
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0.02) 35%,
-    rgba(0, 0, 0, 0.38) 100%
+    rgba(16, 47, 87, 0.02) 45%,
+    rgba(16, 47, 87, 0.2) 100%
   );
-
   pointer-events: none;
-
-  transition: opacity var(--dur-mid) var(--ease-out);
 }
-
-.card:hover .imageOverlay {
-  opacity: 0.72;
-}
-
-/*
-============================================================
-PROJECT INDEX
-============================================================
-*/
 
 .projectIndex {
   position: absolute;
-
   top: 1rem;
   right: 1rem;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   min-width: 38px;
-  height: 30px;
-
-  padding: 0 0.65rem;
-
-  border: 1px solid rgba(255, 255, 255, 0.16);
-
-  border-radius: 999px;
-
-  background: rgba(8, 10, 14, 0.62);
-
-  backdrop-filter: blur(10px);
-
-  font-family: var(--font-display);
-
-  font-size: 0.68rem;
-
+  height: 32px;
+  padding: 0 0.7rem;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  background: rgba(16, 47, 87, 0.82);
+  color: var(--clr-white);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: var(--fw-semibold);
-
-  letter-spacing: 0.12em;
-
-  color: rgba(255, 255, 255, 0.8);
-
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out);
 }
 
-.card:hover .projectIndex {
-  color: var(--clr-accent);
-
-  border-color: rgba(16, 185, 129, 0.45);
-
-  background: rgba(8, 10, 14, 0.76);
-}
-
-/*
-============================================================
-FALLBACK THUMBNAIL
-============================================================
-*/
+/* Fallback when an image is unavailable */
 
 .thumbnailNum {
   display: flex;
-
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: 100%;
-
+  color: var(--clr-navy);
   font-family: var(--font-display);
-
   font-size: clamp(4rem, 7vw, 6rem);
-
   font-weight: var(--fw-bold);
-
-  color: var(--clr-border-mid);
-
-  transition:
-    color var(--dur-mid) var(--ease-out),
-    transform var(--dur-mid) var(--ease-out);
 }
 
-.card:hover .thumbnailNum {
-  color: var(--clr-accent);
-
-  transform: scale(1.05);
-}
-
-/*
-============================================================
-CARD BODY
-============================================================
-*/
+/* ============================================================
+   CARD BODY
+============================================================ */
 
 .body {
   display: flex;
-
-  flex-direction: column;
-
   flex: 1;
-
+  flex-direction: column;
   min-width: 0;
-
-  padding: clamp(1.5rem, 2.5vw, 2.15rem);
-
-  gap: 0.65rem;
+  padding: clamp(1.4rem, 2.5vw, 2rem);
+  gap: 0.85rem;
 }
 
-/*
-============================================================
-PROJECT META
-============================================================
-*/
+/* ============================================================
+   PROJECT META
+============================================================ */
 
 .projectMeta {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
-
-  gap: 1rem;
-
-  min-height: 24px;
-
-  margin-bottom: 0.2rem;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
 }
 
 .year {
-  font-family: var(--font-display);
-
-  font-size: 0.72rem;
-
-  font-weight: var(--fw-semibold);
-
-  line-height: 1;
-
-  letter-spacing: 0.12em;
-
   color: var(--clr-text-sub);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
 }
 
 .projectType {
-  max-width: 65%;
-
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  text-overflow: ellipsis;
-
+  max-width: 75%;
+  color: var(--clr-red-dark);
   font-family: var(--font-body);
-
-  font-size: 0.7rem;
-
-  font-weight: var(--fw-medium);
-
-  line-height: 1.2;
-
-  letter-spacing: 0.04em;
-
-  color: var(--clr-accent);
-
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  line-height: 1.4;
   text-align: right;
-
-  opacity: 0.9;
 }
 
-/*
-============================================================
-PROJECT TITLE
-============================================================
-*/
+/* ============================================================
+   PROJECT TITLE
+============================================================ */
 
 .title {
   margin: 0;
-
+  color: var(--clr-navy);
   font-family: var(--font-display);
-
-  font-size: clamp(1.35rem, 1.6vw, 1.7rem);
-
+  font-size: clamp(1.25rem, 1.6vw, 1.55rem);
   font-weight: var(--fw-bold);
-
-  line-height: 1.15;
-
+  line-height: 1.3;
   letter-spacing: -0.025em;
-
-  color: var(--clr-text);
-
-  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.card:hover .title {
-  color: var(--clr-text);
-}
-
-/*
-============================================================
-DESCRIPTION
-============================================================
-*/
+/* ============================================================
+   PROJECT DESCRIPTION
+============================================================ */
 
 .desc {
   flex: 1;
-
   max-width: 65ch;
-
-  margin: 0.45rem 0 0;
-
-  font-family: var(--font-body);
-
-  font-size: var(--fs-base);
-
-  font-weight: var(--fw-regular);
-
-  line-height: 1.7;
-
+  margin: 0;
   color: var(--clr-text-sub);
-
-  display: -webkit-box;
-
-  -webkit-box-orient: vertical;
-
-  -webkit-line-clamp: 5;
-
-  line-clamp: 5;
-
-  overflow: hidden;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.8;
 }
 
-/*
-============================================================
-TECHNOLOGY TAGS
-============================================================
-*/
+/* ============================================================
+   TECHNOLOGY TAGS
+============================================================ */
 
 .tags {
   display: flex;
-
   flex-wrap: wrap;
-
-  gap: 0.45rem;
-
-  margin-top: 1.2rem;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
 }
 
 .tag {
   display: inline-flex;
-
   align-items: center;
-
-  min-height: 29px;
-
-  padding: 0.3rem 0.68rem;
-
+  min-height: 30px;
+  padding: 0.35rem 0.7rem;
   border: 1px solid var(--clr-border);
-
-  border-radius: 999px;
-
-  background: rgba(255, 255, 255, 0.015);
-
-  font-family: var(--font-body);
-
-  font-size: 0.72rem;
-
-  font-weight: var(--fw-medium);
-
-  line-height: 1;
-
-  letter-spacing: 0.015em;
-
+  border-radius: 4px;
+  background: var(--clr-bg-2);
   color: var(--clr-text-sub);
-
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
+  font-family: var(--font-body);
+  font-size: 0.73rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
 }
 
-.tag:hover {
-  color: var(--clr-accent);
-
-  border-color: rgba(16, 185, 129, 0.5);
-
-  background: var(--clr-accent-dim);
-
-  transform: translateY(-1px);
-}
-
-/*
-============================================================
-CARD FOOTER
-============================================================
-*/
+/* ============================================================
+   CARD FOOTER
+============================================================ */
 
 .cardFooter {
   display: flex;
-
   align-items: center;
-
   justify-content: flex-end;
-
-  margin-top: 1.5rem;
-
-  padding-top: 1.2rem;
-
-  border-top: 1px solid rgba(245, 245, 245, 0.08);
+  margin-top: auto;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--clr-border);
 }
 
 .footerLinks {
   display: flex;
-
   align-items: center;
-
-  justify-content: flex-end;
-
   flex-wrap: wrap;
-
-  gap: 0.55rem;
+  gap: 0.65rem;
 }
 
-/*
-============================================================
-PROJECT ACTION
-============================================================
-*/
+/* ============================================================
+   PROJECT LINKS
+============================================================ */
 
 .readMore {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
-  gap: 0.45rem;
-
-  min-height: 36px;
-
-  padding: 0.45rem 0.85rem;
-
-  border: 1px solid var(--clr-border);
-
-  border-radius: 999px;
-
-  background: transparent;
-
+  gap: 0.5rem;
+  min-height: 38px;
+  padding: 0.5rem 0.85rem;
+  border: 1px solid var(--clr-navy);
+  border-radius: 4px;
+  background: var(--clr-navy);
+  color: var(--clr-white);
   font-family: var(--font-body);
-
-  font-size: 0.72rem;
-
+  font-size: 0.75rem;
   font-weight: var(--fw-semibold);
-
   line-height: 1;
-
-  color: var(--clr-accent);
-
   text-decoration: none;
-
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
-}
-
-.readMore:hover {
-  color: var(--clr-text);
-
-  border-color: var(--clr-accent);
-
-  background: var(--clr-accent-dim);
-
-  transform: translateY(-2px);
 }
 
 .readMore:focus-visible {
-  outline: 2px solid var(--clr-accent);
-
+  outline: 2px solid var(--clr-red);
   outline-offset: 3px;
 }
 
-/*
-============================================================
-LARGE TABLET
-============================================================
-*/
+/* ============================================================
+   TABLET
+============================================================ */
 
 @media (max-width: 1024px) {
   .header {
     grid-template-columns: 1fr;
-
     gap: 1.25rem;
-
-    margin-bottom: 3rem;
   }
 
   .sub {
     max-width: 60ch;
   }
 
-  .grid {
-    gap: 2rem;
-  }
-
   .body {
     padding: 1.5rem;
   }
-
-  .title {
-    font-size: 1.4rem;
-  }
 }
 
-/*
-============================================================
-TABLET + MOBILE
-============================================================
-*/
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 768px) {
   .projects {
-    padding-top: 4.5rem;
-
-    padding-bottom: 5.5rem;
+    padding-top: 4rem;
+    padding-bottom: 4.5rem;
   }
 
   .header {
-    margin-bottom: 2.75rem;
+    margin-bottom: 2.5rem;
   }
 
   .heading {
-    font-size: clamp(2.4rem, 8vw, 3.5rem);
+    font-size: var(--fs-2xl);
   }
 
   .sub {
     max-width: 100%;
-
-    font-size: 1rem;
-
-    line-height: 1.7;
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 
   .grid {
-    grid-template-columns: 1fr;
-
-    gap: 2.5rem;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.75rem;
   }
 
   .thumbnail {
@@ -707,191 +349,51 @@ TABLET + MOBILE
   }
 
   .body {
-    padding: 1.5rem;
+    padding: clamp(1.25rem, 5vw, 1.75rem);
   }
 
   .title {
-    font-size: 1.45rem;
+    font-size: 1.35rem;
   }
 
   .desc {
-    font-size: 1rem;
-
-    line-height: 1.7;
-
-    -webkit-line-clamp: 6;
-
-    line-clamp: 6;
-  }
-
-  .tags {
-    gap: 0.45rem;
-
-    margin-top: 1.15rem;
-  }
-
-  .tag {
-    min-height: 30px;
-
-    font-size: 0.72rem;
-  }
-
-  .cardFooter {
-    margin-top: 1.35rem;
-
-    padding-top: 1.1rem;
-  }
-
-  .readMore {
-    min-height: 38px;
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
 }
 
-/*
-============================================================
-SMALL PHONES
-============================================================
-*/
+/* ============================================================
+   SMALL PHONES
+============================================================ */
 
 @media (max-width: 420px) {
   .projects {
-    padding-top: 3.75rem;
-
-    padding-bottom: 4.5rem;
-  }
-
-  .header {
-    margin-bottom: 2.35rem;
+    padding-top: 3.5rem;
+    padding-bottom: 4rem;
   }
 
   .heading {
-    font-size: 2.3rem;
-  }
-
-  .sub {
-    font-size: 0.98rem;
-  }
-
-  .grid {
-    gap: 2rem;
-  }
-
-  .body {
-    padding: 1.25rem;
+    font-size: 2.25rem;
   }
 
   .projectMeta {
-    gap: 0.75rem;
+    align-items: flex-start;
   }
 
   .projectType {
-    font-size: 0.64rem;
-  }
-
-  .title {
-    font-size: 1.3rem;
-  }
-
-  .desc {
-    font-size: 0.98rem;
-  }
-
-  .tag {
-    min-height: 28px;
-
-    padding: 0.28rem 0.62rem;
-
+    max-width: 70%;
     font-size: 0.68rem;
   }
 
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+  }
+
   .footerLinks {
-    width: 100%;
-
-    justify-content: flex-end;
-  }
-
-  .readMore {
-    min-height: 36px;
-
-    padding: 0.4rem 0.72rem;
-  }
-}
-
-/*
-============================================================
-TOUCH DEVICES
-============================================================
-*/
-
-@media (hover: none) {
-  .card:hover {
-    transform: none;
-
-    box-shadow: none;
-
-    background: var(--clr-bg-2);
-
-    border-color: rgba(245, 245, 245, 0.08);
-  }
-
-  .card:hover::before {
-    transform: scaleY(0);
-  }
-
-  .card:hover .thumbnailImg {
-    transform: none;
-
-    filter: none;
-  }
-
-  .card:hover .imageOverlay {
-    opacity: 1;
-  }
-
-  .card:hover .projectIndex {
-    color: rgba(255, 255, 255, 0.8);
-
-    border-color: rgba(255, 255, 255, 0.16);
-
-    background: rgba(8, 10, 14, 0.62);
-  }
-
-  .tag:hover {
-    color: var(--clr-text-sub);
-
-    border-color: var(--clr-border);
-
-    background: rgba(255, 255, 255, 0.015);
-
-    transform: none;
-  }
-
-  .readMore:hover {
-    color: var(--clr-accent);
-
-    border-color: var(--clr-border);
-
-    background: transparent;
-
-    transform: none;
-  }
-}
-
-/*
-============================================================
-REDUCED MOTION
-============================================================
-*/
-
-@media (prefers-reduced-motion: reduce) {
-  .card,
-  .thumbnailImg,
-  .imageOverlay,
-  .thumbnailNum,
-  .projectIndex,
-  .title,
-  .tag,
-  .readMore {
-    transition: none;
+    justify-content: flex-start;
   }
 }

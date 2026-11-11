@@ -123,12 +123,12 @@ export default function Projects() {
           <div className={styles.headerContent}>
             <span className={styles.eyebrow}>Selected Work</span>
 
-            <h2 className={`${styles.heading} reveal`}>
+            <h2 className={styles.heading}>
               <em>Crafted</em> Experiences
             </h2>
           </div>
 
-          <p className={`${styles.sub} reveal`}>
+          <p className={styles.sub}>
             A closer look at what I build — real products designed to solve real
             problems, from first idea to finished system.
           </p>
@@ -139,10 +139,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <article
               key={project.title}
-              className={`${styles.card} reveal`}
-              style={{
-                transitionDelay: `${index * 70}ms`,
-              }}
+              className={styles.card}
             >
               {/* Project Image */}
               <div className={styles.thumbnail}>

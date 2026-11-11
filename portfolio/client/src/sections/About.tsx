@@ -1,71 +1,22 @@
+
 import styles from './About.module.css'
 
-const skills = [
+const highlights = [
   {
-    name: 'React',
-    color: '#61DAFB',
-    bg: 'rgba(97,218,251,0.08)',
-    icon: '⚛',
+    label: 'Education',
+    value: 'BSc Computer Science — JKUAT',
   },
   {
-    name: 'JavaScript',
-    color: '#F7DF1E',
-    bg: 'rgba(247,223,30,0.08)',
-    icon: '𝙅𝙎',
+    label: 'Academic Recognition',
+    value: 'DAFI Silver Academic Excellence Award',
   },
   {
-    name: 'PostgreSQL',
-    color: '#336791',
-    bg: 'rgba(51,103,145,0.08)',
-    icon: '🐘',
+    label: 'Professional Experience',
+    value: 'Mathematics & Chemistry Teacher',
   },
   {
-    name: 'Docker',
-    color: '#2496ED',
-    bg: 'rgba(36,150,237,0.08)',
-    icon: '🐳',
-  },
-  {
-    name: 'Python',
-    color: '#3776AB',
-    bg: 'rgba(55,118,171,0.08)',
-    icon: '🐍',
-  },
-  {
-    name: 'C/C++',
-    color: '#00599C',
-    bg: 'rgba(0,89,156,0.08)',
-    icon: '⚙',
-  },
-  {
-    name: 'Java',
-    color: '#007396',
-    bg: 'rgba(0,115,150,0.08)',
-    icon: '☕',
-  },
-  {
-    name: 'Seaborn',
-    color: '#4C72B0',
-    bg: 'rgba(76,114,176,0.08)',
-    icon: '📊',
-  },
-  {
-    name: 'Matplotlib',
-    color: '#11557C',
-    bg: 'rgba(17,85,124,0.08)',
-    icon: '📈',
-  },
-  {
-    name: 'pandas',
-    color: '#4DABCF',
-    bg: 'rgba(77,171,207,0.08)',
-    icon: '🐼',
-  },
-  {
-    name: 'NumPy',
-    color: '#4DABCF',
-    bg: 'rgba(77,171,207,0.08)',
-    icon: '🔢',
+    label: 'Leadership',
+    value: 'Secretary General, JKUAT-SSSSA',
   },
 ]
 
@@ -75,51 +26,55 @@ export default function About() {
       <div className="container">
         <div className={styles.grid}>
           <div className={styles.left}>
-            <h2 className={`${styles.heading} reveal`}>
-              Crafting code that
-              <em>actually ships.</em>
+            <h2 className={styles.heading}>
+              A little about
+              <em>my journey.</em>
             </h2>
           </div>
 
           <div className={styles.right}>
-            <p className={`${styles.bio} reveal`}>
-              I’m a developer passionate about building fast, reliable, and
-              delightful digital products. I work across full-stack web and
-              mobile development, and I’m experienced in applying AI, machine
-              learning, neural networks, and natural language processing to
-              real-world problems. From designing scalable backends to crafting
-              intuitive, pixel-perfect interfaces, I focus on clean
-              architecture, performance, and creating solutions that are both
-              practical and impactful.
+            <p className={styles.bio}>
+              I am a Computer Science graduate from Jomo Kenyatta
+              University of Agriculture and Technology (JKUAT), with
+              a strong interest in software engineering, artificial
+              intelligence, machine learning, and data science.
             </p>
 
-            <p
-              className={`${styles.bio} reveal`}
-              style={{ transitionDelay: '80ms' }}
-            >
-              When I’m not coding, I’m exploring new tools, expanding my skills,
-              and preparing to contribute more actively to the tech community.
+            <p className={styles.bio}>
+              My academic and practical experiences have shaped my
+              interest in developing technology that addresses real-world
+              challenges. Through projects involving web development,
+              machine learning, and data-driven systems, I continue to
+              strengthen my ability to transform ideas into practical
+              software solutions.
             </p>
 
-            <div
-              className={`${styles.skills} reveal`}
-              style={{ transitionDelay: '160ms' }}
-            >
-              {skills.map((s) => (
-                <span
-                  key={s.name}
-                  className={styles.tag}
-                  style={
-                    {
-                      '--tag-color': s.color,
-                      '--tag-bg': s.bg,
-                    } as React.CSSProperties
-                  }
-                >
-                  <span className={styles.tagIcon}>{s.icon}</span>
+            <p className={styles.bio}>
+              Beyond technology, I have gained experience in teaching
+              Mathematics and Chemistry at Vision Secondary School and
+              serving as Secretary General of the JKUAT South Sudanese
+              and Sudanese Students Association. These experiences have
+              strengthened my communication, leadership, collaboration,
+              and problem-solving skills.
+            </p>
 
-                  <span className={styles.tagName}>{s.name}</span>
-                </span>
+            <p className={styles.bio}>
+              I am committed to continuous learning and professional
+              growth, particularly in AI and emerging technologies.
+              My long-term interest is in building innovative solutions
+              that make technology more useful, accessible, and impactful.
+            </p>
+
+            <div className={styles.highlights}>
+              {highlights.map((item) => (
+                <div key={item.label} className={styles.highlight}>
+                  <span className={styles.highlightLabel}>
+                    {item.label}
+                  </span>
+                  <span className={styles.highlightValue}>
+                    {item.value}
+                  </span>
+                </div>
               ))}
             </div>
           </div>

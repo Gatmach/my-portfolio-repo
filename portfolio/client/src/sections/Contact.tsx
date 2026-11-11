@@ -1,3 +1,4 @@
+
 import { Turnstile } from '@marsidev/react-turnstile'
 import type { TurnstileInstance } from '@marsidev/react-turnstile'
 import {
@@ -20,10 +21,6 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY
 const apiUrl = import.meta.env.VITE_API_URL ?? 'http://localhost:5000'
 
-if (!siteKey) {
-  console.error('Missing VITE_TURNSTILE_SITE_KEY environment variable')
-}
-
 export default function Contact() {
   const [form, setForm] = useState<FormState>({
     name: '',
@@ -33,15 +30,16 @@ export default function Contact() {
 
   const [status, setStatus] = useState<Status>('idle')
   const [turnstileToken, setTurnstileToken] = useState('')
+  const [feedback, setFeedback] = useState('')
 
   const turnstileRef = useRef<TurnstileInstance | null>(null)
 
-  // Hide success/error message automatically
   useEffect(() => {
     if (status === 'success' || status === 'error') {
       const timer = setTimeout(() => {
         setStatus('idle')
-      }, 5000)
+        setFeedback('')
+      }, 6000)
 
       return () => clearTimeout(timer)
     }
@@ -56,21 +54,37 @@ export default function Contact() {
     }))
   }
 
-  const handleSubmit = async (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    // Basic validation
     if (form.name.trim().length < 2) {
+      setFeedback('Please enter your full name.')
+      setStatus('error')
+      return
+    }
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+    if (!emailPattern.test(form.email.trim())) {
+      setFeedback('Please enter a valid email address.')
+      setStatus('error')
+      return
+    }
+
+    if (form.message.trim().length < 10) {
+      setFeedback('Please enter a message of at least 10 characters.')
       setStatus('error')
       return
     }
 
     if (!turnstileToken) {
+      setFeedback('Please complete the security verification.')
       setStatus('error')
       return
     }
 
     setStatus('loading')
+    setFeedback('')
 
     try {
       const res = await fetch(`${apiUrl}/api/contact`, {
@@ -80,6 +94,9 @@ export default function Contact() {
         },
         body: JSON.stringify({
           ...form,
+          name: form.name.trim(),
+          email: form.email.trim(),
+          message: form.message.trim(),
           turnstileToken,
         }),
       })
@@ -91,6 +108,9 @@ export default function Contact() {
       }
 
       setStatus('success')
+      setFeedback(
+        "Thank you! Your message has been sent successfully. I'll get back to you within 24 hours."
+      )
 
       setForm({
         name: '',
@@ -99,12 +119,16 @@ export default function Contact() {
       })
 
       setTurnstileToken('')
-
-      // Reset Turnstile widget
       turnstileRef.current?.reset()
     } catch (error) {
       console.error('Contact form error:', error)
+
       setStatus('error')
+      setFeedback(
+        error instanceof Error
+          ? error.message
+          : 'Unable to send your message. Please try again.'
+      )
     }
   }
 
@@ -112,47 +136,47 @@ export default function Contact() {
     <section id="contact" className={`section ${styles.contact}`}>
       <div className="container">
         <div className={styles.wrapper}>
-          {/* Left */}
           <div className={styles.left}>
-            <h2 className={`${styles.heading} reveal`}>
+            <p className={styles.eyebrow}>GET IN TOUCH</p>
+
+            <h2 className={styles.heading}>
               Let's build
-              <br />
-              something great.
+              <em>something great.</em>
             </h2>
 
-            <p className={`${styles.sub} reveal`}>
-              Have a project in mind or just want to chat? Drop me a message and
-              I'll get back to you within 24 hours.
+            <p className={styles.sub}>
+              Have a project, an opportunity, or an idea you'd like
+              to discuss? I'd love to hear from you. Send me a message
+              and let's start a conversation.
             </p>
           </div>
 
-          {/* Right */}
           <form
-            className={`${styles.form} reveal`}
+            className={styles.form}
             onSubmit={handleSubmit}
             noValidate
           >
             <div className={styles.field}>
               <label htmlFor="name" className={styles.fieldLabel}>
-                Name
+                Your name
               </label>
 
               <input
                 id="name"
                 name="name"
                 type="text"
-                placeholder="Your full name"
+                placeholder="Enter your full name"
                 value={form.name}
                 onChange={handleChange}
                 required
-                minLength={2}
+                autoComplete="name"
                 className={styles.input}
               />
             </div>
 
             <div className={styles.field}>
               <label htmlFor="email" className={styles.fieldLabel}>
-                Email
+                Email address
               </label>
 
               <input
@@ -163,20 +187,21 @@ export default function Contact() {
                 value={form.email}
                 onChange={handleChange}
                 required
+                autoComplete="email"
                 className={styles.input}
               />
             </div>
 
             <div className={styles.field}>
               <label htmlFor="message" className={styles.fieldLabel}>
-                Message
+                Your message
               </label>
 
               <textarea
                 id="message"
                 name="message"
                 rows={5}
-                placeholder="Tell me about your project..."
+                placeholder="Tell me what you have in mind..."
                 value={form.message}
                 onChange={handleChange}
                 required
@@ -184,21 +209,26 @@ export default function Contact() {
               />
             </div>
 
-            {/* Cloudflare Turnstile */}
             <div className={styles.turnstile}>
-              <Turnstile
-                ref={turnstileRef}
-                siteKey={siteKey}
-                onSuccess={(token) => setTurnstileToken(token)}
-                onExpire={() => setTurnstileToken('')}
-                onError={() => setTurnstileToken('')}
-              />
+              {siteKey ? (
+                <Turnstile
+                  ref={turnstileRef}
+                  siteKey={siteKey}
+                  onSuccess={(token) => setTurnstileToken(token)}
+                  onExpire={() => setTurnstileToken('')}
+                  onError={() => setTurnstileToken('')}
+                />
+              ) : (
+                <p className={styles.errorMsg}>
+                  Security verification is currently unavailable.
+                </p>
+              )}
             </div>
 
             <button
               type="submit"
               className={styles.submit}
-              disabled={status === 'loading'}
+              disabled={status === 'loading' || !siteKey}
             >
               {status === 'loading' ? (
                 <>
@@ -210,18 +240,17 @@ export default function Contact() {
               )}
             </button>
 
-            {status === 'success' && (
-              <p className={styles.successMsg}>
-                ✓ Thank you! Your message has been sent successfully. I'll get
-                back to you within 24 hours.
-              </p>
-            )}
-
-            {status === 'error' && (
-              <p className={styles.errorMsg}>
-                {!turnstileToken
-                  ? 'Please complete the security verification before sending.'
-                  : 'Unable to send your message right now. Please try again in a few moments.'}
+            {feedback && (
+              <p
+                className={
+                  status === 'success'
+                    ? styles.successMsg
+                    : styles.errorMsg
+                }
+                role="status"
+                aria-live="polite"
+              >
+                {feedback}
               </p>
             )}
           </form>

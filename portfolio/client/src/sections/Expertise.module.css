@@ -1,0 +1,131 @@
+
+
+.expertise {
+  position: relative;
+  background: var(--clr-bg-2);
+}
+
+.header {
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+}
+
+.heading {
+  margin: 0;
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.heading em {
+  display: block;
+  color: var(--clr-red);
+  font-style: normal;
+}
+
+.intro {
+  max-width: 60ch;
+  margin: 1.25rem 0 0;
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  line-height: 1.8;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+}
+
+.card {
+  min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--clr-white);
+}
+
+.number {
+  display: inline-block;
+  margin-bottom: 1.75rem;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: var(--fw-semibold);
+}
+
+.cardTitle {
+  margin: 0;
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.4;
+}
+
+.description {
+  max-width: 48ch;
+  margin: 0.85rem 0 1.5rem;
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--clr-border);
+  border-radius: 3px;
+  background: var(--clr-bg-2);
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .header {
+    margin-bottom: 2.5rem;
+  }
+
+  .heading {
+    font-size: var(--fs-2xl);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+}

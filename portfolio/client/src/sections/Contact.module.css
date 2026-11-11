@@ -1,19 +1,18 @@
-/*
-============================================================
-CONTACT
-============================================================
-*/
+
+/* ============================================================
+   CONTACT SECTION
+============================================================ */
 
 .contact {
-  padding-top: clamp(3rem, 6vw, 5rem);
+  position: relative;
+  padding-top: clamp(4rem, 7vw, 6rem);
   padding-bottom: clamp(5rem, 8vw, 8rem);
+  background: var(--clr-white);
 }
 
-/*
-============================================================
-CONTACT WRAPPER
-============================================================
-*/
+/* ============================================================
+   CONTACT LAYOUT
+============================================================ */
 
 .wrapper {
   display: grid;
@@ -22,117 +21,106 @@ CONTACT WRAPPER
   align-items: start;
 }
 
-/*
-============================================================
-LEFT SECTION
-============================================================
-*/
-
 .left {
-  padding-top: 0.25rem;
+  padding-top: 0.5rem;
 }
 
+.eyebrow {
+  margin: 0 0 1.25rem;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+}
+
+/* ============================================================
+   HEADING
+============================================================ */
+
 .heading {
+  max-width: 12ch;
   margin: 0 0 1.5rem;
-
+  color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2.7rem, 5vw, 4.5rem);
   font-weight: var(--fw-bold);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
 
-  line-height: 1.02;
-  letter-spacing: -0.04em;
-
-  color: var(--clr-text);
+.heading em {
+  display: block;
+  margin-top: 0.12em;
+  color: var(--clr-red);
+  font-style: normal;
 }
 
 .sub {
-  max-width: 42ch;
+  max-width: 45ch;
   margin: 0;
-
+  color: var(--clr-text-sub);
   font-family: var(--font-body);
   font-size: var(--fs-base);
   font-weight: var(--fw-regular);
-
-  line-height: 1.8;
-
-  color: var(--clr-text-sub);
+  line-height: 1.85;
 }
 
-/*
-============================================================
-FORM
-============================================================
-*/
+/* ============================================================
+   FORM
+============================================================ */
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 1.35rem;
-
+  gap: 1.4rem;
   min-width: 0;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-radius: 10px;
 }
 
-/*
-============================================================
-FIELD
-============================================================
-*/
+/* ============================================================
+   FORM FIELDS
+============================================================ */
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 0.55rem;
+  gap: 0.6rem;
 }
 
 .fieldLabel {
+  color: var(--clr-navy);
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: var(--fw-semibold);
-
-  line-height: 1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-
-  color: var(--clr-text-muted);
+  letter-spacing: 0.04em;
 }
 
-/*
-============================================================
-INPUTS
-============================================================
-*/
+/* ============================================================
+   INPUTS
+============================================================ */
 
 .input,
 .textarea {
   width: 100%;
   min-width: 0;
-
   padding: 0.95rem 1rem;
-
-  background: var(--clr-bg-2);
-
+  background: var(--clr-white);
   border: 1px solid var(--clr-border);
-  border-radius: var(--r-sm);
-
+  border-radius: 6px;
   outline: none;
-
   color: var(--clr-text);
-
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: var(--fw-regular);
-
-  line-height: 1.5;
-
-  transition:
-    background var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    box-shadow var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
+  line-height: 1.6;
 }
 
 .input {
-  height: 50px;
+  height: 52px;
 }
 
 .textarea {
@@ -140,407 +128,199 @@ INPUTS
   resize: vertical;
 }
 
-/*
-============================================================
-PLACEHOLDER
-============================================================
-*/
-
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--clr-text-muted);
-  opacity: 0.45;
-  transition: opacity var(--dur-fast) var(--ease-out);
+  color: var(--clr-text-sub);
+  opacity: 0.7;
 }
-
-.input:focus::placeholder,
-.textarea:focus::placeholder {
-  opacity: 0.3;
-}
-/*
-============================================================
-INPUT FOCUS
-============================================================
-*/
 
 .input:focus,
 .textarea:focus {
-  background: var(--clr-bg-3);
-
-  border-color: var(--clr-accent);
-
-  box-shadow: 0 0 0 3px var(--clr-accent-dim);
-
-  transform: translateY(-1px);
+  background: var(--clr-white);
+  border-color: var(--clr-navy);
+  outline: 3px solid rgba(21, 61, 112, 0.1);
+  outline-offset: 1px;
 }
 
-/*
-============================================================
-INVALID INPUT
-============================================================
-*/
-
-.input:invalid:not(:placeholder-shown),
-.textarea:invalid:not(:placeholder-shown) {
-  border-color: rgba(239, 68, 68, 0.55);
+.input:invalid:not(:placeholder-shown) {
+  border-color: var(--clr-red);
 }
 
-/*
-============================================================
-TURNSTILE
-============================================================
-*/
+/* ============================================================
+   TURNSTILE
+============================================================ */
 
 .turnstile {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-
   min-height: 65px;
-
-  margin: 0.25rem 0 0;
-
+  margin-top: 0.25rem;
   overflow-x: auto;
-
-  animation: fadeIn 0.4s ease;
 }
 
-/*
-============================================================
-SUBMIT BUTTON
-============================================================
-*/
+/* ============================================================
+   SUBMIT BUTTON
+============================================================ */
 
 .submit {
-  align-self: flex-start;
-
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  gap: 0.6rem;
-
-  min-width: 175px;
-  min-height: 50px;
-
-  padding: 0.75rem 1.5rem;
-
-  border: 1px solid var(--clr-accent);
-  border-radius: var(--r-sm);
-
-  background: var(--clr-accent);
-
-  color: #080808;
-
+  align-self: flex-start;
+  gap: 0.65rem;
+  min-width: 180px;
+  min-height: 52px;
+  padding: 0.85rem 1.5rem;
+  background: var(--clr-red);
+  border: 1px solid var(--clr-red);
+  border-radius: 6px;
+  color: var(--clr-white);
   cursor: pointer;
-
   font-family: var(--font-display);
   font-size: 0.85rem;
   font-weight: var(--fw-bold);
-
-  line-height: 1;
   letter-spacing: 0.01em;
-
-  white-space: nowrap;
-
-  transition:
-    transform var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    box-shadow var(--dur-fast) var(--ease-out),
-    opacity var(--dur-fast) var(--ease-out);
 }
-
-/*
-============================================================
-SUBMIT HOVER
-============================================================
-*/
 
 .submit:hover:not(:disabled) {
-  transform: translateY(-2px);
-
-  background: var(--clr-text);
-
-  border-color: var(--clr-text);
-
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: var(--clr-red-dark);
+  border-color: var(--clr-red-dark);
 }
-
-/*
-============================================================
-SUBMIT ACTIVE
-============================================================
-*/
-
-.submit:active:not(:disabled) {
-  transform: translateY(0);
-
-  box-shadow: none;
-}
-
-/*
-============================================================
-SUBMIT FOCUS
-============================================================
-*/
 
 .submit:focus-visible {
-  outline: 2px solid var(--clr-accent);
-
-  outline-offset: 4px;
+  outline: 3px solid rgba(244, 81, 75, 0.25);
+  outline-offset: 3px;
 }
-
-/*
-============================================================
-SUBMIT DISABLED
-============================================================
-*/
 
 .submit:disabled {
-  opacity: 0.55;
-
+  opacity: 0.6;
   cursor: not-allowed;
-
-  transform: none;
-
-  box-shadow: none;
 }
 
-/*
-============================================================
-LOADING SPINNER
-============================================================
-*/
+/* ============================================================
+   LOADING INDICATOR
+============================================================ */
 
 .loadingSpinner {
   width: 15px;
   height: 15px;
-
-  border: 2px solid rgba(8, 8, 8, 0.25);
-  border-top-color: #080808;
-
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-top-color: var(--clr-white);
   border-radius: 50%;
-
-  animation: spin 0.75s linear infinite;
 }
 
-/*
-============================================================
-STATUS MESSAGES
-============================================================
-*/
+/* ============================================================
+   STATUS MESSAGES
+============================================================ */
 
 .successMsg,
 .errorMsg {
   margin: 0.25rem 0 0;
-
   padding: 0.9rem 1rem;
-
-  border-radius: var(--r-sm);
-
+  border-radius: 6px;
   font-family: var(--font-body);
   font-size: 0.88rem;
   font-weight: var(--fw-medium);
-
-  line-height: 1.55;
-
-  animation: slideUp 0.35s var(--ease-out);
+  line-height: 1.6;
 }
-
-/*
-============================================================
-SUCCESS
-============================================================
-*/
 
 .successMsg {
-  background: rgba(34, 197, 94, 0.1);
-
-  border: 1px solid rgba(34, 197, 94, 0.3);
-
-  color: #86efac;
+  background: #edf8f0;
+  border: 1px solid #c7e8d0;
+  color: #246b3b;
 }
-
-/*
-============================================================
-ERROR
-============================================================
-*/
 
 .errorMsg {
-  background: rgba(239, 68, 68, 0.1);
-
-  border: 1px solid rgba(239, 68, 68, 0.3);
-
-  color: #fca5a5;
+  background: #fff0ef;
+  border: 1px solid #f5ceca;
+  color: #a52e28;
 }
 
-/*
-============================================================
-ANIMATIONS
-============================================================
-*/
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-/*
-============================================================
-TABLET
-============================================================
-*/
+/* ============================================================
+   TABLET
+============================================================ */
 
 @media (max-width: 1024px) {
   .wrapper {
     grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
-
     gap: 3rem;
   }
 
   .heading {
-    font-size: clamp(2.4rem, 5vw, 3.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
   }
 }
 
-/*
-============================================================
-TABLET + MOBILE
-============================================================
-*/
+/* ============================================================
+   TABLET AND MOBILE
+============================================================ */
 
 @media (max-width: 768px) {
   .contact {
-    padding-top: 2rem;
+    padding-top: 3rem;
     padding-bottom: 5rem;
   }
 
   .wrapper {
     grid-template-columns: 1fr;
-
-    gap: 2.75rem;
+    gap: 2.5rem;
   }
 
   .heading {
-    max-width: 12ch;
-
-    margin-bottom: 1.25rem;
-
-    font-size: clamp(2.4rem, 8vw, 3.5rem);
+    max-width: 14ch;
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
   }
 
   .sub {
     max-width: 60ch;
-
     font-size: 1rem;
-
-    line-height: 1.75;
   }
 
   .form {
-    gap: 1.2rem;
-  }
-
-  .input,
-  .textarea {
-    font-size: 0.95rem;
-  }
-
-  .textarea {
-    min-height: 140px;
-  }
-
-  .turnstile {
-    width: 100%;
-
-    overflow-x: auto;
-
-    justify-content: flex-start;
+    padding: 1.5rem;
   }
 
   .submit {
-    min-width: 170px;
+    width: 100%;
   }
 }
 
-/*
-============================================================
-SMALL PHONES
-============================================================
-*/
+/* ============================================================
+   SMALL PHONES
+============================================================ */
 
 @media (max-width: 420px) {
   .contact {
-    padding-top: 1rem;
+    padding-top: 2rem;
     padding-bottom: 4rem;
   }
 
   .wrapper {
-    gap: 2.25rem;
+    gap: 2rem;
   }
 
   .heading {
     font-size: 2.35rem;
-
-    letter-spacing: -0.035em;
   }
 
   .sub {
     font-size: 0.92rem;
-
-    line-height: 1.75;
   }
 
   .form {
-    gap: 1rem;
-  }
-
-  .field {
-    gap: 0.45rem;
-  }
-
-  .fieldLabel {
-    font-size: 0.65rem;
+    gap: 1.1rem;
+    padding: 1.1rem;
   }
 
   .input,
   .textarea {
-    padding: 0.8rem 0.9rem;
-
+    padding: 0.85rem;
     font-size: 0.9rem;
   }
 
   .input {
-    height: 47px;
+    height: 48px;
   }
 
   .textarea {
@@ -548,61 +328,17 @@ SMALL PHONES
   }
 
   .turnstile {
-    margin-top: 0;
-
     min-height: 60px;
   }
 
   .submit {
-    width: 100%;
-    min-width: 0;
-
-    min-height: 48px;
-
+    min-height: 49px;
     font-size: 0.84rem;
   }
 
   .successMsg,
   .errorMsg {
-    padding: 0.8rem 0.9rem;
-
+    padding: 0.8rem;
     font-size: 0.84rem;
-  }
-}
-
-/*
-============================================================
-TOUCH DEVICES
-============================================================
-*/
-
-@media (hover: none) {
-  .submit:hover:not(:disabled) {
-    transform: none;
-
-    background: var(--clr-accent);
-
-    border-color: var(--clr-accent);
-
-    box-shadow: none;
-  }
-}
-
-/*
-============================================================
-REDUCED MOTION
-============================================================
-*/
-
-@media (prefers-reduced-motion: reduce) {
-  .input,
-  .textarea,
-  .submit,
-  .successMsg,
-  .errorMsg,
-  .turnstile,
-  .loadingSpinner {
-    transition: none;
-    animation: none;
   }
 }

@@ -1,274 +1,181 @@
-/*
-============================================================
-FOOTER
-============================================================
-*/
+
+/* ============================================================
+   FOOTER
+============================================================ */
 
 .footer {
   position: relative;
-
   padding-top: clamp(3.5rem, 6vw, 5rem);
-
   background: var(--clr-bg-2);
-
   border-top: 1px solid var(--clr-border);
 }
 
-/*
-============================================================
-FOOTER INNER
-============================================================
-*/
+/* ============================================================
+   FOOTER INNER
+============================================================ */
 
 .inner {
   display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.5fr)
-    minmax(240px, 1fr);
-
-  gap: clamp(3rem, 8vw, 8rem);
-
+  grid-template-columns: minmax(0, 1.4fr) minmax(150px, 0.8fr) minmax(150px, 0.8fr);
+  gap: clamp(2rem, 5vw, 5rem);
   padding-bottom: clamp(3rem, 5vw, 4.5rem);
 }
 
-/*
-============================================================
-BRAND
-============================================================
-*/
+/* ============================================================
+   BRAND
+============================================================ */
 
 .brand {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
   gap: 1rem;
 }
 
-/*
-============================================================
-TAGLINE
-============================================================
-*/
-
 .tagline {
   max-width: 38ch;
-
   margin: 0;
-
   font-family: var(--font-body);
-
   font-size: var(--fs-sm);
-
   font-weight: var(--fw-regular);
-
-  line-height: 1.7;
-
-  color: var(--clr-text-muted);
+  line-height: 1.8;
+  color: var(--clr-text-sub);
 }
 
-/*
-============================================================
-CONNECT COLUMN
-============================================================
-*/
+/* ============================================================
+   COLUMNS
+============================================================ */
 
 .col {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-start;
-
-  justify-content: flex-start;
+  min-width: 0;
 }
-
-/*
-============================================================
-COLUMN TITLE
-============================================================
-*/
 
 .colTitle {
   margin: 0 0 1.25rem;
-
-  font-family: var(--font-body);
-
-  font-size: 0.7rem;
-
-  font-weight: var(--fw-semibold);
-
-  line-height: 1;
-
-  letter-spacing: 0.12em;
-
-  text-transform: uppercase;
-
-  color: var(--clr-text-muted);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+  color: var(--clr-navy);
 }
 
-/*
-============================================================
-SOCIAL LINKS
-============================================================
-*/
+/* ============================================================
+   NAVIGATION
+============================================================ */
 
-.list {
+.navigation {
   display: flex;
-
-  align-items: center;
-
-  flex-wrap: wrap;
-
-  gap: 0.75rem;
-
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
   margin: 0;
-
   padding: 0;
-
   list-style: none;
 }
 
-/*
-============================================================
-SOCIAL ICON
-============================================================
-*/
-
-.link {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 42px;
-
-  height: 42px;
-
-  border: 1px solid var(--clr-border);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  color: var(--clr-text-muted);
-
+.navigationLink {
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.5;
   text-decoration: none;
-
-  transition:
-    color var(--dur-fast) var(--ease-out),
-    border-color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
 }
 
-/*
-============================================================
-SOCIAL ICON HOVER
-============================================================
-*/
-
-.link:hover {
-  color: var(--clr-accent);
-
-  border-color: var(--clr-accent);
-
-  background: var(--clr-accent-dim);
-
-  transform: translateY(-3px);
+.navigationLink:hover {
+  color: var(--clr-red);
 }
 
-/*
-============================================================
-SOCIAL ICON FOCUS
-============================================================
-*/
-
-.link:focus-visible {
-  outline: 2px solid var(--clr-accent);
-
+.navigationLink:focus-visible {
+  outline: 2px solid var(--clr-red);
   outline-offset: 4px;
 }
 
-/*
-============================================================
-BOTTOM BAR
-============================================================
-*/
+/* ============================================================
+   SOCIAL LINKS
+============================================================ */
+
+.list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--clr-border);
+  border-radius: 50%;
+  background: var(--clr-white);
+  color: var(--clr-navy);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--clr-white);
+  border-color: var(--clr-navy);
+  background: var(--clr-navy);
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--clr-red);
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   BOTTOM BAR
+============================================================ */
 
 .bottom {
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   min-height: 72px;
-
   padding: 1.25rem 1rem;
-
   border-top: 1px solid var(--clr-border);
-
-  background: rgba(0, 0, 0, 0.08);
-
+  background: var(--clr-bg-3);
   text-align: center;
 }
 
-/*
-============================================================
-COPYRIGHT
-============================================================
-*/
-
 .bottom p {
   margin: 0;
-
   font-family: var(--font-body);
-
   font-size: var(--fs-sm);
-
   font-weight: var(--fw-regular);
-
-  line-height: 1.5;
-
-  letter-spacing: 0.02em;
-
-  color: var(--clr-text-muted);
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: var(--clr-text-sub);
 }
 
-/*
-============================================================
-TABLET
-============================================================
-*/
+/* ============================================================
+   TABLET
+============================================================ */
 
-@media (max-width: 768px) {
-  .footer {
-    padding-top: 3.5rem;
-  }
-
+@media (max-width: 900px) {
   .inner {
-    grid-template-columns: 1fr;
-
+    grid-template-columns: minmax(0, 1.2fr) minmax(140px, 0.8fr);
     gap: 2.75rem;
-
-    padding-bottom: 3rem;
   }
 
-  .col {
-    align-items: flex-start;
+  .brand {
+    grid-column: 1 / -1;
   }
 }
 
-/*
-============================================================
-MOBILE
-============================================================
-*/
+/* ============================================================
+   MOBILE
+============================================================ */
 
 @media (max-width: 640px) {
   .footer {
@@ -276,29 +183,28 @@ MOBILE
   }
 
   .inner {
-    gap: 2.5rem;
-
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem 1.5rem;
     padding-bottom: 2.75rem;
   }
 
   .brand {
+    grid-column: 1 / -1;
     align-items: center;
-
     text-align: center;
   }
 
   .tagline {
     max-width: 42ch;
-
-    font-size: var(--fs-sm);
+    text-align: center;
   }
 
   .col {
     align-items: center;
   }
 
-  .colTitle {
-    margin-bottom: 1rem;
+  .navigation {
+    align-items: center;
   }
 
   .list {
@@ -306,11 +212,9 @@ MOBILE
   }
 }
 
-/*
-============================================================
-SMALL PHONES
-============================================================
-*/
+/* ============================================================
+   SMALL PHONES
+============================================================ */
 
 @media (max-width: 420px) {
   .footer {
@@ -318,64 +222,31 @@ SMALL PHONES
   }
 
   .inner {
-    gap: 2.25rem;
-
+    gap: 2.25rem 1rem;
     padding-bottom: 2.5rem;
   }
 
   .tagline {
     font-size: var(--fs-sm);
-
     line-height: 1.7;
   }
 
   .link {
-    width: 40px;
+    width: 38px;
+    height: 38px;
+  }
 
-    height: 40px;
+  .list {
+    gap: 0.5rem;
   }
 
   .bottom {
     min-height: 64px;
-
     padding: 1rem 0.75rem;
   }
 
   .bottom p {
     max-width: 34ch;
-
     font-size: 0.75rem;
-
-    line-height: 1.6;
-  }
-}
-
-/*
-============================================================
-TOUCH DEVICES
-============================================================
-*/
-
-@media (hover: none) {
-  .link:hover {
-    color: var(--clr-text-muted);
-
-    border-color: var(--clr-border);
-
-    background: transparent;
-
-    transform: none;
-  }
-}
-
-/*
-============================================================
-REDUCED MOTION
-============================================================
-*/
-
-@media (prefers-reduced-motion: reduce) {
-  .link {
-    transition: none;
   }
 }

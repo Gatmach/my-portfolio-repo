@@ -1,554 +1,223 @@
+
 .hero {
   position: relative;
-
   min-height: 100svh;
-
   display: flex;
   align-items: center;
-
-  padding-top: 7rem;
-  padding-bottom: 5rem;
-
+  padding: 8rem 0 5rem;
   overflow: hidden;
-
   isolation: isolate;
+  background: var(--clr-navy-dark);
 }
-
-/* ============================================================
-   BACKGROUND
-   ============================================================ */
 
 .bg {
   position: absolute;
   inset: 0;
-
-  background-image: url('/images/yuol.jpg');
-
-  background-size: cover;
-  background-position: top center;
-  background-repeat: no-repeat;
-
-  filter: brightness(0.95);
-
   z-index: -3;
+  background-image: url('/images/yuol.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
 }
-
-/* ============================================================
-   OVERLAYS
-   ============================================================ */
 
 .overlay {
   position: absolute;
   inset: 0;
-
+  z-index: -2;
   background: linear-gradient(
     90deg,
-    rgba(6, 5, 6, 0.82) 0%,
-    rgba(6, 5, 6, 0.64) 42%,
-    rgba(6, 5, 6, 0.3) 75%,
-    rgba(6, 5, 6, 0.18) 100%
+    rgba(16, 47, 87, 0.94) 0%,
+    rgba(16, 47, 87, 0.82) 45%,
+    rgba(16, 47, 87, 0.35) 100%
   );
-
-  z-index: -2;
 }
 
 .overlayBottom {
   position: absolute;
-
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  height: 260px;
-
-  background: linear-gradient(to bottom, transparent 0%, var(--clr-bg) 100%);
-
+  inset: 0;
   z-index: -1;
+  background: linear-gradient(
+    0deg,
+    rgba(16, 47, 87, 0.55) 0%,
+    transparent 35%
+  );
 }
-
-/* ============================================================
-   CONTENT
-   ============================================================ */
 
 .inner {
   position: relative;
   z-index: 1;
-
   width: 100%;
 }
 
 .content {
-  max-width: 720px;
-
+  max-width: 760px;
   padding-left: clamp(1rem, 4vw, 4rem);
 }
-
-/* ============================================================
-   EYEBROW
-   ============================================================ */
 
 .eyebrowWrap {
   display: flex;
   align-items: center;
-
   gap: 0.9rem;
-
-  margin-bottom: 2.25rem;
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.1s both;
+  margin-bottom: 2rem;
 }
 
 .eyebrowLine {
-  display: block;
-
   width: 44px;
   height: 2px;
-
+  background: var(--clr-red);
   flex-shrink: 0;
-
-  background: var(--clr-accent);
 }
 
 .eyebrow {
   margin: 0;
-
-  max-width: none;
-
-  font-size: var(--fs-sm);
-
+  color: var(--clr-white);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   font-weight: var(--fw-semibold);
-
-  line-height: 1.2;
-
-  letter-spacing: 0.18em;
-
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-
-  color: var(--clr-accent);
 }
-
-/* ============================================================
-   MAIN TITLE
-   ============================================================ */
 
 .title {
   display: flex;
   flex-direction: column;
-
-  gap: 0;
-
-  margin: 0 0 1.75rem;
+  margin: 0;
 }
 
-/* First name */
-
-.titleLine1 {
+.titleLine1,
+.titleLine2 {
+  color: var(--clr-white);
   font-family: var(--font-display);
-
-  font-size: clamp(4rem, 8vw, 7rem);
-
-  font-weight: 800;
-
-  line-height: 0.88;
-
+  font-size: clamp(4rem, 9vw, 7.5rem);
+  font-weight: var(--fw-extrabold);
+  line-height: 0.92;
   letter-spacing: -0.055em;
-
-  color: var(--clr-text);
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.22s both;
 }
-
-/* Last name */
 
 .titleLine2 {
-  font-family: var(--font-display);
-
-  font-size: clamp(4rem, 8vw, 7rem);
-
-  font-weight: 800;
-
-  line-height: 0.88;
-
-  letter-spacing: -0.055em;
-
-  padding-left: clamp(1.5rem, 4vw, 4rem);
-
-  color: var(--clr-text);
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.34s both;
+  padding-left: clamp(1.5rem, 5vw, 4rem);
 }
-
-/* Professional title */
 
 .titleAccent {
-  margin-top: 1rem;
-
+  margin-top: 1.2rem;
+  color: var(--clr-red);
   font-family: var(--font-display);
-
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-
-  font-style: italic;
-
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: var(--fw-semibold);
-
-  line-height: 1.2;
-
-  letter-spacing: 0.01em;
-
-  color: var(--clr-accent);
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.46s both;
+  font-style: italic;
 }
-
-/* ============================================================
-   DIVIDER
-   ============================================================ */
 
 .divider {
   width: 64px;
   height: 2px;
-
-  margin: 1.75rem 0;
-
-  background: var(--clr-accent);
-
-  opacity: 0.5;
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.52s both;
+  margin: 2rem 0;
+  background: var(--clr-red);
 }
-
-/* ============================================================
-   SUBTITLE
-   ============================================================ */
 
 .subtitle {
   max-width: 44ch;
-
-  margin: 0 0 2.75rem;
-
-  font-size: var(--fs-lg);
-
-  font-weight: var(--fw-regular);
-
-  line-height: 1.6;
-
-  color: var(--clr-text-sub);
-
-  text-wrap: pretty;
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.64s both;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  line-height: 1.8;
 }
-
-/* ============================================================
-   ACTIONS
-   ============================================================ */
 
 .actions {
   display: flex;
-  align-items: center;
-
-  gap: 1rem;
-
   flex-wrap: wrap;
-
-  animation: fadeSlideLeft 0.9s var(--ease-out) 0.74s both;
-}
-
-/* ============================================================
-   PRIMARY BUTTON
-   ============================================================ */
-
-.btnPrimary {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-
-  min-height: 52px;
-
-  padding: 0.9rem 2rem;
-
-  background: var(--clr-accent);
-  color: var(--clr-bg);
-
-  font-family: var(--font-display);
-
-  font-size: var(--fs-sm);
-
-  font-weight: var(--fw-bold);
-
-  line-height: 1;
-
-  border-radius: var(--r-sm);
-
-  letter-spacing: 0.025em;
-
-  transition:
-    opacity var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
+  gap: 1rem;
+  margin-top: 2.5rem;
 }
 
-.btnPrimary:hover {
-  color: var(--clr-bg);
-
-  opacity: 0.85;
-
-  transform: translateY(-3px);
-}
-
-/* ============================================================
-   GHOST BUTTON
-   ============================================================ */
-
+.btnPrimary,
 .btnGhost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   min-height: 52px;
-
-  padding: 0.9rem 2rem;
-
-  border: 1px solid rgba(245, 245, 245, 0.22);
-
-  color: var(--clr-text);
-
+  padding: 0 1.7rem;
+  border: 1px solid transparent;
+  border-radius: 3px;
   font-family: var(--font-display);
-
-  font-size: var(--fs-sm);
-
+  font-size: 0.85rem;
   font-weight: var(--fw-bold);
+  text-decoration: none;
+}
 
-  line-height: 1;
+.btnPrimary {
+  color: var(--clr-white);
+  background: var(--clr-red);
+}
 
-  border-radius: var(--r-sm);
+.btnGhost {
+  color: var(--clr-white);
+  border-color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+}
 
-  letter-spacing: 0.025em;
-
-  background: rgba(28, 28, 32, 0.45);
-
-  backdrop-filter: blur(10px);
-
-  transition:
-    border-color var(--dur-fast) var(--ease-out),
-    color var(--dur-fast) var(--ease-out),
-    background var(--dur-fast) var(--ease-out),
-    transform var(--dur-fast) var(--ease-out);
+.btnPrimary:hover {
+  background: var(--clr-red-dark);
 }
 
 .btnGhost:hover {
-  border-color: var(--clr-accent);
-
-  color: var(--clr-accent);
-
-  background: var(--clr-accent-dim);
-
-  transform: translateY(-3px);
+  color: var(--clr-white);
+  border-color: var(--clr-red);
+  background: rgba(244, 81, 75, 0.12);
 }
 
-/* ============================================================
-   ANIMATION
-   ============================================================ */
-
-@keyframes fadeSlideLeft {
-  from {
-    opacity: 0;
-
-    transform: translateX(-32px);
-  }
-
-  to {
-    opacity: 1;
-
-    transform: translateX(0);
-  }
+.btnPrimary:focus-visible,
+.btnGhost:focus-visible {
+  outline: 3px solid var(--clr-white);
+  outline-offset: 4px;
 }
-
-/* ============================================================
-   TABLET
-   ============================================================ */
-
-@media (max-width: 1024px) {
-  .hero {
-    padding-top: 6rem;
-    padding-bottom: 4rem;
-  }
-
-  .content {
-    max-width: 650px;
-
-    padding-left: 1.5rem;
-  }
-
-  .titleLine1,
-  .titleLine2 {
-    font-size: clamp(3.75rem, 8vw, 6rem);
-  }
-}
-
-/* ============================================================
-   MOBILE / TABLET
-   ============================================================ */
 
 @media (max-width: 768px) {
   .hero {
-    min-height: 100svh;
-
-    align-items: flex-end;
-
-    padding-top: 6rem;
-    padding-bottom: 4.5rem;
+    min-height: 90svh;
+    padding: 7rem 0 4rem;
   }
 
   .bg {
-    background-position: 62% top;
+    background-position: 58% top;
   }
 
   .overlay {
     background: linear-gradient(
-      180deg,
-      rgba(6, 5, 6, 0.35) 0%,
-      rgba(6, 5, 6, 0.7) 45%,
-      rgba(6, 5, 6, 0.94) 100%
+      90deg,
+      rgba(16, 47, 87, 0.94),
+      rgba(16, 47, 87, 0.68)
     );
   }
 
-  .overlayBottom {
-    height: 180px;
-  }
-
   .content {
-    max-width: 100%;
-
     padding-left: 0;
   }
 
-  .eyebrowWrap {
-    margin-bottom: 1.75rem;
-  }
-
-  .eyebrowLine {
-    width: 36px;
-  }
-
-  .eyebrow {
-    font-size: 0.9rem;
-
-    letter-spacing: 0.14em;
-  }
-
-  .title {
-    margin-bottom: 1.5rem;
-  }
-
   .titleLine1,
   .titleLine2 {
-    font-size: clamp(3.4rem, 12vw, 5.5rem);
-
-    line-height: 0.9;
-  }
-
-  .titleLine2 {
-    padding-left: 1.5rem;
-  }
-
-  .titleAccent {
-    margin-top: 0.85rem;
-
-    font-size: 1.5rem;
-  }
-
-  .divider {
-    margin: 1.5rem 0;
-  }
-
-  .subtitle {
-    max-width: 38ch;
-
-    margin-bottom: 2.25rem;
-
-    font-size: 1.2rem;
-
-    line-height: 1.6;
-  }
-
-  .actions {
-    gap: 0.85rem;
-  }
-
-  .btnPrimary,
-  .btnGhost {
-    min-height: 50px;
-
-    padding-inline: 1.75rem;
-
-    font-size: 0.95rem;
+    font-size: clamp(3.6rem, 13vw, 6rem);
   }
 }
 
-/* ============================================================
-   SMALL PHONES
-   ============================================================ */
-
-@media (max-width: 420px) {
+@media (max-width: 480px) {
   .hero {
-    padding-bottom: 3.5rem;
-  }
-
-  .content {
-    padding-inline: 0;
-  }
-
-  .eyebrow {
-    font-size: 0.82rem;
+    min-height: 85svh;
   }
 
   .titleLine1,
   .titleLine2 {
-    font-size: clamp(2.9rem, 14vw, 4rem);
-  }
-
-  .titleLine2 {
-    padding-left: 1rem;
-  }
-
-  .titleAccent {
-    font-size: 1.25rem;
-  }
-
-  .subtitle {
-    font-size: 1.1rem;
-
-    line-height: 1.55;
+    font-size: clamp(3.2rem, 15vw, 4.5rem);
   }
 
   .actions {
-    flex-direction: column;
-
     align-items: stretch;
-
-    width: 100%;
+    flex-direction: column;
   }
 
   .btnPrimary,
   .btnGhost {
     width: 100%;
-
-    min-height: 52px;
-  }
-}
-
-/* ============================================================
-   REDUCED MOTION
-   ============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-  .eyebrowWrap,
-  .titleLine1,
-  .titleLine2,
-  .titleAccent,
-  .divider,
-  .subtitle,
-  .actions {
-    animation: none;
   }
 }
