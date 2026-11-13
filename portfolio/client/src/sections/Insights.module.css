@@ -1,5 +1,4 @@
 
-
 .insights {
   position: relative;
   background: var(--clr-bg-2);
@@ -17,7 +16,7 @@
   margin: 0 0 1rem;
   color: var(--clr-red);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.12em;
 }
@@ -27,7 +26,7 @@
   margin: 0;
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
   font-weight: var(--fw-bold);
   line-height: 1.08;
   letter-spacing: -0.045em;
@@ -45,7 +44,7 @@
   margin: 0 0 0.35rem;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.2rem;
   line-height: 1.85;
 }
 
@@ -77,7 +76,7 @@
 .number {
   color: var(--clr-red);
   font-family: var(--font-mono);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-semibold);
 }
 
@@ -85,7 +84,7 @@
   max-width: 65%;
   color: var(--clr-text-sub);
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.82rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.07em;
   line-height: 1.6;
@@ -100,7 +99,7 @@
   margin: 0 0 1rem;
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: 1.25rem;
+  font-size: 1.55rem;
   font-weight: var(--fw-bold);
   line-height: 1.4;
 }
@@ -109,28 +108,29 @@
   margin: 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   line-height: 1.8;
 }
 
 .topics {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-top: 2rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--clr-border);
 }
 
 .topic {
-  padding: 0.4rem 0.65rem;
+  padding: 0.45rem 0.75rem;
   color: var(--clr-navy);
   background: var(--clr-bg-2);
   border: 1px solid var(--clr-border);
   border-radius: 4px;
   font-family: var(--font-body);
-  font-size: 0.7rem;
+  font-size: 0.88rem;
   font-weight: var(--fw-medium);
+  line-height: 1.4;
 }
 
 @media (max-width: 1024px) {
@@ -146,6 +146,14 @@
   .card:last-child {
     grid-column: 1 / -1;
   }
+
+  .cardTitle {
+    font-size: 1.45rem;
+  }
+
+  .description {
+    font-size: 1.08rem;
+  }
 }
 
 @media (max-width: 640px) {
@@ -159,7 +167,11 @@
   }
 
   .heading {
-    font-size: clamp(2.3rem, 9vw, 3.2rem);
+    font-size: clamp(2.4rem, 9vw, 3.3rem);
+  }
+
+  .intro {
+    font-size: 1.08rem;
   }
 
   .card {
@@ -169,5 +181,21 @@
 
   .cardTop {
     margin-bottom: 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+
+  .category {
+    font-size: 0.76rem;
+  }
+
+  .topic {
+    font-size: 0.84rem;
   }
 }

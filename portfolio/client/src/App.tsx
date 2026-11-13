@@ -9,6 +9,7 @@ import Expertise from './sections/Expertise'
 import CreativeServices from './sections/CreativeServices'
 import Achievements from './sections/Achievements'
 import Insights from './sections/Insights'
+import Introduction from './sections/Introduction'
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <Introduction />
         <About />
         <Projects />
         <CreativeServices />

@@ -1,0 +1,435 @@
+
+/* ============================================================
+   INTRODUCTION SECTION
+============================================================ */
+
+.introduction {
+  position: relative;
+  background: var(--clr-bg-2);
+  padding-block: clamp(6rem, 9vw, 9rem);
+}
+
+/* ============================================================
+   MAIN INTRODUCTION LAYOUT
+============================================================ */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: start;
+  max-width: 1450px;
+  margin-inline: auto;
+}
+
+.headingGroup {
+  max-width: 650px;
+}
+
+/* ============================================================
+   EYEBROW
+============================================================ */
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: '';
+  width: 32px;
+  height: 2px;
+  background: var(--clr-red);
+}
+
+/* ============================================================
+   MAIN HEADING
+============================================================ */
+
+.heading {
+  margin: 0;
+  max-width: 12ch;
+  font-family: var(--font-display);
+  font-size: var(--fs-3xl);
+  font-weight: var(--fw-bold);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  color: var(--clr-navy);
+}
+
+.heading em {
+  display: block;
+  margin-top: 0.15em;
+  color: var(--clr-red);
+  font-style: normal;
+  font-weight: var(--fw-bold);
+}
+
+/* ============================================================
+   INTRODUCTION CONTENT
+============================================================ */
+
+.content {
+  min-width: 0;
+  padding-top: 3.2rem;
+}
+
+.lead {
+  margin: 0 0 1.4rem;
+  color: var(--clr-navy);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.85;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  max-width: 65ch;
+  margin: 0 0 1.4rem;
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.85;
+  letter-spacing: -0.01em;
+}
+
+.description:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   TECHNICAL INTERESTS SECTION
+============================================================ */
+
+.interestsSection {
+  margin-top: clamp(5rem, 8vw, 7rem);
+}
+
+.interestsHeader {
+  margin-bottom: 2.5rem;
+}
+
+.interestLabel {
+  display: block;
+  margin-bottom: 0.8rem;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.interestsIntro {
+  margin: 0;
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.2rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   INTEREST CARDS GRID
+============================================================ */
+
+.interestGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+  width: 100%;
+}
+
+/* ============================================================
+   INDIVIDUAL CARD
+============================================================ */
+
+.interestCard {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--r-md);
+  background: var(--clr-white);
+}
+
+/* ============================================================
+   CARD IMAGE
+============================================================ */
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--clr-bg-3);
+}
+
+.interestImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.interestNumber {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  height: 36px;
+  padding-inline: 0.7rem;
+  border-radius: var(--r-sm);
+  background: var(--clr-red);
+  color: var(--clr-white);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: var(--fw-semibold);
+}
+
+/* ============================================================
+   CARD CONTENT
+============================================================ */
+
+.cardContent {
+  padding: 1.6rem;
+}
+
+.cardTitle {
+  margin: 0 0 0.8rem;
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.35;
+  letter-spacing: -0.025em;
+}
+
+.cardDescription {
+  margin: 0;
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   CLOSING STATEMENT
+============================================================ */
+.signature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 4rem 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  font-weight: var(--fw-extrabold);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.signature span:first-child {
+  color: var(--clr-red);
+}
+
+.signature span:last-child {
+  color: var(--clr-navy);
+}
+
+/* ============================================================
+   LAPTOP
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1200px) {
+  .layout {
+    gap: 3.5rem;
+  }
+
+  .interestGrid {
+    gap: 1.3rem;
+  }
+
+  .cardContent {
+    padding: 1.4rem;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+}
+
+/* ============================================================
+   TABLET — TWO COLUMNS
+============================================================ */
+
+@media (min-width: 481px) and (max-width: 1024px) {
+  .introduction {
+    padding-block: 5.5rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .heading {
+    font-size: var(--fs-2xl);
+  }
+
+  .content {
+    padding-top: 0;
+  }
+
+  .lead,
+  .description {
+    font-size: 1.18rem;
+  }
+
+  .interestsSection {
+    margin-top: 4.5rem;
+  }
+
+  .interestGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .cardContent {
+    padding: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardDescription {
+    font-size: 1.05rem;
+  }
+}
+
+/* ============================================================
+   MOBILE — ONE COLUMN
+============================================================ */
+
+@media (max-width: 480px) {
+  .introduction {
+    padding-block: 4.5rem;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .eyebrow,
+  .interestLabel {
+    font-size: 0.78rem;
+  }
+
+  .eyebrow {
+    margin-bottom: 1.5rem;
+  }
+
+  .heading {
+    max-width: 14ch;
+    font-size: clamp(2.25rem, 7vw, 3.25rem);
+  }
+
+  .content {
+    padding-top: 0;
+  }
+
+  .lead,
+  .description {
+    font-size: 1.12rem;
+    line-height: 1.8;
+  }
+
+  .interestsSection {
+    margin-top: 3.5rem;
+  }
+
+  .interestsHeader {
+    margin-bottom: 1.8rem;
+  }
+
+  .interestsIntro {
+    font-size: 1.08rem;
+  }
+
+  .interestGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .imageWrapper {
+    aspect-ratio: 16 / 9;
+  }
+
+  .cardContent {
+    padding: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .cardDescription {
+    font-size: 1.02rem;
+  }
+
+  .signature {
+    margin-top: 3rem;
+    font-size: 1.5rem;
+  }
+}
+
+/* ============================================================
+   VERY SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+
+  .lead,
+  .description {
+    font-size: 1.08rem;
+  }
+
+  .cardContent {
+    padding: 1.25rem;
+  }
+
+  .cardTitle {
+    font-size: 1.25rem;
+  }
+
+  .cardDescription {
+    font-size: 1rem;
+  }
+
+  .signature {
+    font-size: 1.05rem;
+  }
+}

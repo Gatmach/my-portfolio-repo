@@ -29,7 +29,7 @@
   margin: 0 0 1.25rem;
   color: var(--clr-red);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.12em;
 }
@@ -43,7 +43,7 @@
   margin: 0 0 1.5rem;
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: clamp(2.7rem, 5vw, 4.5rem);
+  font-size: clamp(2.9rem, 5vw, 4.7rem);
   font-weight: var(--fw-bold);
   line-height: 1.08;
   letter-spacing: -0.045em;
@@ -61,7 +61,7 @@
   margin: 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: var(--fs-base);
+  font-size: 1.2rem;
   font-weight: var(--fw-regular);
   line-height: 1.85;
 }
@@ -94,9 +94,9 @@
 .fieldLabel {
   color: var(--clr-navy);
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: var(--fw-semibold);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.02em;
 }
 
 /* ============================================================
@@ -114,17 +114,17 @@
   outline: none;
   color: var(--clr-text);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: var(--fw-regular);
   line-height: 1.6;
 }
 
 .input {
-  height: 52px;
+  height: 56px;
 }
 
 .textarea {
-  min-height: 150px;
+  min-height: 160px;
   resize: vertical;
 }
 
@@ -169,16 +169,16 @@
   justify-content: center;
   align-self: flex-start;
   gap: 0.65rem;
-  min-width: 180px;
-  min-height: 52px;
-  padding: 0.85rem 1.5rem;
+  min-width: 190px;
+  min-height: 56px;
+  padding: 0.9rem 1.5rem;
   background: var(--clr-red);
   border: 1px solid var(--clr-red);
   border-radius: 6px;
   color: var(--clr-white);
   cursor: pointer;
   font-family: var(--font-display);
-  font-size: 0.85rem;
+  font-size: 1rem;
   font-weight: var(--fw-bold);
   letter-spacing: 0.01em;
 }
@@ -217,12 +217,12 @@
 .successMsg,
 .errorMsg {
   margin: 0.25rem 0 0;
-  padding: 0.9rem 1rem;
+  padding: 1rem;
   border-radius: 6px;
   font-family: var(--font-body);
-  font-size: 0.88rem;
+  font-size: 1rem;
   font-weight: var(--fw-medium);
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 .successMsg {
@@ -248,7 +248,7 @@
   }
 
   .heading {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2.7rem, 5vw, 3.7rem);
   }
 }
 
@@ -269,12 +269,12 @@
 
   .heading {
     max-width: 14ch;
-    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    font-size: clamp(2.6rem, 8vw, 3.6rem);
   }
 
   .sub {
     max-width: 60ch;
-    font-size: 1rem;
+    font-size: 1.12rem;
   }
 
   .form {
@@ -305,7 +305,7 @@
   }
 
   .sub {
-    font-size: 0.92rem;
+    font-size: 1.05rem;
   }
 
   .form {
@@ -313,18 +313,22 @@
     padding: 1.1rem;
   }
 
+  .fieldLabel {
+    font-size: 0.95rem;
+  }
+
   .input,
   .textarea {
     padding: 0.85rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .input {
-    height: 48px;
+    height: 50px;
   }
 
   .textarea {
-    min-height: 130px;
+    min-height: 140px;
   }
 
   .turnstile {
@@ -332,13 +336,13 @@
   }
 
   .submit {
-    min-height: 49px;
-    font-size: 0.84rem;
+    min-height: 52px;
+    font-size: 0.95rem;
   }
 
   .successMsg,
   .errorMsg {
     padding: 0.8rem;
-    font-size: 0.84rem;
+    font-size: 0.95rem;
   }
 }

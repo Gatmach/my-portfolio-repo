@@ -1,5 +1,4 @@
 
-
 .expertise {
   position: relative;
   background: var(--clr-bg-2);
@@ -14,7 +13,7 @@
   margin: 0 0 1rem;
   color: var(--clr-red);
   font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.9rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.12em;
 }
@@ -40,7 +39,7 @@
   margin: 1.25rem 0 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: var(--fs-base);
+  font-size: 1.2rem;
   line-height: 1.8;
 }
 
@@ -63,7 +62,7 @@
   margin-bottom: 1.75rem;
   color: var(--clr-red);
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-semibold);
 }
 
@@ -71,7 +70,7 @@
   margin: 0;
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: var(--fw-bold);
   line-height: 1.4;
 }
@@ -81,29 +80,29 @@
   margin: 0.85rem 0 1.5rem;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 0.9rem;
-  line-height: 1.7;
+  font-size: 1.1rem;
+  line-height: 1.8;
 }
 
 .skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.55rem;
+  gap: 0.6rem;
 }
 
 .tag {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
-  padding: 0.45rem 0.8rem;
+  min-height: 36px;
+  padding: 0.5rem 0.9rem;
   border: 1px solid var(--clr-border);
   border-radius: 3px;
   background: var(--clr-bg-2);
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-medium);
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 @media (max-width: 768px) {
@@ -115,8 +114,20 @@
     font-size: var(--fs-2xl);
   }
 
+  .intro {
+    font-size: 1.12rem;
+  }
+
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .description {
+    font-size: 1.08rem;
   }
 }
 
@@ -127,5 +138,17 @@
 
   .card {
     padding: 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 1.02rem;
+  }
+
+  .tag {
+    font-size: 0.88rem;
   }
 }

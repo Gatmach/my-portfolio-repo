@@ -21,20 +21,23 @@
 /* ============================================================
    MAIN LAYOUT
 ============================================================ */
-
 .inner {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  min-height: 48px;
+  justify-content: space-between;
+  min-height: 52px;
+  width: 100%;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(1rem, 1.6vw, 1.6rem);
+  justify-content: flex-end;
+  flex: 1;
+  gap: clamp(1.5rem, 2.2vw, 2.5rem);
   margin-left: auto;
+  padding-left: clamp(3rem, 7vw, 9rem);
 }
 
 /* ============================================================
@@ -46,12 +49,12 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  min-height: 44px;
+  gap: 0.5rem;
+  min-height: 48px;
   padding-block: 0.5rem;
   color: var(--clr-navy);
   font-family: var(--font-body);
-  font-size: 0.82rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.025em;
   text-transform: uppercase;
@@ -80,7 +83,7 @@
 }
 
 .chevron {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   line-height: 1;
 }
 
@@ -97,8 +100,8 @@
   top: 100%;
   left: -1rem;
   z-index: 110;
-  min-width: 230px;
-  padding-block: 0.45rem;
+  min-width: 250px;
+  padding-block: 0.5rem;
   background: var(--clr-white);
   border: 1px solid var(--clr-border);
   box-shadow: 0 8px 24px rgba(16, 16, 16, 0.08);
@@ -106,9 +109,9 @@
 
 .menuItem {
   display: block;
-  padding: 0.8rem 1rem;
+  padding: 0.9rem 1.1rem;
   color: var(--clr-navy);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-medium);
 }
 
@@ -118,6 +121,7 @@
   background: var(--clr-bg-2);
 }
 
+
 /* ============================================================
    DESKTOP CV BUTTON
 ============================================================ */
@@ -126,15 +130,16 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 42px;
-  margin-left: clamp(1.2rem, 2vw, 2rem);
-  padding: 0 1.1rem;
+  flex-shrink: 0;
+  min-height: 48px;
+  margin-left: clamp(1.5rem, 2.5vw, 3rem);
+  padding: 0 1.5rem;
   border: 1px solid var(--clr-red);
   border-radius: 3px;
   background: var(--clr-red);
   color: var(--clr-white);
   font-family: var(--font-body);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   font-weight: var(--fw-semibold);
   text-decoration: none;
   white-space: nowrap;
@@ -193,7 +198,7 @@
   min-height: 54px;
   color: var(--clr-navy);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
   text-align: left;
@@ -212,7 +217,7 @@
 
 .mobileSubmenu .dropLink {
   min-height: 44px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   text-transform: none;
 }
 
@@ -223,7 +228,7 @@
   min-height: 54px;
   padding-block: 0.8rem;
   color: var(--clr-navy);
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: var(--fw-semibold);
   text-transform: uppercase;
   border-bottom: 1px solid var(--clr-border);
@@ -243,14 +248,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 48px;
+  min-height: 50px;
   margin-top: 1rem;
   border: 1px solid var(--clr-red);
   border-radius: 3px;
   background: var(--clr-red);
   color: var(--clr-white);
   font-family: var(--font-body);
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: var(--fw-semibold);
   text-decoration: none;
 }
@@ -279,6 +284,23 @@
 /* ============================================================
    TABLET AND MOBILE
 ============================================================ */
+
+@media (max-width: 1100px) {
+  .nav {
+    gap: 1.2rem;
+    margin-left: 2rem;
+  }
+
+  .link,
+  .navButton {
+    font-size: 0.85rem;
+  }
+
+  .cvButton {
+    margin-left: 1.2rem;
+    padding-inline: 1rem;
+  }
+}
 
 @media (max-width: 900px) {
   .inner {

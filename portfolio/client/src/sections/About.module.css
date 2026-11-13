@@ -1,49 +1,149 @@
 
+/* ============================================================
+   ABOUT SECTION
+============================================================ */
+
 .about {
   position: relative;
+  padding-block: clamp(6rem, 9vw, 9rem);
   background: var(--clr-white);
+  overflow: hidden;
 }
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
 
 .grid {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(3rem, 7vw, 7rem);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(3rem, 6vw, 5rem);
 }
+
+/* ============================================================
+   PROFESSIONAL IDENTITY LAYOUT
+============================================================ */
 
 .left {
-  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 4vw, 4rem);
+  min-width: 0;
 }
 
+.imageContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-width: 0;
+}
+
+.identityContent {
+  width: 100%;
+  min-width: 0;
+}
+
+.imageWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--clr-bg-2);
+}
+
+.workstationImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* ============================================================
+   BIOGRAPHY LAYOUT
+============================================================ */
+
+.right {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+/* ============================================================
+   SECTION EYEBROW
+============================================================ */
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 0;
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   MAIN HEADING
+============================================================ */
+
 .heading {
-  margin: 0;
   max-width: 12ch;
-  font-family: var(--font-display);
-  font-size: var(--fs-3xl);
-  font-weight: var(--fw-bold);
-  line-height: 1.08;
-  letter-spacing: -0.045em;
+  margin: 0;
   color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 5vw, 5rem);
+  font-weight: var(--fw-extrabold);
+  line-height: 1.08;
+  letter-spacing: -0.055em;
 }
 
 .heading em {
   display: block;
-  margin-top: 0.15em;
+  margin-top: 0.12em;
   color: var(--clr-red);
   font-style: normal;
-  font-weight: var(--fw-bold);
+  font-weight: var(--fw-extrabold);
 }
 
-.right {
-  min-width: 0;
+/* ============================================================
+   PROFESSIONAL IDENTITY DETAILS
+============================================================ */
+
+.identity {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin: 2rem 0 0;
+  padding-left: 1.1rem;
+  border-left: 3px solid var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.055em;
+  line-height: 1.7;
 }
+
+.identity span:first-child {
+  color: var(--clr-navy);
+}
+
+.identity span:not(:first-child) {
+  color: var(--clr-text-sub);
+}
+
+/* ============================================================
+   BIOGRAPHY CONTENT
+============================================================ */
 
 .bio {
   max-width: 65ch;
-  margin: 0 0 1.25rem;
+  margin: 0 0 1.5rem;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: var(--fs-base);
+  font-size: 1.25rem;
   font-weight: var(--fw-regular);
   line-height: 1.85;
   letter-spacing: -0.01em;
@@ -60,9 +160,9 @@
 .highlights {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.5rem 2rem;
-  margin-top: 2.5rem;
-  padding-block: 2rem;
+  gap: 1.75rem 2rem;
+  margin-top: 3rem;
+  padding-block: 2.25rem;
   border-top: 1px solid var(--clr-border);
   border-bottom: 1px solid var(--clr-border);
 }
@@ -70,7 +170,8 @@
 .highlight {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
+  min-width: 0;
   padding-left: 1rem;
   border-left: 3px solid var(--clr-red);
 }
@@ -78,68 +179,213 @@
 .highlightLabel {
   color: var(--clr-text-sub);
   font-family: var(--font-mono);
-  font-size: 0.7rem;
+  font-size: 0.82rem;
   font-weight: var(--fw-semibold);
   letter-spacing: 0.08em;
+  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .highlightValue {
   color: var(--clr-navy);
   font-family: var(--font-body);
-  font-size: 0.95rem;
+  font-size: 1.08rem;
   font-weight: var(--fw-semibold);
-  line-height: 1.5;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
 }
 
+/* ============================================================
+   LARGE LAPTOPS
+============================================================ */
+
+@media (min-width: 1025px) and (max-width: 1400px) {
+  .left {
+    gap: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .heading {
+    font-size: clamp(3rem, 4.5vw, 4.5rem);
+  }
+}
+
+/* ============================================================
+   TABLETS & SMALL LAPTOPS
+============================================================ */
 
 @media (max-width: 1024px) {
+  .about {
+    padding-block: 6rem;
+  }
+
+  .left {
+    gap: 2.5rem;
+  }
+
+  .heading {
+    font-size: clamp(2.8rem, 5vw, 3.8rem);
+  }
+
+  .bio {
+    font-size: 1.15rem;
+    line-height: 1.8;
+  }
+
+  .highlights {
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+}
+
+/* ============================================================
+   TABLET PORTRAIT & MOBILE
+============================================================ */
+
+@media (max-width: 768px) {
+  .about {
+    padding-block: 5rem;
+  }
+
   .grid {
     gap: 3rem;
   }
 
-  .heading {
-    font-size: var(--fs-2xl);
-  }
-}
-
-@media (max-width: 768px) {
-  .about {
-    padding-top: 0;
-  }
-
-  .grid {
+  .left {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
 
+  .identityContent {
+    order: 1;
+  }
+
+  .imageContent {
+    order: 2;
+  }
+
+  .eyebrow {
+    font-size: 0.85rem;
+  }
+
   .heading {
     max-width: 14ch;
-    font-size: clamp(2.25rem, 7vw, 3.25rem);
+    font-size: clamp(2.6rem, 8vw, 3.8rem);
+  }
+
+  .identity {
+    gap: 0.55rem;
+    margin-top: 1.75rem;
+    font-size: 0.82rem;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
   }
 
   .bio {
     max-width: 100%;
-    font-size: 1rem;
+    margin-bottom: 1.25rem;
+    font-size: 1.12rem;
     line-height: 1.8;
+  }
+
+  .highlights {
+    margin-top: 2.25rem;
+    padding-block: 2rem;
   }
 }
 
+/* ============================================================
+   MOBILE PHONES
+============================================================ */
+
 @media (max-width: 600px) {
+  .about {
+    padding-block: 4.5rem;
+  }
+
+  .grid {
+    gap: 2.5rem;
+  }
+
+  .heading {
+    font-size: clamp(2.5rem, 8vw, 3.4rem);
+  }
+
+  .identity {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  .bio {
+    font-size: 1.08rem;
+    line-height: 1.8;
+  }
+
   .highlights {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 1.5rem;
     margin-top: 2rem;
-    padding-block: 1.5rem;
+    padding-block: 1.75rem;
+  }
+
+  .highlight {
+    gap: 0.5rem;
+  }
+
+  .highlightLabel {
+    font-size: 0.8rem;
   }
 
   .highlightValue {
-    font-size: 0.9rem;
+    font-size: 1.05rem;
   }
 }
 
+/* ============================================================
+   SMALL MOBILE SCREENS
+============================================================ */
+
 @media (max-width: 420px) {
+  .about {
+    padding-block: 4rem;
+  }
+
+  .eyebrow {
+    font-size: 0.78rem;
+  }
+
   .heading {
-    font-size: 2.25rem;
+    font-size: 2.35rem;
+    letter-spacing: -0.045em;
+  }
+
+  .identity {
+    gap: 0.5rem;
+    padding-left: 0.85rem;
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+
+  .bio {
+    font-size: 1.02rem;
+    line-height: 1.8;
+  }
+
+  .highlights {
+    gap: 1.25rem;
+    padding-block: 1.5rem;
+  }
+
+  .highlight {
+    padding-left: 0.85rem;
+  }
+
+  .highlightLabel {
+    font-size: 0.75rem;
+  }
+
+  .highlightValue {
+    font-size: 0.98rem;
   }
 }
