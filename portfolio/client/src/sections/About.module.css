@@ -5,50 +5,54 @@
 
 .about {
   position: relative;
-  padding-block: clamp(6rem, 9vw, 9rem);
+  padding-block: clamp(5rem, 8vw, 9rem);
   background: var(--clr-white);
-  overflow: hidden;
+}
+
+.about > :global(.container) {
+  width: 100%;
+  max-width: 1800px;
+  margin-inline: auto;
+  padding-inline: clamp(1.5rem, 3.5vw, 4rem);
 }
 
 /* ============================================================
-   MAIN CONTAINER
-============================================================ */
-
-.grid {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(3rem, 6vw, 5rem);
-}
-
-/* ============================================================
-   PROFESSIONAL IDENTITY LAYOUT
+   PROFESSIONAL IDENTITY
 ============================================================ */
 
 .left {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
   align-items: center;
-  gap: clamp(2rem, 4vw, 4rem);
-  min-width: 0;
+  column-gap: clamp(2rem, 4vw, 5rem);
+  row-gap: 1.5rem;
+  margin-bottom: clamp(4rem, 7vw, 7rem);
+}
+
+.eyebrow {
+  grid-column: 1 / -1;
+  display: block;
+  margin: 0;
+
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
 .imageContent {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  min-width: 0;
-}
-
-.identityContent {
-  width: 100%;
   min-width: 0;
 }
 
 .imageWrapper {
   width: 100%;
   overflow: hidden;
-  border-radius: 8px;
+
   background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
 }
 
 .workstationImage {
@@ -56,189 +60,426 @@
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: center;
 }
 
-/* ============================================================
-   BIOGRAPHY LAYOUT
-============================================================ */
-
-.right {
-  width: 100%;
-  max-width: 1100px;
-  margin-inline: auto;
+.identityContent {
+  min-width: 0;
 }
-
-/* ============================================================
-   SECTION EYEBROW
-============================================================ */
-
-.eyebrow {
-  display: inline-block;
-  margin-bottom: 0;
-  color: var(--clr-red);
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.12em;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-/* ============================================================
-   MAIN HEADING
-============================================================ */
 
 .heading {
-  max-width: 12ch;
-  margin: 0;
+  max-width: 750px;
+  margin: 0 0 1.75rem;
+
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: clamp(3.2rem, 5vw, 5rem);
-  font-weight: var(--fw-extrabold);
+  font-size: clamp(2.5rem, 4.5vw, 5rem);
+  font-weight: var(--fw-bold);
   line-height: 1.08;
   letter-spacing: -0.055em;
 }
 
 .heading em {
   display: block;
-  margin-top: 0.12em;
+
   color: var(--clr-red);
   font-style: normal;
-  font-weight: var(--fw-extrabold);
 }
-
-/* ============================================================
-   PROFESSIONAL IDENTITY DETAILS
-============================================================ */
 
 .identity {
   display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-  margin: 2rem 0 0;
-  padding-left: 1.1rem;
-  border-left: 3px solid var(--clr-red);
-  font-family: var(--font-mono);
-  font-size: 0.88rem;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.055em;
-  line-height: 1.7;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin: 0;
 }
 
-.identity span:first-child {
+.identity span {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 0.85rem;
+
   color: var(--clr-navy);
-}
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-radius: 4px;
 
-.identity span:not(:first-child) {
-  color: var(--clr-text-sub);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.045em;
 }
 
 /* ============================================================
-   BIOGRAPHY CONTENT
+   MY STORY
 ============================================================ */
 
-.bio {
-  max-width: 65ch;
-  margin: 0 0 1.5rem;
-  color: var(--clr-text-sub);
-  font-family: var(--font-body);
-  font-size: 1.25rem;
-  font-weight: var(--fw-regular);
-  line-height: 1.85;
-  letter-spacing: -0.01em;
+.right {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
 }
 
-.bio:last-of-type {
-  margin-bottom: 0;
+.storyHeader {
+  max-width: 900px;
+  margin-bottom: 2rem;
+}
+
+.storyEyebrow {
+  display: block;
+  margin-bottom: 0.8rem;
+
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.storyHeading {
+  margin: 0;
+
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3.25rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+}
+
+.storyContent {
+  position: relative;
+  width: 100%;
+  max-height: 390px;
+  overflow: hidden;
+}
+
+.storyContent:not(.expanded)::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 120px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--clr-white)
+  );
+
+  content: '';
+  pointer-events: none;
+}
+
+.storyContent.expanded {
+  max-height: none;
+}
+
+.bio {
+  width: 100%;
+  max-width: none;
+  margin: 0 0 1.35rem;
+
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: var(--fw-regular);
+  line-height: 1.85;
+}
+
+.readMoreButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  padding: 0.85rem 1.2rem;
+
+  color: var(--clr-white);
+  background: var(--clr-red);
+  border: 1px solid var(--clr-red);
+  border-radius: 4px;
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+}
+
+.readMoreButton span {
+  font-size: 1.25rem;
+  line-height: 1;
 }
 
 /* ============================================================
    ACADEMIC & PROFESSIONAL HIGHLIGHTS
 ============================================================ */
 
+.highlightsSection {
+  margin-top: 5rem;
+}
+
+.highlightsHeader {
+  max-width: 850px;
+  margin-bottom: 2rem;
+}
+
+.highlightsEyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.highlightsHeading {
+  margin: 0 0 0.9rem;
+
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.highlightsDescription {
+  max-width: 70ch;
+  margin: 0;
+
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+/* ============================================================
+   HIGHLIGHT CARD GRID
+============================================================ */
+
 .highlights {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.75rem 2rem;
-  margin-top: 3rem;
-  padding-block: 2.25rem;
-  border-top: 1px solid var(--clr-border);
-  border-bottom: 1px solid var(--clr-border);
+  gap: 1.5rem;
 }
 
 .highlight {
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  align-items: flex-start;
+  gap: 0.85rem;
+
   min-width: 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--clr-red);
+  min-height: 190px;
+  padding: 1.75rem;
+
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--clr-red);
+  border-radius: 8px;
 }
 
+/* ============================================================
+   HIGHLIGHT ICON
+============================================================ */
+
+.highlightIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  color: var(--clr-red);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+}
+
+/* ============================================================
+   HIGHLIGHT TEXT
+============================================================ */
+
 .highlightLabel {
-  color: var(--clr-text-sub);
+  margin: 0;
+
+  color: var(--clr-navy);
   font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: var(--fw-semibold);
-  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: 0.075em;
   line-height: 1.5;
   text-transform: uppercase;
 }
 
 .highlightValue {
-  color: var(--clr-navy);
+  margin: 0;
+
+  color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 1.08rem;
-  font-weight: var(--fw-semibold);
-  line-height: 1.55;
+  font-size: 1.05rem;
+  font-weight: var(--fw-medium);
+  line-height: 1.65;
   overflow-wrap: anywhere;
 }
 
 /* ============================================================
-   LARGE LAPTOPS
+   CORE VALUES
 ============================================================ */
 
-@media (min-width: 1025px) and (max-width: 1400px) {
-  .left {
-    gap: clamp(2.5rem, 4vw, 4rem);
-  }
+.valuesSection {
+  margin-top: 6rem;
+}
 
-  .heading {
-    font-size: clamp(3rem, 4.5vw, 4.5rem);
-  }
+.valuesHeader {
+  max-width: 850px;
+  margin-bottom: 2.5rem;
+}
+
+.valuesEyebrow {
+  display: block;
+  margin-bottom: 0.75rem;
+
+  color: var(--clr-red);
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.valuesHeading {
+  margin: 0 0 0.9rem;
+
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: var(--fw-bold);
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+
+.valuesDescription {
+  max-width: 70ch;
+  margin: 0;
+
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
 }
 
 /* ============================================================
-   TABLETS & SMALL LAPTOPS
+   VALUES GRID
+============================================================ */
+
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.valueCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.9rem;
+
+  min-width: 0;
+  min-height: 220px;
+  padding: 1.75rem;
+
+  background: var(--clr-bg-2);
+  border: 1px solid var(--clr-border);
+  border-top: 3px solid var(--clr-red);
+  border-radius: 8px;
+}
+
+/* ============================================================
+   VALUE ICON
+============================================================ */
+
+.valueIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+
+  color: var(--clr-red);
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: 8px;
+}
+
+/* ============================================================
+   VALUE TEXT
+============================================================ */
+
+.valueTitle {
+  margin: 0;
+
+  color: var(--clr-navy);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: var(--fw-bold);
+  line-height: 1.4;
+}
+
+.valueDescription {
+  margin: 0;
+
+  color: var(--clr-text-sub);
+  font-family: var(--font-body);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+/* ============================================================
+   CLOSING STATEMENT
+============================================================ */
+
+.valuesStatement {
+  max-width: 1000px;
+  margin: 3rem 0 0;
+  padding: 1.75rem 2rem;
+
+  color: var(--clr-navy);
+  background: var(--clr-bg-2);
+  border-left: 4px solid var(--clr-red);
+
+  font-family: var(--font-display);
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  font-weight: var(--fw-semibold);
+  line-height: 1.65;
+}
+
+/* ============================================================
+   LAPTOP SCREENS
 ============================================================ */
 
 @media (max-width: 1024px) {
-  .about {
-    padding-block: 6rem;
-  }
-
   .left {
-    gap: 2.5rem;
+    column-gap: 2rem;
   }
 
   .heading {
-    font-size: clamp(2.8rem, 5vw, 3.8rem);
-  }
-
-  .bio {
-    font-size: 1.15rem;
-    line-height: 1.8;
+    font-size: clamp(2.3rem, 4.5vw, 3.5rem);
   }
 
   .highlights {
     gap: 1.5rem;
-    margin-top: 2.5rem;
   }
 }
 
 /* ============================================================
-   TABLET PORTRAIT & MOBILE
+   TABLETS
 ============================================================ */
 
 @media (max-width: 768px) {
@@ -246,13 +487,92 @@
     padding-block: 5rem;
   }
 
-  .grid {
-    gap: 3rem;
+  .left {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5rem;
+    row-gap: 1.25rem;
+    margin-bottom: 4rem;
   }
 
+  .heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .identity {
+    gap: 0.5rem;
+  }
+
+  .identity span {
+    font-size: 0.65rem;
+  }
+
+  .storyContent {
+    max-height: 420px;
+  }
+
+  .bio {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .highlightsSection {
+    margin-top: 4rem;
+  }
+
+  .highlights {
+    gap: 1.25rem;
+  }
+
+  .highlight {
+    min-height: 175px;
+    padding: 1.5rem;
+  }
+
+  .highlightsDescription,
+  .valuesDescription {
+    font-size: 1rem;
+  }
+
+  .valuesSection {
+    margin-top: 4.5rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .valueCard {
+    min-height: 200px;
+    padding: 1.5rem;
+  }
+
+  .valuesStatement {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 600px) {
+  .about {
+    padding-block: 4rem;
+  }
+
+  /* Professional identity */
   .left {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .eyebrow {
+    order: 0;
   }
 
   .identityContent {
@@ -263,129 +583,134 @@
     order: 2;
   }
 
-  .eyebrow {
-    font-size: 0.85rem;
-  }
-
   .heading {
-    max-width: 14ch;
-    font-size: clamp(2.6rem, 8vw, 3.8rem);
-  }
-
-  .identity {
-    gap: 0.55rem;
-    margin-top: 1.75rem;
-    font-size: 0.82rem;
-  }
-
-  .imageWrapper {
-    max-width: 100%;
-  }
-
-  .bio {
-    max-width: 100%;
     margin-bottom: 1.25rem;
-    font-size: 1.12rem;
-    line-height: 1.8;
+    font-size: clamp(2.3rem, 9vw, 3.2rem);
   }
 
-  .highlights {
-    margin-top: 2.25rem;
-    padding-block: 2rem;
-  }
-}
-
-/* ============================================================
-   MOBILE PHONES
-============================================================ */
-
-@media (max-width: 600px) {
-  .about {
-    padding-block: 4.5rem;
+  .identity span {
+    font-size: 0.68rem;
   }
 
-  .grid {
-    gap: 2.5rem;
+  /* My story */
+  .storyHeading {
+    font-size: 2rem;
   }
 
-  .heading {
-    font-size: clamp(2.5rem, 8vw, 3.4rem);
+  .storyContent {
+    max-height: 440px;
   }
 
-  .identity {
-    margin-top: 1.5rem;
-    font-size: 0.8rem;
+  /* Highlights */
+  .highlightsSection {
+    margin-top: 3.5rem;
   }
 
-  .bio {
-    font-size: 1.08rem;
-    line-height: 1.8;
+  .highlightsHeading {
+    font-size: 1.9rem;
   }
 
   .highlights {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 2rem;
-    padding-block: 1.75rem;
+    gap: 1rem;
   }
 
   .highlight {
-    gap: 0.5rem;
+    min-height: auto;
+    padding: 1.4rem 1.5rem;
+    gap: 0.7rem;
   }
 
-  .highlightLabel {
-    font-size: 0.8rem;
+  .highlightIcon {
+    width: 44px;
+    height: 44px;
   }
 
   .highlightValue {
-    font-size: 1.05rem;
+    font-size: 1rem;
+  }
+
+  /* Core values */
+  .valuesSection {
+    margin-top: 3.5rem;
+  }
+
+  .valuesHeading {
+    font-size: 1.9rem;
+  }
+
+  .valuesGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .valueCard {
+    min-height: auto;
+    padding: 1.4rem 1.5rem;
+  }
+
+  .valueIcon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .valuesStatement {
+    margin-top: 2rem;
+    padding: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 
 /* ============================================================
-   SMALL MOBILE SCREENS
+   SMALL MOBILE
 ============================================================ */
 
 @media (max-width: 420px) {
-  .about {
-    padding-block: 4rem;
-  }
-
-  .eyebrow {
-    font-size: 0.78rem;
+  .about > :global(.container) {
+    padding-inline: 1.15rem;
   }
 
   .heading {
-    font-size: 2.35rem;
-    letter-spacing: -0.045em;
+    font-size: 2.2rem;
   }
 
-  .identity {
-    gap: 0.5rem;
-    padding-left: 0.85rem;
-    font-size: 0.74rem;
-    letter-spacing: 0.04em;
-  }
-
-  .bio {
-    font-size: 1.02rem;
-    line-height: 1.8;
-  }
-
-  .highlights {
-    gap: 1.25rem;
-    padding-block: 1.5rem;
+  .highlightsHeading,
+  .valuesHeading {
+    font-size: 1.7rem;
   }
 
   .highlight {
-    padding-left: 0.85rem;
+    padding: 1.25rem;
   }
 
   .highlightLabel {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
+  }
+}
+
+/* ============================================================
+   LARGE DESKTOP SCREENS
+============================================================ */
+
+@media (min-width: 1440px) {
+  .about > :global(.container) {
+    padding-inline: clamp(3rem, 3.5vw, 5rem);
+  }
+
+  .highlightsSection {
+    margin-top: 5.5rem;
+  }
+
+  .highlights {
+    gap: 1.75rem;
+  }
+
+  .highlight {
+    min-height: 205px;
+    padding: 2rem;
   }
 
   .highlightValue {
-    font-size: 0.98rem;
+    font-size: 1.12rem;
   }
 }

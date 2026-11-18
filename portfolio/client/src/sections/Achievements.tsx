@@ -1,39 +1,31 @@
 
-
 import styles from './Achievements.module.css'
 
 const achievements = [
-  {
-    year: '2026',
-    type: 'EDUCATION',
-    title: 'BSc Computer Science',
-    organization: 'Jomo Kenyatta University of Agriculture and Technology (JKUAT)',
-    description:
-      'Graduated with Second Class Honours (Upper Division).',
-  },
   {
     year: '2025',
     type: 'ACADEMIC RECOGNITION',
     title: 'DAFI Silver Academic Excellence Award',
     organization: 'DAFI Scholarship Programme',
     description:
-      'Recognised for academic excellence and commitment to education.',
+      'Recognised for academic excellence, dedication, and commitment to education.',
   },
   {
     year: '2025',
-    type: 'PROFESSIONAL DEVELOPMENT',
+    type: 'TECHNICAL DEVELOPMENT',
     title: 'LLM Applications with Prompt Engineering',
     organization: 'NVIDIA',
     description:
-      'Completed professional training focused on large language model applications and prompt engineering.',
+      'Completed specialised training in large language model applications and prompt engineering.',
   },
   {
     year: '2024–2026',
     type: 'LEADERSHIP',
     title: 'Secretary General',
-    organization: 'JKUAT South Sudanese and Sudanese Students Association',
+    organization:
+      'JKUAT South Sudanese and Sudanese Students Association',
     description:
-      'Served in a student leadership role, supporting communication, coordination, and student engagement.',
+      'Elected to student leadership, supporting coordination, communication, and student engagement.',
   },
 ]
 
@@ -45,28 +37,34 @@ export default function Achievements() {
           <p className={styles.eyebrow}>MY JOURNEY</p>
 
           <h2 className={styles.heading}>
-            Education &
-            <em>achievements.</em>
+            Achievements &
+            <em>Recognition.</em>
           </h2>
 
           <p className={styles.intro}>
-            A record of academic milestones, professional development,
-            and leadership experiences that continue to shape my growth.
+            Milestones in academic excellence, technical development,
+            and leadership that reflect my commitment to continuous
+            growth and meaningful impact.
           </p>
         </div>
 
-        <div className={styles.timeline}>
+        <div className={styles.grid}>
           {achievements.map((item, index) => (
-            <article className={styles.item} key={item.title}>
-              <div className={styles.marker}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
+            <article
+              className={`${styles.card} ${styles[`card${index + 1}`]}`}
+              key={item.title}
+              style={{ animationDelay: `${index * 180}ms` }}
+            >
+              <div className={styles.cardTop}>
+                <span className={styles.number}>
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+
+                <span className={styles.year}>{item.year}</span>
               </div>
 
-              <div className={styles.content}>
-                <div className={styles.meta}>
-                  <span className={styles.type}>{item.type}</span>
-                  <span className={styles.year}>{item.year}</span>
-                </div>
+              <div className={styles.cardContent}>
+                <span className={styles.type}>{item.type}</span>
 
                 <h3 className={styles.title}>{item.title}</h3>
 
@@ -78,6 +76,8 @@ export default function Achievements() {
                   {item.description}
                 </p>
               </div>
+
+              <div className={styles.cardAccent} aria-hidden="true" />
             </article>
           ))}
         </div>

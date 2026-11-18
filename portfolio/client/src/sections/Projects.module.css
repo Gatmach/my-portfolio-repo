@@ -8,16 +8,15 @@
   padding-bottom: clamp(5rem, 8vw, 8rem);
   background: var(--clr-white);
 }
-
 /* ============================================================
    SECTION HEADER
 ============================================================ */
 
 .header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
-  align-items: end;
-  gap: clamp(2rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
   margin-bottom: clamp(2.5rem, 5vw, 4rem);
 }
 
@@ -41,7 +40,7 @@
   margin: 0;
   color: var(--clr-navy);
   font-family: var(--font-display);
-  font-size: var(--fs-3xl);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
   font-weight: var(--fw-bold);
   line-height: 1.08;
   letter-spacing: -0.045em;
@@ -53,13 +52,15 @@
 }
 
 .sub {
-  max-width: 48ch;
+  width: 100%;
+  max-width: none;
   margin: 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
   line-height: 1.8;
 }
+
 
 /* ============================================================
    PROJECT GRID
@@ -96,7 +97,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
-  background: var(--clr-bg-3);
+  background: var(--clr-bg-2);
   border-bottom: 1px solid var(--clr-border);
 }
 
@@ -106,17 +107,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-}
-
-.imageOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(16, 47, 87, 0.02) 45%,
-    rgba(16, 47, 87, 0.2) 100%
-  );
-  pointer-events: none;
 }
 
 .projectIndex {
@@ -138,22 +128,8 @@
   font-weight: var(--fw-semibold);
 }
 
-/* Fallback when an image is unavailable */
-
-.thumbnailNum {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  color: var(--clr-navy);
-  font-family: var(--font-display);
-  font-size: clamp(4rem, 7vw, 6rem);
-  font-weight: var(--fw-bold);
-}
-
 /* ============================================================
-   CARD BODY
+   PROJECT DETAILS
 ============================================================ */
 
 .body {
@@ -165,16 +141,10 @@
   gap: 1rem;
 }
 
-/* ============================================================
-   PROJECT META
-============================================================ */
-
 .projectMeta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
+  justify-content: flex-start;
 }
 
 .year {
@@ -182,21 +152,8 @@
   font-family: var(--font-mono);
   font-size: 0.9rem;
   font-weight: var(--fw-semibold);
+  letter-spacing: 0.04em;
 }
-
-.projectType {
-  max-width: 75%;
-  color: var(--clr-red-dark);
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: var(--fw-semibold);
-  line-height: 1.5;
-  text-align: right;
-}
-
-/* ============================================================
-   PROJECT TITLE
-============================================================ */
 
 .title {
   margin: 0;
@@ -208,84 +165,43 @@
   letter-spacing: -0.025em;
 }
 
-/* ============================================================
-   PROJECT DESCRIPTION
-============================================================ */
-
 .desc {
   flex: 1;
   max-width: 65ch;
   margin: 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 1.12rem;
+  font-size: 1.05rem;
   font-weight: var(--fw-regular);
   line-height: 1.8;
 }
 
 /* ============================================================
-   TECHNOLOGY TAGS
-============================================================ */
-
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  margin-top: 0.5rem;
-}
-
-.tag {
-  display: inline-flex;
-  align-items: center;
-  min-height: 34px;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid var(--clr-border);
-  border-radius: 4px;
-  background: var(--clr-bg-2);
-  color: var(--clr-text-sub);
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  font-weight: var(--fw-medium);
-  line-height: 1.4;
-}
-
-/* ============================================================
-   CARD FOOTER
+   READ MORE BUTTON
 ============================================================ */
 
 .cardFooter {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: auto;
   padding-top: 1.25rem;
   border-top: 1px solid var(--clr-border);
 }
 
-.footerLinks {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.65rem;
-}
-
-/* ============================================================
-   PROJECT LINKS
-============================================================ */
-
 .readMore {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  min-height: 42px;
-  padding: 0.6rem 1rem;
+  gap: 0.55rem;
+  min-height: 44px;
+  padding: 0.7rem 1.2rem;
   border: 1px solid var(--clr-navy);
   border-radius: 4px;
   background: var(--clr-navy);
   color: var(--clr-white);
   font-family: var(--font-body);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   font-weight: var(--fw-semibold);
   line-height: 1;
   text-decoration: none;
@@ -313,10 +229,6 @@
   .body {
     padding: 1.5rem;
   }
-
-  .desc {
-    font-size: 1.08rem;
-  }
 }
 
 /* ============================================================
@@ -334,22 +246,18 @@
   }
 
   .heading {
-    font-size: var(--fs-2xl);
+    font-size: clamp(2.2rem, 7vw, 3rem);
   }
 
   .sub {
     max-width: 100%;
-    font-size: 1.12rem;
+    font-size: 1.05rem;
     line-height: 1.8;
   }
 
   .grid {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
-  }
-
-  .thumbnail {
-    aspect-ratio: 16 / 9;
   }
 
   .body {
@@ -361,12 +269,8 @@
   }
 
   .desc {
-    font-size: 1.08rem;
+    font-size: 1.02rem;
     line-height: 1.8;
-  }
-
-  .tag {
-    font-size: 0.88rem;
   }
 }
 
@@ -381,16 +285,11 @@
   }
 
   .heading {
-    font-size: 2.25rem;
+    font-size: 2.1rem;
   }
 
-  .projectMeta {
-    align-items: flex-start;
-  }
-
-  .projectType {
-    max-width: 70%;
-    font-size: 0.82rem;
+  .body {
+    gap: 0.9rem;
   }
 
   .title {
@@ -398,14 +297,11 @@
   }
 
   .desc {
-    font-size: 1.02rem;
+    font-size: 0.98rem;
   }
 
-  .tag {
-    font-size: 0.82rem;
-  }
-
-  .footerLinks {
-    justify-content: flex-start;
+  .readMore {
+    min-height: 42px;
+    padding: 0.65rem 1rem;
   }
 }

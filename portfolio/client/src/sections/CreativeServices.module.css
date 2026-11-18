@@ -1,14 +1,22 @@
 
+/* ============================================================
+   CREATIVE SERVICES SECTION
+============================================================ */
+
 .services {
   position: relative;
   background: var(--clr-bg-2);
 }
 
+/* ============================================================
+   SECTION HEADER
+============================================================ */
+
 .header {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.7fr);
-  gap: 3rem;
-  align-items: end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.25rem;
   margin-bottom: 3.5rem;
 }
 
@@ -40,19 +48,28 @@
 }
 
 .intro {
-  max-width: 48ch;
-  margin: 0 0 0.35rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
   color: var(--clr-text-sub);
   font-family: var(--font-body);
-  font-size: 1.2rem;
+  font-size: clamp(1.08rem, 1.2vw, 1.2rem);
   line-height: 1.85;
 }
+
+/* ============================================================
+   SERVICES GRID
+============================================================ */
 
 .grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
 }
+
+/* ============================================================
+   SERVICE CARD
+============================================================ */
 
 .card {
   position: relative;
@@ -64,6 +81,10 @@
   border: 1px solid var(--clr-border);
   border-radius: 10px;
 }
+
+/* ============================================================
+   SERVICE IMAGE
+============================================================ */
 
 .imageWrap {
   width: 100%;
@@ -78,6 +99,10 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* ============================================================
+   CARD NUMBER
+============================================================ */
 
 .number {
   position: absolute;
@@ -94,6 +119,10 @@
   font-size: 0.9rem;
   font-weight: var(--fw-semibold);
 }
+
+/* ============================================================
+   CARD CONTENT
+============================================================ */
 
 .cardContent {
   flex: 1;
@@ -129,6 +158,10 @@
   line-height: 1.8;
 }
 
+/* ============================================================
+   CARD ARROW
+============================================================ */
+
 .arrow {
   align-self: flex-end;
   margin: 0 1.75rem 1.5rem 0;
@@ -137,21 +170,23 @@
   font-weight: var(--fw-bold);
 }
 
-@media (max-width: 900px) {
-  .header {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+/* ============================================================
+   TABLET
+============================================================ */
 
+@media (max-width: 900px) {
   .intro {
-    max-width: 60ch;
     font-size: 1.15rem;
   }
 }
 
+/* ============================================================
+   MOBILE
+============================================================ */
+
 @media (max-width: 640px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.25rem;
   }
 
@@ -161,6 +196,7 @@
 
   .intro {
     font-size: 1.08rem;
+    line-height: 1.8;
   }
 
   .cardContent {

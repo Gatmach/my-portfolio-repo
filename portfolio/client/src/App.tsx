@@ -1,32 +1,63 @@
 
+import { useState } from 'react'
+
 import Navbar from './components/Navbar'
+import type { Page } from './components/Navbar'
+
 import Hero from './sections/Hero'
+import Introduction from './sections/Introduction'
 import About from './sections/About'
-import Projects from './sections/Projects'
-import Contact from './sections/Contact'
-import Footer from './components/Footer'
 import Expertise from './sections/Expertise'
+import Projects from './sections/Projects'
 import CreativeServices from './sections/CreativeServices'
 import Achievements from './sections/Achievements'
-import Insights from './sections/Insights'
-import Introduction from './sections/Introduction'
+import Contact from './sections/Contact'
 
+import Footer from './components/Footer'
 
 export default function App() {
+  const [activePage, setActivePage] = useState<Page>('home')
+
+  const renderPage = () => {
+    switch (activePage) {
+      case 'home':
+        return <Introduction />
+
+      case 'about':
+        return <About />
+
+      case 'expertise':
+        return <Expertise />
+
+      case 'projects':
+        return <Projects />
+
+      case 'services':
+        return <CreativeServices />
+
+      case 'achievements':
+        return <Achievements />
+
+      case 'contact':
+        return <Contact />
+
+      default:
+        return <Introduction />
+    }
+  }
+
   return (
     <>
-      <Navbar />
+      <Navbar
+        activePage={activePage}
+        onNavigate={setActivePage}
+      />
+
       <main>
         <Hero />
-        <Introduction />
-        <About />
-        <Projects />
-        <CreativeServices />
-        <Expertise />
-        <Achievements />
-        <Insights />
-        <Contact />
+        {renderPage()}
       </main>
+
       <Footer />
     </>
   )

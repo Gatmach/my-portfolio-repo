@@ -8,7 +8,6 @@ const sections = [
   'projects',
   'services',
   'achievements',
-  'insights',
   'contact',
 ]
 
