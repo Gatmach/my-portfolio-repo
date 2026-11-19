@@ -1,73 +1,134 @@
-# React + TypeScript + Vite
+# Gatmach Yuol — Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal portfolio showcasing my journey as a Computer Science graduate, technical interests, selected projects, achievements, and creative services.
 
-Currently, two official plugins are available:
+Built to reflect my passion for software engineering, artificial intelligence, innovation, and developing technology that solves real-world problems.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## About Me
 
-## React Compiler
+I am a Computer Science graduate passionate about technology, innovation, and transforming ideas into practical digital solutions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+My technical interests include:
 
-## Expanding the ESLint configuration
+- Software Engineering
+- Artificial Intelligence
+- Machine Learning & Data Science
+- Computer Networking
+- Cybersecurity
+- Innovation & Problem Solving
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+I am driven by curiosity, continuous learning, and the desire to use technology to address real-world challenges.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Portfolio Sections
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Home** — Introduction and overview.
+- **About** — Background, education, and professional interests.
+- **Expertise** — Technical skills and areas of focus.
+- **Projects** — Selected software and technology projects.
+- **Creative Services** — Design and creative work.
+- **Achievements** — Academic recognition, professional development, and leadership.
+- **Contact** — Ways to connect and collaborate.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Featured Projects
+
+### 1. WasteOS
+
+A smart waste management system designed to support efficient waste collection, monitoring, and management.
+
+![WasteOS project preview](public/images/wasteOS.png)
+
+[View on GitHub](https://github.com/Gatmach/SWM-System)
+
+### 2. Farm2Fork
+
+A blockchain-based agricultural traceability solution designed to improve transparency and traceability in the agricultural supply chain.
+
+![Farm2Fork project preview](public/images/farm2fork.png)
+
+[View on GitHub](https://github.com/Farmtfork)
+
+### 3. CropAI
+
+An AI-powered crop disease diagnosis project using machine learning and image classification to identify crop diseases.
+
+![CropAI project preview](public/images/cropai.png)
+
+[View on GitHub](https://github.com/Gatmach/ai-crop-disease-diagnosis)
+
+### 4. Feelr
+
+A software project exploring digital solutions and user-focused application development.
+
+![Feelr project preview](public/images/feelr.png)
+
+[View on GitHub](https://github.com/Gatmach/feeler)
+
+## Technology Stack
+
+- **Frontend:** React, TypeScript, Vite
+- **Styling:** CSS Modules and modern CSS
+- **Development Tools:** ESLint, Git, and GitHub
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone YOUR_REPOSITORY_URL
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Navigate to the project directory:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+cd YOUR_PROJECT_DIRECTORY
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Build the application for production:
+
+```bash
+npm run build --workspace=client
+```
+
+## Design Philosophy
+
+The portfolio follows a clean, modern, and responsive design approach, featuring:
+
+- Deep navy and blue tones.
+- Red accents and clean white backgrounds.
+- Montserrat, Inter, and JetBrains Mono typography.
+- Responsive layouts for different screen sizes.
+- Smooth visual transitions and interactive elements.
+- Clear navigation and focused content presentation.
+- Consistent project imagery and visual storytelling.
+
+## Connect With Me
+
+- **GitHub:** [Gatmach](https://github.com/Gatmach)
+- **LinkedIn:** [Gatmach Yuol Nyuon](https://www.linkedin.com/in/gatmachyuolnyuon/)
+
+## License
+
+This repository contains my personal portfolio, project presentations, and original design assets. Please contact me before reusing its original content or design materials.
+
+---
+
+**Technology with purpose. Solutions with impact.**
