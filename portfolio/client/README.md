@@ -1,33 +1,41 @@
-# Gatmach Yuol — Personal Portfolio
+# Gatmach Yuol
 
-A personal portfolio showcasing my journey as a Computer Science graduate, technical interests, selected projects, achievements, and creative services.
+\<h3 align="center">Computer Science Graduate | Software Developer | Technology Enthusiast\</h3>
 
-Built to reflect my passion for software engineering, artificial intelligence, innovation, and developing technology that solves real-world problems.
+\<p align="center">
+Building meaningful technology through software engineering, artificial intelligence, and innovation.
+\</p>
+
+\<p align="center">
+\<a href="[https://github.com/Gatmach](https://github.com/Gatmach)">GitHub\</a> •
+\<a href="[https://www.linkedin.com/in/gatmachyuolnyuon/](https://www.linkedin.com/in/gatmachyuolnyuon/)">LinkedIn\</a>
+\</p>
+
+---
 
 ## About Me
 
 I am a Computer Science graduate passionate about technology, innovation, and transforming ideas into practical digital solutions.
 
-My technical interests include:
-
-- Software Engineering
-- Artificial Intelligence
-- Machine Learning & Data Science
-- Computer Networking
-- Cybersecurity
-- Innovation & Problem Solving
+My interests span software engineering, artificial intelligence, machine learning, data science, computer networking, and cybersecurity.
 
 I am driven by curiosity, continuous learning, and the desire to use technology to address real-world challenges.
 
+## Technologies
+
+\<p align="center"> \<img src="[https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB](https://img.shields.io/badge/React-20232A?style=for-the-badge\&logo=react\&logoColor=61DAFB)" alt="React" /> \<img src="[https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge\&logo=typescript\&logoColor=white)" alt="TypeScript" /> \<img src="[https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge\&logo=vite\&logoColor=white)" alt="Vite" /> \<img src="[https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge\&logo=css3\&logoColor=white)" alt="CSS3" /> \<img src="[https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white](https://img.shields.io/badge/Git-F05032?style=for-the-badge\&logo=git\&logoColor=white)" alt="Git" /> \<img src="[https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)" alt="GitHub" /> \</p>
+
 ## Portfolio Sections
 
-- **Home** — Introduction and overview.
-- **About** — Background, education, and professional interests.
-- **Expertise** — Technical skills and areas of focus.
-- **Projects** — Selected software and technology projects.
-- **Creative Services** — Design and creative work.
-- **Achievements** — Academic recognition, professional development, and leadership.
-- **Contact** — Ways to connect and collaborate.
+| Section           | Description                                                    |
+| ----------------- | -------------------------------------------------------------- |
+| Home              | Introduction and overview                                      |
+| About             | Background, education, and professional interests              |
+| Expertise         | Technical skills and areas of focus                            |
+| Projects          | Selected software and technology projects                      |
+| Creative Services | Design and creative work                                       |
+| Achievements      | Academic recognition, professional development, and leadership |
+| Contact           | Ways to connect and collaborate                                |
 
 ## Featured Projects
 
@@ -35,39 +43,37 @@ I am driven by curiosity, continuous learning, and the desire to use technology 
 
 A smart waste management system designed to support efficient waste collection, monitoring, and management.
 
-![WasteOS project preview](public/images/wasteOS.png)
-
-[View on GitHub](https://github.com/Gatmach/SWM-System)
+[View Project on GitHub](https://github.com/Gatmach/SWM-System)
 
 ### 2. Farm2Fork
 
 A blockchain-based agricultural traceability solution designed to improve transparency and traceability in the agricultural supply chain.
 
-![Farm2Fork project preview](public/images/farm2fork.png)
-
-[View on GitHub](https://github.com/Farmtfork)
+[View Project on GitHub](https://github.com/Farmtfork)
 
 ### 3. CropAI
 
 An AI-powered crop disease diagnosis project using machine learning and image classification to identify crop diseases.
 
-![CropAI project preview](public/images/cropai.png)
-
-[View on GitHub](https://github.com/Gatmach/ai-crop-disease-diagnosis)
+[View Project on GitHub](https://github.com/Gatmach/ai-crop-disease-diagnosis)
 
 ### 4. Feelr
 
 A software project exploring digital solutions and user-focused application development.
 
-![Feelr project preview](public/images/feelr.png)
+[View Project on GitHub](https://github.com/Gatmach/feeler)
 
-[View on GitHub](https://github.com/Gatmach/feeler)
+## Design Philosophy
 
-## Technology Stack
+The portfolio follows a clean, modern, and responsive design approach, featuring:
 
-- **Frontend:** React, TypeScript, Vite
-- **Styling:** CSS Modules and modern CSS
-- **Development Tools:** ESLint, Git, and GitHub
+- Deep navy and blue tones.
+- Red accents and clean white backgrounds.
+- Montserrat, Inter, and JetBrains Mono typography.
+- Responsive layouts for different screen sizes.
+- Smooth visual transitions and interactive elements.
+- Clear navigation and focused content presentation.
+- Consistent visual styling and user experience.
 
 ## Getting Started
 
@@ -78,16 +84,10 @@ A software project exploring digital solutions and user-focused application deve
 
 ### Installation
 
-Clone the repository:
+Clone the repository from GitHub, then navigate to the project directory:
 
 ```bash
-git clone YOUR_REPOSITORY_URL
-```
-
-Navigate to the project directory:
-
-```bash
-cd YOUR_PROJECT_DIRECTORY
+cd my-portfolio-repo/portfolio
 ```
 
 Install dependencies:
@@ -108,22 +108,9 @@ Build the application for production:
 npm run build --workspace=client
 ```
 
-## Design Philosophy
-
-The portfolio follows a clean, modern, and responsive design approach, featuring:
-
-- Deep navy and blue tones.
-- Red accents and clean white backgrounds.
-- Montserrat, Inter, and JetBrains Mono typography.
-- Responsive layouts for different screen sizes.
-- Smooth visual transitions and interactive elements.
-- Clear navigation and focused content presentation.
-- Consistent project imagery and visual storytelling.
-
 ## Connect With Me
 
-- **GitHub:** [Gatmach](https://github.com/Gatmach)
-- **LinkedIn:** [Gatmach Yuol Nyuon](https://www.linkedin.com/in/gatmachyuolnyuon/)
+\<p align="center"> \<a href="[https://github.com/Gatmach](https://github.com/Gatmach)"> \<img src="[https://img.shields.io/badge/GitHub-Gatmach-181717?style=for-the-badge&logo=github](https://img.shields.io/badge/GitHub-Gatmach-181717?style=for-the-badge\&logo=github)" alt="GitHub Profile" /> \</a> \<a href="[https://www.linkedin.com/in/gatmachyuolnyuon/](https://www.linkedin.com/in/gatmachyuolnyuon/)"> \<img src="[https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge\&logo=linkedin)" alt="LinkedIn Profile" /> \</a> \</p>
 
 ## License
 
@@ -131,4 +118,6 @@ This repository contains my personal portfolio, project presentations, and origi
 
 ---
 
-**Technology with purpose. Solutions with impact.**
+\<p align="center">
+\<strong>Technology with purpose. Solutions with impact.\</strong>
+\</p>
