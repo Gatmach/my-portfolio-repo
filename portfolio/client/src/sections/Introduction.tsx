@@ -6,31 +6,43 @@ const interests = [
     number: '01',
     title: 'Software Engineering',
     description: 'Designing and building practical software applications and digital solutions.',
+    image: '/images/software_engineering.png',
+    alt: 'Software engineering workspace with code displayed on a laptop',
   },
   {
     number: '02',
     title: 'Artificial Intelligence',
     description: 'Exploring intelligent systems that learn, reason, and solve problems.',
+    image: '/images/artificial_intelligence.png',
+    alt: 'Glowing artificial intelligence neural brain with connected digital networks',
   },
   {
     number: '03',
     title: 'Machine Learning & Data Science',
     description: 'Discovering patterns, analysing data, and developing data-driven solutions.',
+    image: '/images/machine_learning_data_science.png',
+    alt: 'Machine learning model dashboard with data visualisations and neural network',
   },
   {
     number: '04',
     title: 'Computer Networking',
     description: 'Understanding network infrastructure, connectivity, and communication systems.',
+    image: '/images/computer_networking.png',
+    alt: 'Network switches, server racks, Ethernet cables and global connectivity',
   },
   {
     number: '05',
     title: 'Cybersecurity',
     description: 'Exploring digital security, system protection, and network safety.',
+    image: '/images/cyberSecurity.png',
+    alt: 'Digital security shield and padlock surrounded by cybersecurity protection symbols',
   },
   {
     number: '06',
     title: 'Innovation & Problem Solving',
     description: 'Turning creative ideas into practical solutions to real-world challenges.',
+    image: '/images/innovation_problemSolving.png',
+    alt: 'Glowing light bulb representing creativity, innovation and problem solving',
   },
 ]
 
@@ -96,8 +108,8 @@ export default function Introduction() {
               >
                 <div className={styles.imageWrapper}>
                   <img
-                    src="/images/yuol.jpg"
-                    alt="Gatmach Yuol"
+                    src={interest.image}
+                    alt={interest.alt}
                     className={styles.interestImage}
                     loading="lazy"
                   />
